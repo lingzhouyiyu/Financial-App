@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+			<div class="ub ord_top">
+				<div class="ub ub-f1 ord_item bc-text">
+					<div class="ub">
+						借款金额
+					</div>
+					<div class="ub ub-f1 ord_input">
+						<input class="ub ub-f1" type="text" name="" id="" value="" placeholder="请输入借款金额" />
+					</div>
+					<div class="ub">元</div>
+				</div>
+			</div>
+			<div class="ub ord_top ord_top02">
+				<div class="ub ub-f1 ord_item bc-text">
+					<div class="ub">
+						借款金额
+					</div>
+					<div class="ub ub-f1 ord_input">
+						<input class="ub ub-f1" type="text" name="" id="" value="" placeholder="请输入最小投资单位" />
+					</div>
+					<div class="ub">元</div>
+				</div>
+			</div>
+			<div class="ub ord_top ord_top02">
+				<div class="ub ub-f1 ord_item bc-text">
+					<div class="ub">
+						还款期限
+					</div>
+					<div class="ub ub-f1 ord_input">
+						<input class="ub ub-f1" type="text" name="" id="" value="" placeholder="请输入还款期限" />
+					</div>
+					<div class="ub">天</div>
+				</div>
+			</div>
+			<div class="ub ord_top ord_top02">
+				<div class="ub ub-f1 ub-ac ord_item bc-text">
+					<div class="ub">
+						年化率利 
+					</div>
+					<div class="ub ub-f1 ord_input">
+						<input class="ub ub-f1" type="text" name="" id="" value="" placeholder="5~20  " />
+					</div>
+					<div class="ub">%</div>
+				</div>
+			</div>
+			<div class="ub ord_top ord_top02">
+				<div class="ub ub-f1 ub-ac ord_item bc-text">
+					<div class="ub ub-f1">
+						还款方式 
+					</div>
+					<div class="ub ub-f1 ord_check ">
+						<div class="ub ub-ac ub-pc ub-f1 ub-fh ord_cate ord_active" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+							到期还本息
+						</div>
+						<div class="ub ub-ac ub-pc ub-f1 ub-fh ord_cate" style="border-top-right-radius: 8px; border-bottom-right-radius: 8px;">
+							每月付息
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pc ord_warming">
+				*借款期限小于1个月，只能选择到期还本息
+			</div>
+			<div class="ub ub-ac ub-pc ord_warming ord_warming02">
+				*借款期限大于6个月，只能选择到每月付息
+			</div>
+			<div class="ub ub-ac ub-pc ord_btn">
+				下一步
+			</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		$(".ord_check .ord_cate").click(function(){
+			$(".ord_cate").removeClass("ord_active");
+			$(this).addClass("ord_active");
+		})
+	</script>
+
+</html>

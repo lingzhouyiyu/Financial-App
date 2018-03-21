@@ -1,0 +1,46 @@
+.bd_1{
+	padding:  1em 0;
+	
+}
+.bd_1 .tzhk{
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+	padding: 1em 1em;
+	font-size: 1em;
+	color: #19191;
+}
+.bd_2 {
+	padding: 0 1em 1em 1em;
+	border-bottom: 1px solid #d3d3d3;
+}
+.bd_2 .je{
+	font-size: 1em;
+	color: #a4a4a4;
+}
+.bd_2 .money{
+	color: #ff721f;
+	font-size: 2em;
+}
+.bd_2 .zhjy{
+	font-size: 0.8em;
+	color: #a4a4a4;
+	margin-top: 0.3em;
+}
+.bd_3{
+	padding: 1em 1em;
+	border-bottom: 1px solid #d3d3d3;
+}
+.bd_3 .xm{
+	padding-bottom: 1em;
+}
+.bd_3 .sm{
+	padding-bottom: 1em;
+}
+.bd_3 .L{
+	margin-right: 1em;
+	font-size: 1em;
+	color: #9b9b9b;
+}
+.bd_3 .R{
+	margin-right: 4em;
+}

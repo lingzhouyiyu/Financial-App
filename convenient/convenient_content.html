@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bg_white" ontouchstart>
+		<div class="ub top bc-text">
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc">
+				<span>0.00</span>
+				<span>元</span>
+			</div>
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc ">
+				<span class="font-size125 colorglod">0.00</span>
+			</div>
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc">
+				<span>0.00</span>
+				<span>%</span>
+			</div>
+		</div>
+		<div class="ub  bc-text top_botom">
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc">
+				充值总金额
+			</div>
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc ">
+				今日利息
+			</div>
+			<div class="ub ub-f1 ub-fh ub-ac ub-pc">
+				利息收益
+			</div>
+		</div>
+		<div class="ub ub-ac bc-text  ub-pc cont_center">
+			<!--未开通-->
+			<div class="ub ub-pc ub-ver cont_before ">
+				<div class="ub ub-pc ub-ac umar-b">
+					<span class="ub">您</span>
+					<span class="ub colorglod">未加入</span>
+					<span class="ub">易购易乐会员</span>
+				</div>
+				<div class="ub ub-ac ub-pc before_botom">
+					<span class="ub umar-r">了解项目详情</span>
+					<img class="ub ub-ac" style="width: 0.6em;" src="../common/images/go.png" />
+				</div>
+				<div class="ub ub-ac ub-pc color96 top_botom">
+					点击下方申请加入
+				</div>
+			</div>
+			<!--已开通-->
+			<div class="ub ub-ver  cont_after uhide">
+				<div class="ub ">
+					会员卡余额
+				</div>
+				<div class="ub after_txt">
+					<span>5000</span>
+					<span>元</span>
+				</div>
+			</div>
+		</div>
+		<div class="ub  bc-text convent_botom">
+			<div class="ub ub-f1 ub-ac ub-fh ub-ver">
+				<div class="ub umar-b colorglod">
+					0.00
+				</div>
+				<div class="ub">
+					累计利息(元)
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ac  ub-fh ub-ver">
+				<div class="ub umar-b colorglod">
+					0.00
+				</div>
+				<div class="ub">
+					可提现金额(元)
+				</div>
+			</div>
+		</div>
+		<div class="ub btn_box">
+			<div class="ub ub-ac ub-pc ub-f1 convent_btn">
+				申请加入
+			</div>
+		</div>
+		
+
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		
+			//打开常见问题
+		appcan.button(".cjwt", "ani-act", function(a, b) {
+
+			appcan.window.open("questions", "../questions/questions.html");
+			appcan.window.publish('questions', '');
+			//              appcan.window.publish('move', '1');
+		})
+	</script>
+
+</html>

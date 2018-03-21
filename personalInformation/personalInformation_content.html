@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/personalInformation.css">
+	</head>
+
+	<body class="um-vp bg_white" ontouchstart>
+		<div class="ub ub-ver pi_1 bc-text">
+			<div class="ub ub-pc ub--ac tx"><img src="../personalInformation/css/myImg/1.jpg"></div>
+			<div class="ub ub-pc ub-ac word">普通会员</div>
+		</div>
+		<div class="ub ub-ver pi_2 bc-text">
+
+			<div class="ub ub-ac yhm">
+				<div class="ub ub-f1  word word_left">用户名</div>
+				<div class="ub  ub-f1 uinput  sr">
+					<input class="ub FncName" type="text" placeholder=""></div>
+			</div>
+
+			<div class="ub ub-ac ub-pj zsxm">
+				<div class="ub ub-f1  word word_left">真实姓名</div>
+				<div class="ub ub-f1 uinput sr">
+					<input class="ub Fname" type="text" placeholder=""></div>
+			</div>
+			<div class="ub ub-ac ub-pj xb">
+				<div class="ub ub-f1  word word_left">性别</div>
+				<div class="ub ub-f1 uinput  sr">
+					<input class="ub Fsex" type="text" placeholder=""></div>
+			</div>
+			<div class="ub ub-ac ub-pj sfzhm uhide">
+				<div class="ub ub-f1  word word_left">身份证号码</div>
+				<div class="ub ub-f1 uinput sr">
+					<input class="ub Fidcard" type="text" placeholder=""></div>
+			</div>
+			<div class="ub ub-ac ub-pj gzdw uhide">
+				<div class="ub ub-f1  word word_left">工作单位</div>
+				<div class="ub ub-f1 uinput sr">
+					<input class="ub Fworkplace" type="text" placeholder=""></div>
+			</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script>
+		appcan.ready(function() {
+			var userin = Fsuper.getuserinfo();
+			console.log(userin);
+			$(".FncName").val(userin.Fphone);
+			$(".Fname").val(userin.Fname);
+			$(".Fsex").val(userin.Fsex);
+			$(".Fidcard").val(userin.Fidcard);
+			$(".Fworkplace").val(userin.Fworkplace);
+			$(".Fphone").val(userin.Fphone);
+		});
+	</script>
+
+</html>

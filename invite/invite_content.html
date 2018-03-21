@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bg_white" ontouchstart>
+		<img style="width: 100%;" src="../common/images/invite.jpg" />
+		<div class="ub bc-tex invite_title">
+			邀请方式
+		</div>
+		<div class="ub ub-ver invite_way01">
+			<div class="ub">
+				<div class="ub invite_left">
+					方式1
+				</div>
+				<div class="ub ub-f1 bc-tex invite_right">
+					邀请码 随时随地邀请
+				</div>
+			</div>
+			<div class="ub">
+				<div class="ub invite_left">
+					
+				</div>
+				<div class="ub ub-f1 bc-tex invite_botom">
+					好友注册时，邀请人手机号栏填写您的注册手机号码
+				</div>
+			</div>
+			<div class="ub">
+				<div class="ub invite_left">
+					方式2
+				</div>
+				<div class="ub ub-f1 bc-tex invite_right">
+					复制分享链接
+				</div>
+			</div>
+			<div class="ub">
+				<div class="ub invite_left">
+					
+				</div>
+				<div class="ub ub-f1 bc-tex invite_botom">
+					http://dzyryd2.shop0301.com/
+				</div>
+			</div>
+			<!--<div class="ub dbcopy">
+				<div class="ub ub-f1 copy_top">
+					http://dzyryd2.shop0301.com/
+				</div>
+				<div class="ub ub-ac ub-pc sure_btn">
+					复制链接
+				</div>
+			</div>-->
+			<img style="width: 100%; margin-top: 1em; " src="css/myImg/invite04.png" />
+		</div>
+		<div class="ub margin1" >
+			温馨提示
+		</div>
+		<div class="ub margin2" >
+			1.奖金奖励=好友的每笔年化交易额XXXXXXXXXX；
+		</div>
+		<div class="ub margin2" >
+			2. 本活动奖励直接推荐关系；
+		</div>
+		<div class="ub margin2" >
+			3. 邀请人需为已投资过本平台，方能参与本活动。
+		</div>
+		<div class="ub ub-f1 ub-ac ub-pc invite_btn">
+			马上邀请
+		</div>
+		<div class="ub ub-ac ub-pc inviterec">
+			<div class="ub umar-r">
+				<img src="css/myImg/zd.jpg" />
+			</div>
+			<div class="ub bc-text">
+				我的邀请记录
+			</div>
+		</div>
+		<!--马上邀请-->
+		<div class="invite uhide">
+			<div class="invite_main">
+				<div class="ub ub-ver ub-f1">
+					<div class="ub way01">
+						<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc ">
+							<div class="ub ub-ac ub-pc invite_way">
+								<img src="css/myImg/fx01.png" />
+							</div>
+							<div class="ub ub-ac ub-pc umar-t bc-text">
+								微信
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc ">
+							<div class="ub ub-ac ub-pc invite_way">
+								<img src="css/myImg/fx02.png" />
+							</div>
+							<div class="ub ub-ac ub-pc umar-t bc-text">
+								朋友圈
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc ">
+							<div class="ub ub-ac ub-pc invite_way">
+								<img src="css/myImg/fx03.png" />
+							</div>
+							<div class="ub ub-ac ub-pc umar-t bc-text">
+								QQ
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc ">
+							<div class="ub ub-ac ub-pc invite_way">
+								<img src="css/myImg/fx04.png" />
+							</div>
+							<div class="ub ub-ac ub-pc umar-t bc-text">
+								QQ空间
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-ac ub-pc ub-f1 bc-text outinvite">
+						取消
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		//打开弹出层
+		appcan.button(".invite_btn", "ani-act", function(a, b) {
+
+			$(".invite").removeClass("uhide");
+		})
+		//关闭弹出层
+		appcan.button(".outinvite", "ani-act", function(a, b) {
+
+			$(".invite").addClass("uhide");
+		})
+		//我的邀请记录
+		appcan.button(".inviterec", "ani-act", function(a, b) {
+
+			appcan.window.open("myinvite", "../myinvite/myinvite.html");
+			appcan.window.publish('myinvite', '');
+		})
+	</script>
+
+</html>

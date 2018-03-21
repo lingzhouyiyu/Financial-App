@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<!--回款计划 -->
+		<div class="ub ub-ver hk">
+			<div class="ub ub-f1 hk_top bc-text">
+				<div class="ub ub-f1">
+					<div class="ub umar-r">
+						<img src="../common/images/calc_gray.png" />
+					</div>
+					<div class="ub beftex">按日统计</div>
+					<div class="ub umar-l">
+						<img src="../common/images/icon-back-down.png" />
+					</div>
+				</div>
+			</div>
+			<!--选择日月弹层-->
+			<div class="check_mask uhide">
+				<div class="ub ub-ac ub-f1 check_item" onclick="seleyear('day')">
+					<div class="ub ub-ac umar-r">
+						<img class="ub-img" style="width: 1.5em;" src="../common/images/calc_gray.png" />
+					</div>
+					<div class="ub ub-ac curtxt">按日统计</div>
+				</div>
+				<div class="ub ub-ac ub-f1 check_item" onclick="seleyear('month')">
+					<div class="ub ub-ac umar-r">
+						<img class="ub-img" style="width: 1.5em;" src="../common/images/calc02.png" />
+					</div>
+					<div class="ub ub-ac curtxt">按月统计</div>
+				</div>
+				<div class="ub ub-ac ub-f1 check_item" onclick="seleyear('year')">
+					<div class="ub ub-ac umar-r">
+						<img class="ub-img" style="width: 1.5em;" src="../common/images/calc02.png" />
+					</div>
+					<div class="ub ub-ac curtxt">按年统计</div>
+				</div>
+			</div>
+			<div class="ub hk_list ub-ver listtotal">
+			</div>
+			<div class="lxsytemp uhide">
+				<!--利息收益item -->
+				<div class="ub ub-ver redeem_item stitem lxsyitems">
+					<div class="ub umar-r ub-f1  name_left bc-text">
+						<span class="FMingC">欣欣财富</span>
+					</div>
+					<div class="ub botm_detial">
+						<div class="ub ub-ver ub-f1 ub-fh">
+							<div class="ub margin6">
+								<span class="color96 umar-r">收到利息 </span>
+								<span class="colorglod FLxJe">0.00</span>
+							</div>
+						</div>
+						<div class="ub ub-ver ub-f1 ub-fh">
+							<div class="ub margin6">
+								<span class="color96 umar-r">收到时间 </span>
+								<span class="bc-text Fpaytime font-size08"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hkjhtemp uhide">
+				<!--回款计划item -->
+				<div class="ub ub-ver redeem_item stitem hkjh hkjhitems">
+					<div class="ub ub-ac ub-f1 top_name">
+						<div class="ub umar-r ub-f1  name_left bc-text">
+							<span>[</span>
+							<span class="Ftype"></span>
+							<span>]</span>
+							<span class="FMingC"></span>
+						</div>
+					</div>
+					<div class="ub botm_detial">
+						<div class="ub ub-ver ub-f1 ub-fh">
+							<div class="ub margin6">
+								<span class="color96 umar-r">投资金额 </span>
+								<span class="colorglod Fmoney">100</span>
+							</div>
+							<div class="ub">
+								<span class="color96 umar-r">剩余本金</span>
+								<span class="bc-text FsyBj">0.00</span>
+							</div>
+						</div>
+						<div class="ub ub-ver ub-f1 ub-fh">
+							<div class="ub margin6">
+								<span class="color96 umar-r">到期时间 </span>
+								<span class="bc-text FendTime font-size08">2016-10-11</span>
+							</div>
+							<div class="ub">
+								<span class="color96 umar-r">期限 </span>
+								<span class="bc-text FTouZqx"></span>
+								<span class="bc-text Fdaw"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ub hk_list ub-ver uhide">
+
+				<!--还款计划item -->
+				<div class="ub ub-ver redeem_item stitem">
+					<div class="ub ub-ac ub-f1 top_name">
+						<div class="ub umar-r ub-f1  name_left bc-text">
+							<span>[</span>
+							<span class="Ftype">随投随赎</span>
+							<span>]</span>
+							<span class="FMingC">欣欣财富</span>
+						</div>
+					</div>
+					<div class="ub botm_detial">
+						<div class="ub ub-ver ub-f1 ub-fh">
+							<div class="ub margin6">
+								<span class="color96 umar-r">投资金额 </span>
+								<span class="colorglod Fmoney">100</span>
+							</div>
+							<div class="ub">
+								<span class="color96 umar-r">剩余本金</span>
+								<span class="bc-text FLiX">0.00</span>
+							</div>
+						</div>
+						<div class="ub ub-ver ub-f1 ub-fh">
+							<div class="ub margin6">
+								<span class="color96 umar-r">到期时间 </span>
+								<span class="bc-text FdownTime font-size08">2016-10-11</span>
+							</div>
+							<div class="ub">
+								<span class="color96 umar-r">期限 </span>
+								<span class="bc-text FTouZqx"></span>
+								<span class="bc-text Fdaw"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script>
+		var pageSize = 10;
+		var Fstart = 0;
+		var FTzselects = "day";
+		var msg = "hkjh";
+		appcan.ready(function() {
+			appcan.window.subscribe('lcjh', function(tmsg) {
+				msg = tmsg;
+				Fstart = 0;
+				$(".listtotal").empty();
+				if(msg == "hkjh") {
+					getHkjhLiset();
+				}
+				if(msg == "huankjh") {
+
+				}
+				if(msg == "lxsy") {
+					getLXSyLiset();
+				}
+			});
+			getHkjhLiset();
+			appcan.frame.setBounce([0, 1], function(type) {
+				$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+			}, function(type) {
+				$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+			}, function(type) {
+				if(type == 0) {
+					$(".listtotal").empty();
+					if(msg == "hkjh") {
+						getHkjhLiset();
+					}
+					if(msg == "huankjh") {
+
+					}
+					if(msg == "lxsy") {
+						getLXSyLiset();
+					}
+				} else if(type == 1) {
+					$(".listtotal").empty();
+					if(msg == "hkjh") {
+						getHkjhLiset();
+					}
+					if(msg == "huankjh") {
+
+					}
+					if(msg == "lxsy") {
+						getLXSyLiset();
+					}
+				}
+				setTimeout(function() {
+					appcan.frame.resetBounce(type);
+				}, 1000);
+			})
+		});
+		//年月日
+		function seleyear(sid) {
+			FTzselects = sid;
+			Fstart = 0;
+			$(".listtotal").empty();
+			if(msg == "hkjh") {
+				getHkjhLiset();
+			}
+			if(msg == "huankjh") {
+
+			}
+			if(msg == "lxsy") {
+				getLXSyLiset();
+			}
+		}
+		//打开详情
+		appcan.button(".hkjh", "ani-act", function() {
+				appcan.window.open("magDetail", "../magDetail/magDetail.html");
+				appcan.window.publish('magDetail', '');
+				//              appcan.window.publish('move', '1');
+			})
+			//选择日月
+		appcan.button(".hk_top", "ani-act", function() {
+			$(this).siblings(".check_mask").removeClass("uhide");
+		})
+
+		appcan.button(".check_item", "ani-act", function() {
+				$(".check_item").removeClass("colorglod");
+				$(this).addClass("colorglod");
+				var beftex = $(this).parent().siblings().find(".beftex");
+				var curtxt = $(this).find(".curtxt").text();
+				beftex.text(curtxt);
+				$(this).parent().addClass("uhide");
+			})
+			//回款计划
+		function getHkjhLiset() {
+			alert(FTzselects);
+			var furl = "/app/getHkjhLiset";
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: {
+					Fuserid: Fsuper.getuserid(),
+					pageSize: pageSize,
+					Fstart: Fstart,
+					FTzselects: FTzselects
+				},
+				success: function(result) {
+					var rows = result.data.rows;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addstsuitem(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addstsuitem(row, end) {
+			var list = $(".listtotal");
+			var item = $(".hkjhtemp").clone();
+			var domitem = item.find(".hkjhitems");
+			domitem.attr("id", row.Fid);
+			if(row.FType == "0") {
+				domitem.find(".Ftype").text("新手标");
+			}
+			if(row.FType == "1") {
+				domitem.find(".Ftype").text("随投随赎");
+			}
+			if(row.FType == "2") {
+				domitem.find(".Ftype").text("随投定赎");
+			}
+			domitem.find(".FMingC").text(row.FMingC);
+			domitem.find(".Fmoney").text(row.Fmoney);
+			domitem.find(".FsyBj").text(row.FsyBj);
+			domitem.find(".FendTime").text(row.FendTime);
+			if(row.FTouZlx == "0") {
+				domitem.find(".FTouZqx").text("--");
+				domitem.find(".Fdaw").text("天");
+			} else {
+				if(row.FJiXlx == "0") {
+					domitem.find(".FTouZqx").text(row.FTouZqx);
+					domitem.find(".Fdaw").text("天");
+				} else {
+					domitem.find(".FTouZqx").text(row.FTouZqx);
+					domitem.find(".Fdaw").text("个月");
+				}
+			}
+			//domitem.attr("onclick", "details('" + row.FType + "','" + row.Fid + "','" + row.FMingC + "')");
+			list.append(domitem);
+			Fstart = end;
+		}
+		//利息收益
+		function getLXSyLiset() {
+			var furl = "/app/getLXSyLiset";
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: {
+					Fuserid: Fsuper.getuserid(),
+					pageSize: pageSize,
+					Fstart: Fstart,
+					FTzselects: FTzselects
+				},
+				success: function(result) {
+					var rows = result.data.rows;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addstsuitems(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addstsuitems(row, end) {
+			var list = $(".listtotal");
+			var item = $(".lxsytemp").clone();
+			var domitem = item.find(".lxsyitems");
+			domitem.attr("id", row.Fid);
+			domitem.find(".FLxJe").text(row.FLxJe);
+			domitem.find(".Fpaytime").text(row.Fpaytime);
+			list.append(domitem);
+			Fstart = end;
+		}
+	</script>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp " ontouchstart>
+		<div class="ub ub-ac calc_item">
+			<div class="ub bc-text">
+				投资金额
+			</div>
+			<div class="ub ub-f1">
+				<input class="ub ub-f1 uinput" type="text" placeholder="输入投资金额" />
+			</div>
+		</div>
+		<div class="ub ub-ac calc_item">
+			<div class="ub bc-text">
+				年化收益
+			</div>
+			<div class="ub ub-f1">
+				<input class="ub ub-f1 uinput" type="text" placeholder="输入年化率" />
+			</div>
+		</div>
+		<div class="ub ub-ac calc_item">
+			<div class="ub bc-text">
+				投资期限
+			</div>
+			<div class="ub ub-f1">
+				<input class="ub ub-f1 uinput" type="text" placeholder="输入投资期限" />
+			</div>
+		</div>
+		<div class="ub calc_item">
+			<div class="ub ub-ac bc-text">
+				期限类型
+			</div>
+			<div class="ub ub-f1 ub-ac ub-pc">
+				<div class="ub ub-f1 ub-ac ub-pc checkItem">
+					<div class="ub radiobox umar-r">
+						<input type="radio" name="radio" >
+					</div>
+					<div class="ub bc-text margin6">天</div>
+				</div>
+				<div class="ub ub-f1 ub-ac ub-pc checkItem">
+					<div class="ub  radiobox umar-r ">
+						<input type="radio" name="radio" >
+					</div>
+					<div class="ub bc-text margin6">
+						月
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ac calc_item">
+			<div class="ub ub-f1 bc-text">
+				还款方式
+			</div>
+			<div class="ub ub-ac bc-text">
+				<div class="ub">
+					一次性还款
+				</div>
+				<div class="ub ub-ac img_up">
+					<img src="../common/images/icon-back-down.png" />
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-f1 ub-ac ub-pc calc_btn">
+			计算收益
+		</div>
+		<div class="ub calc_count ">
+			<div class="ub ub-f1 ub-fh  bc-text">
+				收益合计
+			</div>
+			<div class="ub ub-pc ub-f1 ub-fh colorred">
+				<span>0.00</span>
+				<span>元</span>
+			</div>
+		</div>
+
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		//加载进度条
+		function animate() {
+			$(".charts").each(function(i, item) {
+				var a = parseInt($(item).parents().find(".percent").text());
+
+				$(item).animate({
+					width: a + "%"
+				}, 3000);
+
+			});
+		}
+		animate();
+	</script>
+
+</html>

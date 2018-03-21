@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ver bc-text main_box">
+			<div class="ub  ub-ac ub-f1 input_item input_item02">
+				<div class="ub  margin_r ">
+					旧密码
+				</div>
+				<div class="ub ub-f1 pwd_input uinput">
+					<input class="ub ub-f1  oldpasd" type="password" placeholder="原登录密码" />
+				</div>
+			</div>
+			<div class="ub  ub-ac ub-f1 input_item">
+				<div class="ub  margin_r">
+					新密码
+				</div>
+				<div class="ub ub-f1 pwd_input uinput">
+					<input class="ub ub-f1  newFpwd" type="password" placeholder="含字母和数字的6-16个字符" />
+				</div>
+			</div>
+			<div class="ub  ub-ac ub-f1 input_item">
+				<div class="ub  margin_r">
+					确认新密码
+				</div>
+				<div class="ub ub-f1 pwd_input uinput">
+					<input class="ub ub-f1  shareFpwd" type="password" placeholder="再次输入新密码" />
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-f1 ub-ac ub-pc sure_btn" onclick="checkPassword()">
+			确定
+		</div>
+		<div class="ub ub-pe bc-text find_pwd">
+			忘记密码
+		</div>
+	</body>
+	<script src="../../common/js/appcan.js"></script>
+	<script src="../../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../../common/js/yfkj.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery.1.10.2.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery.md5.js"></script>
+	<script type="text/javascript" src="../../common/js/Safe.js"></script>
+	<script type="text/javascript" src="../../common/js/des.js"></script>
+	<script>
+		function checkPassword() {
+			var oldpasd = $(".oldpasd").val();
+			var newFpwd = $(".newFpwd").val();
+			var shareFpwd = $(".shareFpwd").val();
+			if(oldpasd == "") {
+				appcan.window.openToast('旧不能为空！', '1500');
+				return;
+			}
+			if(newFpwd == "") {
+				appcan.window.openToast('新密码不能为空！', '1500');
+				return;
+			}
+			if(shareFpwd == "") {
+				appcan.window.openToast('确认密码不能为空！', '1500');
+				return;
+			}
+			if(newFpwd != shareFpwd) {
+				appcan.window.openToast('新密码和确认密码不一样！', '1500');
+				return;
+			}
+			var parm = {
+				currentFpwd: $.md5($(".oldpasd").val()).toUpperCase(),
+				newFpwd: $.md5($(".newFpwd").val()).toUpperCase(),
+				Fuserid: Fsuper.getuserid()
+			}
+			Safe.post(Serverurl+"/app/safecheckPawd", parm, function(result) {
+				var code = result.code;
+				if(code == 0) {
+					appcan.window.publish('changepsd', '');
+				} else if(code == 2) {
+					appcan.window.openToast('当前密码错误！', '1500');
+				} else {
+					return;
+				}
+			})
+		}
+	</script>
+
+</html>

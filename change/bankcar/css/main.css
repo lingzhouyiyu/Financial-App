@@ -1,0 +1,11 @@
+.main_box{ padding-top: 0.6em;}
+.input_item{ background: #fff; height: 3em; padding: 0 1em; border-bottom: 1px solid #E1E1E1;}
+.dbinput{}
+.margin_r{ margin-right: 1em;}
+.input_item02{ margin-bottom: 0.6em;}
+.changeCar{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');background:rgba(0,0,0,0.3);}
+.car_main{ background: #fff; margin-left: 1.5em; margin-right: 1.5em; border-radius: 0.4em; margin-top: 50%;  }
+.car_title{ background: #f0f0f0; height: 3em; padding-left: 0.6em; border-top-left-radius: 0.4em; border-top-right-radius: 0.4em;}
+.car_tel{ padding: 1em;}
+.car_content{ padding:0 1em 1em 1em;}
+.car_btn{ height: 2.8em; border-top: 1px solid #E1E1E1;}

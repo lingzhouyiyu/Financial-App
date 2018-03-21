@@ -1,0 +1,51 @@
+.pi_1 img{
+	margin: 1em 0 0.3em 0;
+}
+.pi_1 .word{
+	font-size: 1em;
+	color: #323232;
+	
+}
+.pi_2{
+	padding: 1em 1em;
+}
+.pi_2 .yhm{
+	
+	padding: 0.4em 0;
+	border-bottom: 1px solid #e2e2e2;
+
+}
+.pi_2 .zsxm{
+	
+	padding: 0.4em 0;
+	border-bottom: 1px solid #e2e2e2;
+
+}.pi_2 .xb{
+	
+	padding: 0.4em 0;
+	border-bottom: 1px solid #e2e2e2;
+
+}.pi_2 .sfzhm{
+	
+	padding: 0.4em 0;
+	border-bottom: 1px solid #e2e2e2;
+
+}
+.pi_2 .gzdw{
+	
+	padding: 0.4em 0;
+	border-bottom: 1px solid #e2e2e2;
+
+}
+.pi_2 .lxdh{
+	
+	padding: 0.4em 0;
+	border-bottom: 1px solid #e2e2e2;
+
+}
+.pi_2 input{
+	width: 100%;
+	background-color: transparent;
+	border: none;
+}
+.word_left{ width: 8.5em;}

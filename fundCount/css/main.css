@@ -1,0 +1,24 @@
+.fund_top{ background: #fff; padding: 1em 0;}
+.fund_left{ height: 1px; background: #E1E1E1; margin-left: 5em; margin-right: 0.4em;}
+.fund_right{ height: 1px; background: #E1E1E1; margin-right: 5em; margin-left: 0.4em;}
+.fund_num{ background: #fff; color: #fd6040; font-size: 1.3em; padding-bottom: 1em;}
+.fund_box{ background: #fff; padding-bottom: 1em; padding-left: 1em;font-size: 0.95em;}
+.circle{ width: 0.8em; height: 0.8em; border-radius: 0.8em; background: #ffc260; margin-right: 0.2em;}
+.fund_itemBotom{ padding-left: 1em; color: #323232; margin-top: 0.3em; font-size: 0.95em;}
+.circle01{ background: #f5897f;}
+.circle02{ background: #8992b8;}
+.circle03{ background: #bc95a7;}
+.circle04{ background: #f9ac78;}
+.circle05{ background: #2ab8aa;}
+.box_img img{ width:1.2em;}
+.box_main{ background: #fff; margin: 0.6em 0;}
+.box_top{ border-bottom: 1px solid #E1E1E1; padding: 0.6em 1em;}
+.fund_box2{ padding-top: 1em;  border-bottom: 1px solid #E1E1E1;}
+.bottom_box{ background: #fff; padding: 1em;}
+.bottom_item2{ }
+.border_b{ border-bottom: 1px solid #E1E1E1;}
+.border_r{ border-right: 1px solid #E1E1E1;}
+.left_item{ padding-bottom: 1em;}
+.right_item{ padding-top: 1em;}
+.item_b{ margin-bottom: 0.3em;}
+.box_top2{ border-top: 1px solid #E1E1E1;}

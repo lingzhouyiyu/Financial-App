@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ver bc-text main_box">
+			<div class="ub  ub-ac ub-f1 input_item input_item02">
+				<div class="ub   margin_r">
+					<img src="css/myImg/bank_icon.png" style="width: 2em;" />
+				</div>
+				<div class="ub">
+					<span class=""></span>
+					<span class="color96">尾号(</span>
+					<span class="color96 weihao"></span>
+					<span class="color96">)</span>
+				</div>
+			</div>
+
+			<div class="ub  ub-ac ub-f1 input_item">
+				<div class="ub  margin_r">
+					开户行名称
+				</div>
+				<div class="ub Fbankname">
+
+				</div>
+			</div>
+			<div class="ub  ub-ac ub-f1 input_item">
+				<div class="ub  margin_r">
+					开户行支行
+				</div>
+				<div class="ub FKaihuzH">
+
+				</div>
+			</div>
+		</div>
+		<!--更换银行卡弹窗-->
+		<div class="changeCar bc-text uhide">
+			<div class="ub ub-ver car_main">
+				<div class="ub ub-ac  car_title">
+					<div class="ub ub-f1">
+						更换银行卡
+					</div>
+					<div class="ub umar-r close_car">
+						<img style="width: 1.8em;" src="../../common/css/icons/icon-close-act.png" />
+					</div>
+				</div>
+				<div class="ub ub-ac car_tel">
+					大众客服：0871-68888888
+				</div>
+				<div class="ub car_content color96">
+					用户如需换卡，您可拨打大众客服电话，向客服咨询更换银行卡流程及所需提交的申请材料 。
+				</div>
+				<div class="ub ub-ac ub-pc car_btn">
+					马上拨打
+				</div>
+			</div>
+		</div>
+		<script src="../../common/js/appcan.js"></script>
+		<script src="../../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../../common/js/jquery.1.10.2.js"></script>
+	</body>
+
+</html>
+<script>
+	appcan.ready(function() {
+		getuserinfo();
+		appcan.window.subscribe('changeid', function(msg) {
+			$(".changeCar").removeClass("uhide");
+		});
+		appcan.button(".close_car", "btn-act", function() {
+			$(".changeCar").addClass("uhide");
+		})
+	});
+
+	function getuserinfo() {
+		var parm = {
+			Fuserid: Fsuper.getuserid()
+		}
+		appcan.ajax({
+			url: Serverurl + '/app/bankCar',
+			type: "POST",
+			dataType: "json",
+			data: parm,
+			success: function(result) {
+				var data = result.data[0];
+				var msg = result.msg;
+				var debug = result.debug;
+				var code = result.code;
+				if(code < 10000) {
+					if(code == 0) { //返回成功
+						var str = data.FbankNum;
+						$(".Fbankname").text(data.Fbankname);
+						$(".FKaihuzH").text(data.FKaihuzH);
+						$(".weihao").text(data.FbankNum.substr(str.length - 4));
+					}
+				} else {
+					if(Fsuperdbg) {
+						alert(result.code);
+						alert(result.msg);
+						alert(result.debug);
+					}
+				}
+			}
+		});
+	}
+</script>

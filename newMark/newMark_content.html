@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/newMark.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<!--
+            作者：694250639@qq.com
+            时间：2016-11-03
+            描述：新手专享
+       -->
+		<div class="ub zero_top">
+			<div class="ub ub-ac ub-pc zero_title FMingC">
+				
+			</div>
+		</div>
+		<!--
+            作者：694250639@qq.com
+            时间：2016-11-03
+            描述：预期年化利率
+        -->
+		<div class="ub ub-pc ub-ac nm_yqnhll">
+			<div class="ub ub-f1 ub-pc yqnhll_1"><img class="L" src="../newMark/css/myImg/1.jpg"><span>预期年化利率</span><img class="R" src="../newMark/css/myImg/2.jpg"></div>
+
+		</div>
+		<div class="ub  zero_percent">
+			<div class="ub ub-ac ub-pc ub-f1  zero_percentTxt">
+				<span class="percent FLiX">0.00</span>
+				<span>%</span>
+			</div>
+		</div>
+		<!--
+            作者：694250639@qq.com
+            时间：2016-11-03
+            描述：单笔上限 期限 起投金额
+        -->
+		<!--投资金额-->
+		<div class="ub invest">
+			<div class="ub ub-f1 invest_main">
+				<div class="ub ub-ver ub-f1 ub-ac ub-fh invset_border">
+					<div class="ub umar-b color96">
+						单笔上限
+					</div>
+					<div class="ub bc-text">
+						<span class="Fmax">0.00</span>
+						<span>元</span>
+					</div>
+				</div>
+				<div class="ub ub-ver ub-f1 ub-fh ub-ac invset_border ">
+					<div class="ub umar-b color96">
+						期限
+					</div>
+					<div class="ub bc-text">
+						<span class="FTouZqx"></span>
+						<span class="Fdwei"></span>
+					</div>
+				</div>
+				<div class="ub ub-ver ub-ac ub-f1 ub-fh">
+					<div class="ub umar-b color96">
+						起投金额
+					</div>
+					<div class="ub bc-text">
+						<span class="Fmin">0.00</span>
+						<span>元</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--投资说明-->
+		<div class="ub ub-ac ub-pc invest_botm">
+			<div class="ub ub-ac ub-f1 ub-fh">
+				<img src="../common/images/ok.png" />
+				<div class="ub color96">本金+利息</div>
+			</div>
+			<div class="ub ub-ac ub-f1 ub-fh">
+				<img src="../common/images/ok.png" />
+				<div class="ub color96 ">T(成交日)+1天</div>
+			</div>
+			<div class="ub ub-ac ub-f1 ub-fh">
+				<img src="../common/images/ok.png" />
+				<div class="ub color96 ">按月付息到期还本</div>
+			</div>
+		</div>
+		<!--账户余额-->
+		<div class="ub ub-ac account">
+			<div class="ub ub-f1 account_left">
+				<span class="bc-text">账户余额：</span>
+				<span class="colorred">￥</span>
+				<span class="colorred Fyue">0.00</span>
+			</div>
+			<div class="ub account_right">
+				<div class="ub ub-ac ub-pc account_btn gocash">
+					充值
+				</div>
+			</div>
+		</div>
+		<!--投资余额-->
+		<div class="ub ub-ac account">
+			<div class="ub  account_left bc-text">
+				<span>投资余额：</span>
+			</div>
+			<div class="ub-f1 ub-ac  ub money_right">
+			     <div class="muinput">
+				<input id="Fmoney" class="ub ub-f1 umar-r" type="text" onkeyup="changemoney(this)"/>
+				</div>
+				<div class="ub colorred umar-r" onclick="allmoney()">全投</span>
+				</div>
+			</div>
+		</div>
+
+		<!--获得收益-->
+		<div class="ub account">
+			<div class="ub ub-f1 ub-fh account_left">
+				<span class="bc-text">获得收益：</span>
+			</div>
+			<div class="ub ub-ver  ub-f1 ub-fh account_left">
+				<div class="ub colorred umar-b">
+					<span class="dqsymoney">0.00</span>
+					<span>元</span>
+				</div>
+				<div class="ub color96 umar-b font-small">
+					到期收益
+				</div>
+			</div>
+			<div class="ub ub-ver ub-f1 ub-fh account_left">
+				<div class="ub colorred umar-b">
+					<span class="FSxed">0.00</span>
+					<span>元</span>
+				</div>
+				<div class="ub color96 umar-b font-small">
+					易购易乐授信金额
+				</div>
+			</div>
+		</div>
+		<!--合同-->
+		<div class="ub ub-ac ub-pc agree bc-text">
+			<div class="checkbox umar-r">
+				<input id="agree" type="checkbox" checked="checked" name="radio" class="uabs ub-con">
+			</div>
+			<div class="text1">
+				同意投资后自动生成
+			</div>
+			<div class="text2 goxieyi">
+				《合同》
+			</div>
+		</div>
+		<!--底部-->
+		<div class="ub ub-ac invest_bottom">
+			<div class="ub ub-ac gocalc uhide">
+				<img src="../common/images/clc.png" />
+			</div>
+			<div class="ub ub-f1">
+				<div class="ub ub-f1 ub-ac ub-pc invest_btn" onclick="user.litzdown()">
+					立即投资
+				</div>
+			</div>
+		</div>
+		<!--交易密码弹窗-->
+		<div class="tranpwd uhide xsdqlcywin" >
+			<div class="ub ub-ver tranpwd_main">
+				<div class="ub ub-f1 tranpwd_top bc-text">
+					<div class="ub ub-ac ub-f1">交易密码</div>
+					<div class="ub ub-ac " onclick="closewin()">
+						<img src="../common/css/icons/icon-close-act.png" />
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc tranpwd_center">
+					<div class="ub ub-f1 tranpwd_input umar-r uinput">
+						<input class="ub ub-f1  jymm" type="password" />
+					</div>
+					<div class="ub  colorred">
+						*
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 tranpwd_btn" onclick="user.quickdown()">
+					确认
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/appcan.tab.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script type="text/javascript" src="../common/js/Safe.js"></script>
+	<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+	<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		var LXtoal = 0;
+		var Fid = appcan.locStorage.getVal("xsbid");
+		var Fyue = 0;
+		var Fidcard = "";
+		var Fmax = 0;
+		var Fmin = 0;
+		appcan.ready(function() {
+				getProductinfo();
+				getUserMoney();
+			})
+			//计算
+		appcan.button(".gocalc", "ani-act", function(a, b) {
+
+				appcan.window.open("calculate", "../calculate/calculate.html");
+			})
+			//充值
+		appcan.button(".gocash", "ani-act", function(a, b) {
+
+				//appcan.window.open("recharge", "../recharge/recharge.html");
+				appcan.window.openToast('请登录到电脑端大众易融易贷官网充值！', '2000');
+			})
+			//优惠券
+		appcan.button(".gocoup", "ani-act", function(a, b) {
+
+			appcan.window.open("coupon", "../coupon/coupon.html");
+		})
+		function getProductinfo() {
+			var furl = '/app/getStddsAlone';
+			var parm = {
+				Fid: appcan.locStorage.getVal("xsbid")
+			};
+			console.log(Serverurl + furl);
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) {
+							var data = rows;
+							Fmax = Number(data.Fmax);
+							Fmin = Number(data.Fmin);
+							$(".FMingC").text(data.FMingC);
+							$(".FTouZqx").text(data.FTouZqx);
+							$(".FLiX").text(data.FLiX);
+							$(".Fmax").text(data.Fmax);
+							$(".Fmin").text(data.Fmin);
+							if(data.FJiXlx == "0") {
+								$(".Fdwei").text("天");
+							} else {
+								$(".Fdwei").text("个月");
+							}
+							LXtoal = data.totalLX;
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+
+		function getUserMoney() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getUserMoney",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							Fyue = Number(rows.Fyue);
+							if(rows.Fidcard != null && rows.Fidcard != "") {
+								Fidcard = rows.Fidcard;
+							}
+							$(".Fyue").text(rows.Fyue.toFixed(2));
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+
+		function allmoney() {
+			$("#Fmoney").val($(".Fyue").text().trim());
+			$(".dqsymoney").text((LXtoal * $(".Fyue").text().trim()).toFixed(2));
+			$(".FSxed").text(Number($(".Fyue").text().trim()).toFixed(2));
+		}
+
+		function closewin() {
+			$(".xsdqlcywin").addClass("uhide");
+		}
+
+		function changemoney(dom) {
+			$(".dqsymoney").text((LXtoal * $(dom).val()).toFixed(2));
+			$(".FSxed").text(Number($(dom).val()).toFixed(2));
+		}
+		var user = {
+			usetopay: function() {
+
+			},
+			litzdown: function() {
+				if(Fidcard == "") {
+					appcan.window.openToast('请到安全中心绑定个人信息！', '2000');
+					return;
+				}
+				var Fmoney = Number($("#Fmoney").val());
+				if(Fmoney == "") {
+					appcan.window.openToast('请输入投资金额！', '2000');
+					return;
+				}
+				if(Fyue < Fmoney) {
+					appcan.window.openToast('余额不足，请去电脑端大众易融易贷官网充值！', '2000');
+					return;
+				}
+				if(Fmin > Fmoney) {
+					appcan.window.openToast('起投金额为' + Fmin, '2000');
+					return;
+				}
+				if(Fmax < Fmoney) {
+					appcan.window.openToast('单笔上线金额为' + Fmax, '2000');
+					return;
+				}
+				$(".xsdqlcywin").removeClass("uhide");
+			},
+			quickdown: function() {
+				var Fpaypwd = $(".jymm").val();
+				if(Fpaypwd == "") {
+					appcan.window.openToast('交易密码不能为空', '2000');
+					return;
+				}
+				var parm = {
+					Fuserid: Fsuper.getuserid(),
+					Fpaypwd: $.md5($(".jymm").val()).toUpperCase(),
+				}
+				Safe.post(Serverurl + "/Common/CheckPassword", parm, function(result) {
+					var code = result.code;
+					console.log(result.data);
+					if(code == 0) {
+						var Fmoney = $("#Fmoney").val();
+						var parm = {
+							Fuserid: Fsuper.getuserid(),
+							Fmoney: Fmoney,
+							Fsupersign: result.data,
+							ids: "",
+							Productid: appcan.locStorage.getVal("xsbid"),
+							FchooseType: "0"
+						}
+						console.log(parm);
+						Safe.post(Serverurl + "/Common/CheckSign", parm, function(result) {
+							var code = result.code;
+							if(code == 0) {
+								$(".xsdqlcywin").removeClass("uhide");
+								$(".xsdqlcywin").addClass("uhide");
+								appcan.window.openToast('投资成功', '2000');
+								appcan.window.open("invest", "../invest/invest.html");
+								appcan.window.evaluateScript({
+									name: 'newMark',
+									scriptContent: 'windowclose()'
+								});
+							} else {
+
+								return;
+							}
+						})
+					} else if(code == 3) {
+						appcan.window.openToast('交易密码错误', '2000');
+						return;
+					} else {
+						return;
+					}
+				})
+			},
+		}
+	</script>
+
+</html>

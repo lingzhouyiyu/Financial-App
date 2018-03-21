@@ -1,0 +1,6 @@
+.calc_item{ margin:0 1em; border-bottom: 1px solid #E1E1E1; padding: 1em 0;}
+.calc_item input{ border: 0 none; padding: 0 5px; margin-left: 0.5em;}
+.img_up img{ width: 1.5em;}
+.calc_btn{ background: #cecece; height: 2.5em; color: #fff; margin: 2em 1em 1em 1em; border-radius: 2.5em;}
+.calc_count{ margin: 0 1em;}
+.margin6{ margin-left: 0.6em;}

@@ -1,0 +1,14 @@
+.redeem_top{ padding: 1em; border-bottom: 1px solid #E1E1E1; background: #fff;}
+.redeem_bot{ margin: 2em 1em; background: #fff;}
+.redeem_border{ border: 1px solid #382071; height: 2.5em; border-radius: 0.4em; overflow: hidden;}
+.redeem_border input{ height: 2.5em; border: 0 none; border-radius: 0.4em; padding: 0 5px; }
+.redeem_btn{ height: 2.5em; background: #382071; color:  #fff; padding: 0 1em; border-top-right-radius: 0.4em; border-bottom-right-radius: 0.4em;}
+
+.tranpwd{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');background:rgba(0,0,0,0.3);background:rgba(0,0,0,0.4); position: fixed; left: 0; top: 0; width: 100%; height: 100%;}
+.tranpwd_main{ margin-left: 1.5em; margin-right: 1.5em; background: #fff; margin-top: 50%; border-radius: 0.4em; }
+.tranpwd_top{ background: #f0f0f0; padding: 0 0.4em; border-top-left-radius: 0.4em; border-top-right-radius: 0.4em; height: 2.8em;}
+.tranpwd_top img{ width: 1.8em;}
+.tranpwd_center{ background: #fff; padding:1.8em 1em;}
+.tranpwd_input{ border: 1px solid #DCDEDF;}
+.tranpwd_center input{ height: 2.5em; border: 0 none; padding: 0 5px;}
+.tranpwd_btn{ height: 2.8em; background: #382071; margin-left: 2.5em; margin-right: 2.5em; color: #fff; border-radius: 0.4em; margin-bottom: 1.5em;}

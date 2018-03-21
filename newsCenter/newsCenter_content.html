@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<!--头部-->
+		<div class="ub main_title bc-text">
+			<div class="ub ub-pc  ub-f1 ub-fh dbtitle title1 title_active " id="dzgg">
+				<div class="ub ub-ac ">
+					大众公告
+				</div>
+				<div class="ub sign">
+					
+				</div>
+			</div>
+			<div class="ub ub-pc dbtitle  ub-f1 ub-fh" id="grxx">
+				<div class="ub ub-ac ">
+					个人消息
+				</div>
+				<div class="ub sign uhide">
+					
+				</div>
+			</div>
+		</div>
+		<!--大众公告-->
+		<div class="ub ub-ver changebox dzgg dzgg_list bc-text" id="dzggid">
+			<div class="ub ub-f1 ub-ver  gg_item">
+				<div class="ub ub-pe umar-b sign_box">
+					<div class="ub  sign01"></div>
+				</div>
+				<div class="ub  gg_title">
+					<div class="ub ub-f1 left_title ">
+						新用户活动规则变化通新用户活动规则变化通
+					</div>
+					<div class="ub ub-ac  gg_time color96">
+						2016-10-11 15:00:00
+					</div>
+				</div>
+				<div class="ub ub-ac gg_content texthidden color96">
+					各位情爱的大众易融易贷理财用户：为了给你提供各位情爱的大众易融易贷理财用户：为了给你提供
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ver  gg_item">
+				<div class="ub ub-pe umar-b sign_box">
+					<div class="ub  sign01 uhide"></div>
+				</div>
+				<div class="ub  gg_title">
+					<div class="ub ub-f1 left_title color96">
+						新用户活动规则变化通新用户活动规则变化通
+					</div>
+					<div class="ub ub-ac  gg_time color96">
+						2016-10-11 15:00:00
+					</div>
+				</div>
+				<div class="ub ub-ac gg_content texthidden color96">
+					各位情爱的大众易融易贷理财用户：为了给你提供各位情爱的大众易融易贷理财用户：为了给你提供
+				</div>
+			</div>
+		</div>
+		<!--个人消息-->
+		<div class="ub ub-ver changebox dzgg bc-text grxx_list uhide" id="grxxid">
+			<div class="ub ub-f1 ub-ver  gg_item">
+				<div class="ub ub-pe umar-b sign_box">
+					<div class="ub  sign01 uhide"></div>
+				</div>
+				<div class="ub  gg_title">
+					<div class="ub ub-f1 left_title ">
+						回款提醒
+					</div>
+					<div class="ub ub-ac  gg_time color96">
+						2016-10-11 15:00:00
+					</div>
+				</div>
+				
+			</div>
+			<div class="ub ub-f1 ub-ver  gg_item">
+				<div class="ub ub-pe umar-b sign_box">
+					<div class="ub  sign01 uhide"></div>
+				</div>
+				<div class="ub  gg_title">
+					<div class="ub ub-f1 left_title color96">
+						恭喜您注册成功 
+					</div>
+					<div class="ub ub-ac  gg_time color96">
+						2016-10-11 15:00:00
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		
+		$(".dbtitle").click(function(){
+			$(".dbtitle").removeClass("title_active");
+			$(".changebox").addClass("uhide");
+			$(this).addClass("title_active");
+			var id = $(this).attr("id");
+			id = id+"id";
+			$("#"+id).removeClass("uhide");
+		});
+		
+		//打开消息详情
+		appcan.button(".gg_item", "ani-act", function() {
+				appcan.window.open("newsDetail", "../newsDetail/newsDetail.html");
+				appcan.window.publish('newsDetail', '');
+				//              appcan.window.publish('move', '1');
+			})
+	</script>
+
+</html>

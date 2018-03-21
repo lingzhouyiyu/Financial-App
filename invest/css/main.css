@@ -1,0 +1,13 @@
+.head_border{ border: 1px solid #382071; border-radius: 0.4em; background: #fff; height: 2em; color:#382071 ;}
+.head_active{ background: #382071;  color: #fff;}
+.redeem_top{ background: #382071; padding: 1em 0.5em; color: #fff;}
+.top_name{ border-bottom: 1px solid #E1E1E1; padding-bottom: 1em;}
+.borderwhite{ border-right: 1px solid #fff;}
+.redeem_item{ background: #fff; padding: 1em 0.6em; margin-bottom: 0.6em;}
+.name_right{ color: #51c696; font-size: 0.9em;}
+.name_right img{ width: 1em;}
+.margin6{ margin-bottom: 0.5em;}
+.botm_detial{ padding-top: 1em;}
+.invest_cate{ padding: 1em; background: #fff; margin-bottom: 0.6em;}
+.boder_l{ border-right: 1px solid #E1E1E1;}
+.top_active{ color: #382071;}

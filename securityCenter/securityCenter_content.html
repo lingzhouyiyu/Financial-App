@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/securityCenter.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<!--
+     	作者：694250639@qq.com
+     	时间：2016-11-07
+     	描述：1 身份验证 手机验证 银行卡
+     -->
+		<div class="ub ub-ver sc_1">
+			<div class="ub ub-ac ub-pj sfyz bc-text sfyz">
+				<div class="ub ub-ac word Fidcardimg">
+					<img src="css/myImg/ok_icon.png" />
+					<img class="uhide" src="css/myImg/warming_icon.png" />
+					<div class="ub ub-ac umar-l">身份验证</div>
+				</div>
+				<div class="ub ub-ac fh"><span class="Fidcardsf"></span>
+					<div class="ub R account_right">
+						<img src="../common/images/go.png" />
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pj sjyz bc-text sjyz uhide">
+				<div class="ub ub-ac word">
+					<img src="css/myImg/ok_icon.png" />
+					<img class="uhide" src="css/myImg/warming_icon.png" />
+					<div class="ub ub-ac umar-l">手机验证</div>
+				</div>
+				<div class="ub ub-ac fh">
+					<div class="ub R account_right">
+						<img src="../common/images/go.png" />
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pj yhk bc-text bankcar">
+				<div class="ub ub-ac word Fbankimg">
+					<img src="css/myImg/warming_icon.png" />
+					<div class="ub ub-ac umar-l">银行卡</div>
+				</div>
+				<div class="ub ub-ac fh"><span class="Fidcard"></span>
+					<div class="ub R account_right">
+						<img src="../common/images/go.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--描述：2 登录密码 交易密码 认证-->
+		<div class="ub ub-ver sc_2 ">
+			<div class="ub ub-ac ub-pj dlmm bc-text dlmm">
+				<div class="ub ub-ac word">
+					<img src="css/myImg/ok_icon.png" />
+					<img class="uhide" src="css/myImg/warming_icon.png" />
+					<div class="ub ub-ac umar-l">登录密码</div>
+				</div>
+				<div class="ub ub-ac fh">
+					<div class="ub R account_right">
+						<img src="../common/images/go.png" />
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pj jymm bc-text">
+				<div class="ub ub-ac word paypwds">
+					<img src="css/myImg/ok_icon.png" />
+					<img class="uhide" src="css/myImg/warming_icon.png" />
+					<div class="ub ub-ac umar-l">交易密码</div>
+				</div>
+				<div class="ub ub-ac fh"><span class="Fpaypwd">
+     		</span>
+					<div class="ub R account_right"><span class="paytext"></span>
+						<img src="../common/images/go.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		var Fname = "";
+		var Fpaypwd = "";
+		var Fidcard = "";
+		var Fphone = "";
+		var FbankNum = "";
+		appcan.ready(function() {
+				getuserinfo();
+				appcan.window.subscribe('getuserinfops', function(msg) {
+					getuserinfo();
+				});
+			})
+			//打开身份验证
+		appcan.button(".sfyz", "ani-act", function(a, b) {
+				if(Fidcard != "") {
+					appcan.window.open("sfyz", "../change/sfyz/sfyz.html");
+				} else {
+					appcan.window.open("authentication1", "../authentication1/authentication1.html");
+				}
+
+			})
+			//打开手机验证
+		appcan.button(".sjyz", "ani-act", function(a, b) {
+				if(Fidcard != "" && Fidcard != null) {
+					appcan.window.open("sfyz", "../change/sfyz/sfyz.html");
+				} else {
+					appcan.window.open("authentication1", "../authentication1/authentication1.html");
+				}
+			})
+			//打开银行卡
+		appcan.button(".bankcar", "ani-act", function(a, b) {
+				if(FbankNum == "" || FbankNum == null) {
+					appcan.window.open("authentication3", "../authentication3/authentication3.html");
+				} else {
+					appcan.window.open("bankcar", "../change/bankcar/bankcar.html");
+				}
+
+			})
+			//打开修改登录密码
+		appcan.button(".dlmm", "ani-act", function(a, b) {
+				appcan.window.open("changpwd", "../change/changpwd/changpwd.html");
+			})
+			//打开修改交易密码
+		appcan.button(".jymm", "ani-act", function(a, b) {
+				if(Fpaypwd == "0") {
+					appcan.window.open("authentication2", "../authentication2/authentication2.html");
+				} else {
+					appcan.window.open("changjym", "../change/changjym/changjym.html");
+				}
+
+			})
+			//查询用户信息
+		function getuserinfo() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			}
+			appcan.ajax({
+				url: Serverurl + '/app/getevuserinfo',
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var users = result.data[0];
+					var msg = result.msg;
+					var debug = result.debug;
+					var code = result.code;
+					console.log(users);
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							if(users.Fname != null) {
+								Fname = users.Fname;
+							}
+
+							if(users.Fpaypwd != null) {
+								Fpaypwd = users.Fpaypwd;
+							}
+
+							if(users.Fidcard != null) {
+								Fidcard = users.Fidcard;
+							}
+
+							if(users.Fphone != null) {
+								Fphone = users.Fphone;
+							}
+
+							if(users.FbankNum != null) {
+								FbankNum = users.FbankNum;
+							}
+
+							if(Fidcard != "") {
+								$(".Fidcardimg img").attr("src", "css/myImg/ok_icon.png");
+							} else {
+								$(".Fidcardsf").text("未验证");
+								$(".Fidcardimg img").attr("src", "css/myImg/warming_icon.png");
+							}
+
+							if(FbankNum != "" && FbankNum != null) { //已完绑定银行卡  
+								$(".Fbankimg img").attr("src", "css/myImg/ok_icon.png");
+							} else {
+								$(".Fidcard").text("未绑定");
+								$(".Fbankimg img").attr("src", "css/myImg/warming_icon.png");
+							}
+							if(Fpaypwd == '0') {
+								$(".paytext").text("未设置");
+								$(".paypwds img").attr("src", "css/myImg/warming_icon.png");
+							} else {
+								$(".paypwds img").attr("src", "css/myImg/ok_icon.png");
+							}
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+	</script>
+
+</html>

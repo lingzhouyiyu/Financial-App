@@ -1,0 +1,36 @@
+.au_1 {
+padding-top: 1em;
+}
+.au_1 .word{
+
+	padding-left: 0.5em;
+	color: #382071;
+}
+.au_1 .word .wz{
+	padding-top: 0.3em;
+	font-size: 0.7em;
+}
+.au_2 .bb{
+	padding-top: 0.7em;
+	color:  #382071;;
+	font-size: 1.2em;
+}
+
+.au_3 .nr{
+	padding:1em;
+	 word-wrap: break-word;
+	 word-break:break-all;
+	
+}
+.au_4 {
+	 text-align: center;
+	margin: 0 auto;
+	padding-bottom: 1em;
+	font-size: 0.8em;
+	position:absolute;
+	left: 50%;
+	margin-left: -5em;
+    bottom:0;
+
+
+}

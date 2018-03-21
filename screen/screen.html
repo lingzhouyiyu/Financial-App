@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class=" ub" ontouchstart style="background:rgba(0,0,0,0.3); z-index: 1; margin-top: 2.8em;">
+		<div class="ub ub-ver ub-f1 bc-text screen_main c-wh allzl">
+			<!--期限-->
+			<div class="ub ub-ver screen_cate">
+				<div class="ub ub-ac screen_top">
+					期限
+				</div>
+				<div class="ub ub-ver choose_qx">
+					<div class="ub  ub-f1 screen_choose  bc-text">
+						<div class="ub ub-f1 ub-fh">
+							<div id="1" class="ub lxqx ub-ac ub-pc  ub-f1 screen_item ">
+								7-15天
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ">
+							<div id="2" class="ub lxqx ub-f1 ub-ac ub-pc screen_item">
+								16天-30天
+							</div>
+						</div>
+					</div>
+					<div class="ub  ub-f1 screen_choose bc-text">
+						<div class="ub ub-f1 ub-fh">
+							<div id="3" class="ub lxqx ub-ac ub-pc  ub-f1 screen_item">
+								1-3个月
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ">
+							<div id="4" class="ub lxqx ub-f1 ub-ac ub-pc screen_item">
+								4-6个月
+							</div>
+						</div>
+					</div>
+					<div class="ub  ub-f1 screen_choose bc-text">
+						<div class="ub ub-f1 ub-fh">
+							<div id="5" class="ub lxqx ub-ac ub-pc  ub-f1 screen_item">
+								7-12个月
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ">
+							<div id="6" class="ub lxqx ub-f1 ub-ac ub-pc screen_item">
+								12个月以上
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--利率-->
+			<div class="ub ub-ver screen_cate">
+				<div class="ub ub-ac screen_top">
+					利率
+				</div>
+				<div class="ub ub-ver choose_ll">
+					<div class="ub  ub-f1 screen_choose  bc-text">
+						<div class="ub ub-f1 ub-fh">
+							<div id="1" class="ub lxfw ub-ac ub-pc  ub-f1 screen_item">
+								5%-9%
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ">
+							<div id="2" class="ub lxfw ub-f1 ub-ac ub-pc screen_item">
+								9%-11%
+							</div>
+						</div>
+					</div>
+					<div class="ub  ub-f1 screen_choose bc-text">
+						<div class="ub ub-f1 ub-fh">
+							<div id="3" class="ub lxfw ub-ac ub-pc  ub-f1 screen_item">
+								11%-13%
+							</div>
+						</div>
+						<div class="ub ub-f1 ub-fh ">
+							<div id="4" class="ub lxfw ub-f1 ub-ac ub-pc screen_item">
+								13%以上
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="ub ub-ac screen_sure">
+				<div class="ub ub-f1">
+					<div class="ub  ub-f1 ub-fh dbsure">
+						<div class="ub ub-f1 ub-ac ub-pc sure_btn">
+							确认
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-fh dbreset">
+						<div class="ub ub-f1 ub-ac ub-pc haschoose out_btn">
+							重置
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {})
+
+		function closepop() {
+			appcan.execScriptInWin("detail", "closePop()");
+		}
+
+		appcan.button(".btn", "ani-act", function() {
+				closepop();
+			})
+			//期限
+		appcan.button(".choose_qx .screen_item", "ani-act", function() {
+				$(".choose_qx .screen_item").removeClass("screen_active");
+				$(this).addClass("screen_active");
+				appcan.window.publish('lxqx', $(this).attr("id"));
+			})
+			//利率
+		appcan.button(".choose_ll .screen_item", "ani-act", function() {
+				$(".choose_ll .screen_item").removeClass("screen_active");
+				$(this).addClass("screen_active");
+				appcan.window.publish('lxfw', $(this).attr("id"));
+			})
+			//类型
+		appcan.button(".choose_lx .screen_item", "ani-act", function() {
+				$(".choose_lx .screen_item").removeClass("screen_active");
+				$(this).addClass("screen_active");
+			})
+			//确认按钮
+		appcan.button(".dbsure", "ani-act", function() {
+			appcan.window.close(-1);
+		});
+		//重置按钮
+		appcan.button(".dbreset", "ani-act", function() {
+			$(".screen_item").removeClass("screen_active");
+		});
+	</script>
+
+</html>

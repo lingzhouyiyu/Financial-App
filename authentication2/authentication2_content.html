@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/authentication1.css">
+	</head>
+
+	<body class="um-vp" style="background: #fff" ontouchstart>
+		<!--
+       	1 身份验证 设置交易密码 绑定银行卡
+       -->
+		<img src="../authentication2/css/myImg/1.jpg" style="width:auto;width:90%;text-align:center;vertical-align:middle;padding: 1em;"></div>
+		<div class="ub ub-ver ub--ac ub-pc a_1">
+			<div class="ub ub-pc ub-ac word">
+				<div class="ub ub-f1 ub-pc ub-ac sfyz">身份证验证</div>
+				<div class="ub ub-f1 ub-pc ub-ac szjymm">设置交易密码</div>
+				<div class="ub ub-f1 ub-pc ub-ac bdyhk">绑定银行卡</div>
+			</div>
+		</div>
+		<!-- 2验证信息-->
+		<div class="ub ub-ver a_2">
+			<div class="ub xm ">
+				<div class="ub ub-ac word">交易密码</div>
+				<div class="ub ub-f1 uinput "><input type="password" class="newFpwd" placeholder="请输入密码" /></div>
+			</div>
+			<div class="ub sfz">
+				<div class="ub ub-ac word">确认密码</div>
+				<div class="ub ub-f1 uinput "><input class="shareFpwd" type="password" placeholder="请再次输入密码" /></div>
+			</div>
+		</div>
+
+		<!--
+        	3 申请验证：
+        -->
+		<div class="ub a_3">
+			<div class="ub ub-pc ub-ac ub-f1 sqyz">确认提交</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/appcan.tab.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+	<script type="text/javascript" src="../common/js/Safe.js"></script>
+	<script type="text/javascript" src="../common/js/des.js"></script>
+
+	<script type="text/javascript">
+		appcan.button(".sqyz", "ani-act", function(a, b) {
+			savePwd();
+		})
+
+		function savePwd() {
+			var newFpwd = $(".newFpwd").val();
+			var shareFpwd = $(".shareFpwd").val();
+			if(newFpwd == "") {
+				appcan.window.openToast('交易密码不能为空！', '1000');
+				return;
+			}
+			if(shareFpwd == "") {
+				appcan.window.openToast('确认密码不能为空！', '1000');
+				return;
+			}
+			if(newFpwd != shareFpwd) {
+				appcan.window.openToast('交易密码和确认密码不一样！', '1000');
+				return;
+			}
+			var parm = {
+				newFpwd: $.md5($(".newFpwd").val()).toUpperCase(),
+				Fuserid: Fsuper.getuserid()
+			}
+			Safe.apppost(Serverurl + "/app/savePawd", parm, function(result) {
+				var code = result.code;
+				if(code == 0) {
+					appcan.window.open("authentication3", "../authentication3/authentication3.html");
+					appcan.window.evaluateScript({
+						name: 'authentication2',
+						scriptContent: 'windowclose()'
+					});
+					appcan.window.evaluateScript({
+                        name: 'authentication1',
+                        scriptContent: 'windowclose()'
+                    });
+				}
+			})
+		}
+	</script>
+
+</html>

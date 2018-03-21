@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub recharge_top">
+			<div class="ub ub-f1 nav">
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh top_nav nav_left " id="recharge">
+					我要提现
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh top_nav nav_right nav_active" id="recored">
+					提现记录
+				</div>
+			</div>
+		</div>
+		<!--提现-->
+		<div class="ub ub-ver bc-text recharge changebox" id="rechargeid">
+			<div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+				<div class="ub">可用余额:</div>
+				<div class="ub ub-f1 Fyue">
+					0.00
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+				<div class="ub">提现至:</div>
+				<div class="ub ub-f1 Fbankname">
+
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+				<div class="ub">银行卡号:</div>
+				<div class="ub ub-f1 FbankNum">
+
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+				<div class="ub">提现金额</div>
+				<div class="ub ub-f1">
+					<input class="ub ub-f1 FpayNum" type="text" placeholder="提现金额金额不能低于100元" />
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+				<div class="ub">交易密码</div>
+				<div class="ub ub-f1">
+					<input class="ub ub-f1 FTxmm" type="password" placeholder="输入交易密码" />
+				</div>
+			</div>
+			<div class="ub ub-ver sxf bc-text">
+				<div class="ub ub-ac">
+					<span>手续费：</span>
+					<span class="colorred">￥</span>
+					<span class="colorred">0.00</span>
+				</div>
+				<div class="ub ub-ac umar-b">
+					1、每月首次提现免手续费，超出次数按提现金额0.18% 收取；
+				</div>
+				<div class="ub ub-ac">
+					2、新用户充值后未投资直接提现，手续费按提现金额0.18%收取。
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pc ub-f1 recharge_btn" onclick="TXZ.quickdown()">
+				立即提现
+			</div>
+		</div>
+		<div class="temp uhide">
+			<div class="ub ub-f1 record_item items">
+				<div class="ub ub-pc ub-ver ub-f1 record_left">
+					<div class="ub colorglod margin6">
+						<span>￥</span>
+						<span>800</span>
+					</div>
+					<div class="ub ub-ac">
+						<div class="ub ub-ac">
+							<img class="ub-img umar-r" src="../common/images/clock.png" />
+						</div>
+						<span class="color96">2016-10-19</span>
+					</div>
+				</div>
+				<div class="ub ub-ac">
+					提现成功
+				</div>
+			</div>
+		</div>
+		<!--提现记录-->
+		<div class="ub listtx ub-ver changebox rech_record bc-text uhide" id="recoredid">
+			<!--提现记录item-->
+		</div>
+		<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/appcan.tab.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/Safe.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+		<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		var Fidcard = "";
+		var FbankNum = "";
+		var Fyue = 0;
+		appcan.ready(function() {
+				getUserMoney();
+			})
+			//加载进度条
+		function animate() {
+			$(".charts").each(function(i, item) {
+				var a = parseInt($(item).parents().find(".percent").text());
+
+				$(item).animate({
+					width: a + "%"
+				}, 3000);
+
+			});
+		}
+		animate();
+		$(".top_nav").click(function() {
+			$(".top_nav").removeClass("nav_active");
+			$(".changebox").addClass("uhide");
+			$(this).addClass("nav_active");
+			var id = $(this).attr("id");
+			id = id + "id";
+			$("#" + id).removeClass("uhide");
+		});
+
+		function getUserMoney() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getUserMoney",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".FbankNum").text(rows.FbankNum);
+							$(".Fbankname").text(rows.Fbankname);
+							$(".Fyue").text(rows.Fyue.toFixed(2));
+							Fidcard = rows.Fidcard;
+							FbankNum = rows.FbankNum;
+							Fyue = Number(rows.Fyue);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		var TXZ = {
+			quickdown: function() {
+				if(Fidcard == "") {
+					appcan.window.openToast('请到个人中心绑定个人信息！', '2000');
+					return;
+				}
+				if(FbankNum == "") {
+					appcan.window.openToast('请到个人中心绑定银行卡信息！', '2000');
+					return;
+				}
+				var FpayNum = $(".FpayNum").val();
+				if(FpayNum == "") {
+					appcan.window.openToast('请输入提现金额！', '2000');
+					return;
+				}
+				if(FpayNum < 100) {
+					appcan.window.openToast('输入的提现金额不能小于100！', '2000');
+					return;
+				}
+				if(FpayNum > Fyue) {
+					appcan.window.openToast('输入的提现金额不能大于可用余额！', '2000');
+					return;
+				}
+				var Fpaypwd = $(".FTxmm").val();
+				if(Fpaypwd == "") {
+					appcan.window.openToast('交易密码不能为空！', '2000');
+					return;
+				}
+				var parm = {
+					Fuserid: Fsuper.getuserid(),
+					Fpaypwd: $.md5($(".FTxmm").val()),
+				}
+				Safe.post(Serverurl + "/Common/CheckPassword", parm, function(result) {
+					var code = result.code;
+					alert(code);
+					if(code == 0) {
+						var parm = {
+							Fuser_id: Fsuper.getuserid(),
+							FpayNum: $(".FpayNum").val(),
+							Fpay_way: 0,
+							Fsupersign: result.data
+						}
+						Safe.post(Serverurl + "/fundMange/TXchecksing", parm, function(result) {
+							var code = result.code;
+							if(code == 0) {
+								alert("bb");
+							} else {
+								return;
+							}
+						})
+					} else if(code == 3) {
+						appcan.window.openToast('交易密码错误！', '2000');
+						return;
+					} else {
+						return;
+					}
+				})
+			},
+		}
+	</script>
+</html>

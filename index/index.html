@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+	<style>
+		.ulev-3 {
+			font-size: 1em !important;
+		}
+	</style>
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../index/css/main.css">
+
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div id="page_0" class="up ub ub-ver" tabindex="0">
+			<!--header开始-->
+			<div id="header" class="bc-text-head ub bc-head">
+				<div id="header1" class="uh bc-text-head ub bc-head">
+					<div class="nav-btn" id="nav-left" ontouchstart="appcan.touch()" onclick="appcan.openWinWithUrl('newsCenter','../newsCenter/newsCenter.html');">
+						<img class="ub-img" style="width: 1.5em;" src="../common/images/index_infor.png" />
+					</div>
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">首页</h1>
+					<div class="nav-btn nav-bt" id="nav-right">
+						<img class="ub-img" style="width: 1.5em;" src="../common/images/index_search.png" />
+					</div>
+				</div>
+
+				<div id="header2" class="ubhide  uh bc-text-head ub bc-head" style="z-index: 99;">
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c header20" tabindex="0">随投随赎</h1>
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c header21" tabindex="0">随投定赎   </h1>
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c header22" tabindex="0">乐宝  </h1>
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c header23" tabindex="0">0元购</h1>
+				</div>
+				<div id="header3" class="ubhide uh bc-text-head ub bc-head">
+					<div class="nav-btn" id="nav-left">
+
+					</div>
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">发现</h1>
+					<div class="nav-btn nav-bt" id="nav-right">
+
+					</div>
+				</div>
+				<div id="header4" class="ubhide uh bc-text-head ub bc-head">
+					<div class="nav-btn" ontouchstart="appcan.touch()" onclick="appcan.openWinWithUrl('personalInformation','../personalInformation/personalInformation.html');">
+						<img src="../common/images/mine.png" style="width: 2.2em;" />
+					</div>
+					<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">我的</h1>
+					<div class="nav-btn  nav-bt" id="nav-right" ontouchstart="appcan.touch()" onclick="appcan.openWinWithUrl('bill','../bill/bill.html');">
+						<img src="../common/images/record.png" style="width:1.3em;" />
+						<div class="ub ub-ac " style="color: #8879aa; margin-left: 5px;">
+							账单
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--header结束-->
+			<!--content开始-->
+			<div id="content" class="ub-f1 tx-l t-bla bc-bg ub">
+
+			</div>
+			<!--content结束-->
+			<div id="footer" class="uf t-bla ub ubt bc-border" style="background: #382071;">
+				<div class="ub ub-f1 tab" id="footer1">
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.tab.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		var titHeight = 0;
+		var conArray = [false, false, false, false];
+		appcan.ready(function() {
+			appcan.window.subscribe('indexmove', function(msg) {
+				tabview.moveTo(msg);
+				openCon(msg);
+			});
+			titHeight = $('#header').offset().height;
+			//appcan.frame.open("content", "indexCon_0.html", 0, titHeight);
+			openCon(0);
+			conArray[0] = true;
+			window.onorientationchange = window.onresize = function() {
+				titHeight = $('#header').offset().height;
+				//uexWindow.setPopoverFrame("content", 0, titHeight, $("#content").width(), $("#content").height());
+				for(var i = 0; i < 4; i++) {
+					if(conArray[i]) {
+						uexWindow.setPopoverFrame("content_" + i, 0, titHeight, $("#content").width(), $("#content").height());
+					}
+				}
+				//for (var i = 0; i < 4; i++) {
+				//    if (conArray[i])
+				//        appcan.resizePopoverByEle("content", 0, $("#header1").offset().height, 0, 'content_' + i);
+				//        //appcan.frame.resize("content", 0, $("#header1").offset().height, 0, 'content_' + i);   
+				//}
+			}
+		});
+
+		var tabview = appcan.tab({
+			selector: "#footer1",
+			hasIcon: true,
+			hasAnim: false,
+			hasLabel: true,
+			hasBadge: true,
+			index: 0,
+			ispico: true,
+			data: [{
+				label: "首页",
+				icon: "fa-home",
+				pico: "../common/images/foot01.png",
+				pactivico: "../common/images/foot01_active.png"
+			}, {
+				label: "理财",
+				icon: "fa-list",
+				pico: "../common/images/foot02.png",
+				pactivico: "../common/images/foot02_active.png"
+			}, {
+				label: "发现",
+				icon: "fa-user",
+				pico: "../common/images/foot03.png",
+				pactivico: "../common/images/foot03_active.png"
+			}, {
+				label: "我的",
+				icon: "fa-shopping-cart",
+				pico: "../common/images/foot04.png",
+				pactivico: "../common/images/foot04_active.png",
+			}]
+		});
+		tabview.on("click", function(obj, index) {
+			//			if(Fsuper.checkUserLogin() == 0) {
+			//				return;
+			//			}
+			if(index == 3) {
+			    appcan.window.publish('index4', '');
+				if(Fsuper.checkUserLogin() == 0) {
+					return;
+				}
+				
+			}
+			openCon(index);
+		})
+		appcan.button(".nav-btn", "btn-act", function() {
+			//appcan.window.close(-1);
+		})
+
+		function openCon(idx) {
+			for(var i = 0, l = $("#header")[0].children.length; i < l; i++) {
+				if(idx == i) {
+					$("#header")[0].children[i].className = "uh bc-text-head ub bc-head maxh";
+					if(!conArray[idx]) {
+						appcan.openPopoverByEle("content", "indexCon_" + idx + ".html", 0, $('#header').offset().height, 0, 'content_' + idx);
+						uexWindow.setPopoverFrame("content_" + idx, 0, titHeight, $("#content").width(), $("#content").height());
+						appcan.frame.resize("content", 0, $("#header").offset().height, 0, 'content_' + idx);
+						conArray[idx] = true;
+					} else {
+						appcan.bringPopoverToFront('content_' + idx);
+					}
+				} else {
+					$("#header")[0].children[i].className = "uhide";
+				}
+			}
+		}
+		appcan.button(".header20", "btn-act", function() {
+			appcan.window.publish('Fselect', 'stsu');
+		})
+		appcan.button(".header21", "btn-act", function() {
+			appcan.window.publish('Fselect', 'stds');
+		})
+		appcan.button(".header22", "btn-act", function() {
+			appcan.window.publish('Fselect', 'leb');
+		})
+		appcan.button(".header23", "btn-act", function() {
+			appcan.window.publish('Fselect', 'lyg');
+		})
+	</script>
+
+</html>

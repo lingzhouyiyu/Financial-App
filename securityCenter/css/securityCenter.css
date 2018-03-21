@@ -1,0 +1,55 @@
+img{
+	
+	width: 1.3em;
+}
+.account_right img{ width: 0.6em;}
+.sc_1{
+	border-top:6px solid #efefed;
+	padding: 0em 1em 0 1em;
+	background: #fff;
+}
+.sc_1 .sfyz{
+	padding: 1em 0;
+	border-bottom:1px solid #efefed;
+}
+.sc_1 .sjyz{
+	padding: 1em 0;
+	border-bottom:1px solid #efefed;
+}
+.sc_1 .yhk{
+	padding: 1em 0;
+	
+}
+.sc_1 .yhk span{
+	color: #808080;
+	padding-right: 0.5em;
+}
+.sc_1 .fh{
+	font-size: 1em;
+	color: #c2c2c2;
+}
+.sc_2{
+	background: #fff;
+	border-top:6px solid #efefed;
+	padding: 0 1em;
+}
+.sc_2 .dlmm{
+	padding: 1em 0;
+	border-bottom:1px solid #efefed;
+}
+.sc_2 .jymm{
+		padding: 1em 0;
+	border-bottom:1px solid #efefed;
+}
+.sc_2 .rz{
+		padding: 1em 0;
+	border-bottom:1px solid #efefed;
+}
+.sc_2 span{
+	color: #808080;
+	padding-right: 0.5em;
+}
+.sc_2 .fh{
+	font-size: 1em;
+	color: #c2c2c2;
+}

@@ -1,0 +1,24 @@
+.invite_title{ padding: 1em;}
+.invite_btn{ margin-left: 1.5em; margin-right: 1.5em; margin-top: 3em; height: 2.8em; background: #382071; color: #fff; border-radius: 0.4em; }
+.inviterec{ margin-top: 1em; margin-bottom: 1em;}
+.inviterec img{ width: 1.5em;}
+.invite{ position: fixed; left: 0; bottom: 0;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');background:rgba(0,0,0,0.3); height: 100%; width: 100%;}
+.invite_main{ background: #fff; position: absolute; left: 0; bottom: 0; width: 100%; height: auto;}
+.invite_way{ border: 1px solid #E1E1E1; width: 3.5em; height: 3.5em; border-radius: 50%;}
+.invite_way img{ width: 2em;}
+.way01{ padding-top: 2em;}
+.outinvite{ margin-top: 2em; border-top: 1px solid #E1E1E1; height: 3em;}
+.invite_way01{ margin:1em ; padding: 0.6em; border: 1px solid #E1E1E1;}
+.invite_left{ color: #382071; width: 3em;}
+.bc-tex{ color: #212121;}
+.invite_botom{ margin-top: 0.4em; margin-bottom: 1em; color: #b4b4b4; }
+.dbcopy{ border: 1px solid #E1E1E1; border-radius: 0.4em;margin-top: 0.6em; }
+.copy_top{ padding: 0.6em 0 0.6em 0.6em; font-size: 0.95em;  color: #b4b4b4; overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.sure_btn{ background: #dcdcdc; color: #5d5d5d; width: 5em;}
+.margin1{ margin-left: 1em; color: #646464;}
+.margin2{ margin-left: 1.6em; color: #646464; margin-bottom: 0.4em;}

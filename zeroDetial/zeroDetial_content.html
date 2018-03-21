@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub zero_top">
+			<div class="ub ub-ac ub-pc zero_title FMingC">
+
+			</div>
+			<div class="ub ub-ac ub-pc umar-l zero_sign">
+				<span>商品价格</span>
+				<span class="Fprice">0.00</span>
+				<span>元</span>
+			</div>
+		</div>
+		<div class="ub ub-ver zero_percent">
+			<div class="ub ub-ac ub-pc ub-f1  zero_percentTxt">
+				<span class="percent FLiX_prepose">0</span>
+				<span>%</span>
+			</div>
+			<div class="ub ub-f1  status">
+				<div style="width:0;" class="ub  charts"></div>
+			</div>
+		</div>
+		<!--投资金额-->
+		<div class="ub invest">
+			<div class="ub ub-f1 invest_main">
+				<div class="ub ub-ver ub-f1 ub-ac ub-fh invset_border">
+					<div class="ub umar-b color96">
+						投资金额
+					</div>
+					<div class="ub bc-text">
+						<span class="Fmax">0.00</span>
+						<span>元</span>
+					</div>
+				</div>
+				<div class="ub ub-ver ub-f1 ub-fh ub-ac invset_border ">
+					<div class="ub umar-b color96">
+						封闭期
+					</div>
+					<div class="ub bc-text">
+						<span class="FTouZqx">0</span>
+						<span class="Fdw"></span>
+					</div>
+				</div>
+				<div class="ub ub-ver ub-ac ub-f1 ub-fh">
+					<div class="ub umar-b color96">
+						单笔上限
+					</div>
+					<div class="ub bc-text">
+						<span class="Fmax">0.00</span>
+						<span>元</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--投资说明-->
+		<div class="ub ub-ac ub-pc invest_botm">
+			<div class="ub ub-ac ub-f1 ub-fh">
+				<img src="../common/images/ok.png" />
+				<div class="ub color96">
+					本金+利息
+				</div>
+			</div>
+			<div class="ub ub-ac ub-f1 ub-fh">
+				<img src="../common/images/ok.png" />
+				<div class="ub color96 ">
+					T(成交日)+1天
+				</div>
+			</div>
+			<div class="ub ub-ac ub-f1 ub-fh">
+				<img src="../common/images/ok.png" />
+				<div class="ub color96 ">
+					按月付息到期还本
+				</div>
+			</div>
+		</div>
+		<!--账户余额-->
+		<div class="ub ub-ac account">
+			<div class="ub ub-f1 account_left">
+				<span class="bc-text">账户余额：</span>
+				<span class="colorred">￥</span>
+				<span class="colorred Fyue">0.00</span>
+			</div>
+			<div class="ub account_right">
+				<div class="ub ub-ac ub-pc account_btn gocash">
+					充值
+				</div>
+			</div>
+		</div>
+		<!--投资余额-->
+		<div class="ub ub-ac account">
+			<div class="ub  account_left bc-text">
+				<span>投资余额：</span>
+			</div>
+			<div class="ub-f1 ub-ac  ub money_right">
+				<div class="muinput">
+					<input class="ub ub-f1 umar-r Fmoney" type="text" />
+				</div>
+				<div class="ub colorred umar-r" onclick="allTz()">
+					全投</span>
+				</div>
+			</div>
+		</div>
+		<!--获得收益-->
+		<div class="ub  account">
+			<div class="ub ub-f1 ub-fh account_left">
+				<span class="bc-text">获得收益：</span>
+			</div>
+			<div class="ub ub-ver ub-f1 ub-fh account_left">
+				<div class="ub colorred umar-b">
+					<span class="FqzLix">0.00</span>
+					<span>元</span>
+				</div>
+				<div class="ub color96 umar-b font-small">
+					到期收益
+				</div>
+			</div>
+			<div class="ub ub-ver ub-f1 ub-fh account_left">
+				<div class="ub colorred umar-b">
+					<span class="Fmax">0.00</span>
+					<span>元</span>
+				</div>
+				<div class="ub color96 umar-b font-small">
+					易购易乐授信金额
+				</div>
+			</div>
+		</div>
+		<!--合同-->
+		<div class="ub ub-ac ub-pc agree bc-text">
+			<div class="checkbox umar-r">
+				<input id="agree" type="checkbox" checked="checked" name="radio" class="uabs ub-con">
+			</div>
+			<div class="text1">
+				同意投资后自动生成
+			</div>
+			<div class="text2 goxieyi">
+				《合同》
+			</div>
+		</div>
+		<!--底部-->
+		<div class="ub ub-ac invest_bottom">
+			<div class="ub ub-ac gocalc uhide">
+				<img src="../common/images/clc.png" />
+			</div>
+			<div class="ub ub-f1">
+				<div class="ub ub-f1 ub-ac ub-pc invest_btn">
+					立即投资
+				</div>
+			</div>
+		</div>
+
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+			getmessages();
+			getcpmessages();
+			getspmessages();
+		});
+		var lygproductid = appcan.locStorage.getVal("lygproductid");
+		var lyggoodsid = appcan.locStorage.getVal("lyggoodsid");
+		var Fidcard = "";
+		var Fyue = "";
+		var FJiE = ""; //0元购产品金额
+		//立即投资
+		appcan.button(".invest_btn", "ani-act", function(a, b) {
+			if(Fsuper.checkUserLogin() == 0) {
+				return;
+			}
+			if(Fsuper.checkUserauthen() == 0) {
+				return;
+			}
+			//投资金额
+			var Fmoney = $(".Fmoney").val();
+			if(Fidcard == "") {
+				appcan.window.openToast('请您先绑定身份证！', '2000');
+				return;
+			}
+			if(Fmoney == "") {
+				appcan.window.openToast('投资金额不能为空！', '2000');
+				return;
+			}
+			if(Fyue < Fmoney) {
+				appcan.window.openToast('您的余额不足，请充值！', '2000');
+				return;
+			}
+			if(Fmoney != FJiE) {
+				appcan.window.openToast("投资金额为" + FJiE, '2000');
+				return;
+			}
+
+			appcan.locStorage.setVal("lygFmoney", Fmoney);
+			appcan.window.open("zeroInvest", "../zeroInvest/zeroInvest.html");
+		});
+		//用户信息
+		function getmessages() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getmessages",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							Fyue = rows.Fyue;
+							if(rows.Fidcard != null && rows.Fidcard != "") {
+								Fidcard = rows.Fidcard;
+							}
+							$(".Fyue").text(rows.Fyue.toFixed(2));
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		//产品信息
+		function getcpmessages() {
+			var parm = {
+				Fid: lygproductid,
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getcpmessages",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							FJiE = rows.Fmax;
+							$(".FMingC").text(rows.FMingC);
+							$(".Fmax").text(rows.Fmax);
+							$(".FLiX_prepose").text(rows.FLiX_prepose);
+							if(rows.FJiXlx == "0") {
+								$(".FTouZqx").text(rows.FTouZqx);
+								$(".Fdw").text("天");
+							} else {
+								$(".FTouZqx").text(rows.FTouZqx);
+								$(".Fdw").text("个月");
+							}
+							$(".FqzLix").text(msg);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		//商品信息
+		function getspmessages() {
+			var parm = {
+				Fid: lyggoodsid,
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getspmessages",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(".Fprice").text(rows.Fprice);
+
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+		//全投资
+		function allTz() {
+			$(".Fmoney").val($(".Fyue").text().trim());
+		}
+	</script>
+
+</html>

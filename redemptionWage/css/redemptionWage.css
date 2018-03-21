@@ -1,0 +1,30 @@
+.rw_1 {border-bottom: 1px solid #F0F0F0;padding: 1em;color: #656565;font-size: 1.125em;}
+.rw_2{
+	padding: 0 1em;
+}
+
+.rw_2 .ksje { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .ysje { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .tzje { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .hdsy { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .nll { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .tzsj { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .zt { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+.rw_2 .xy { padding: 1em 0;
+border-bottom: 1px solid #F0F0F0;}
+
+.rw_2 .word1{
+	color: #ffa040;
+}
+.rw_3{padding: 1em;}
+.rw_3 .shje{padding: 1px 1px ;background:#382071;border-radius: 6px;color: #F0F0F0;}
+
+.rw_3 input{ margin :0 0.5em 0 0;padding-left:1em;overflow:hidden;background:white;border-radius: 6px; color: #382071;}
+.rw_3 .sh{margin-left: 2em;margin-right: 1em;}

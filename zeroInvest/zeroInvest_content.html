@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="zero_top">
+			<div class="ub zero_item">
+				<span>项目：</span>
+				<span class="FMingC"></span>
+			</div>
+			<div class="ub zero_item">
+				<span>名称：</span>
+				<span class="Fname"></span>
+			</div>
+			<div class="ub zero_item">
+				<span>产品价格：</span>
+				<span class="Fprice">0.00</span>
+			</div>
+			<div class="ub zero_item">
+				产品简介：
+			</div>
+			<div class="ub zero_item Fdesc">
+
+			</div>
+		</div>
+		<div class="zero_top zero_top2">
+			<div class="ub">
+				<div class="ub ub-f1 ub-ver top_left">
+					<div class="ub zero_item">
+						<span>可用余额：</span>
+						<span class="Fyue">0.00</span>
+						<span>元</span>
+					</div>
+					<div class="ub zero_item">
+						<span>投资金额：</span>
+						<span class="Fmax">0.00</span>
+						<span>元</span>
+					</div>
+				</div>
+				<div class="ub top_right">
+					<div class="ub ub-ac ub-pc right_btn">
+						去充值
+					</div>
+				</div>
+			</div>
+			<div class="ub zero_item">
+				<span>投资期限：</span>
+				<span class="FTouZqx">0</span>
+				<span class="Fdw"></span>
+			</div>
+			<div class="ub zero_item">
+				<span>投资方式：</span>
+				<span>利息前置</span>
+			</div>
+			<div class="ub choose" id="expressArea">
+				<dl class="ub ub-f1">
+					<dt class="ub">
+                        选择地区：
+                    </dt>
+					<!--选择地区填入值-->
+					<dd class="ub ub-f1 ssq choose_txt">
+						省 > 市 > 区/县
+					</dd>
+				</dl>
+			</div>
+
+			<div class="ub ub-ac   uinput zero_item zero_input">
+				<input type="text" class="xxdz1" placeholder="请输入详细地址" />
+			</div>
+			<div class="ub ub-ac pwd_input">
+				<span>交易密码：</span>
+				<div class="ub  ub-f1 ub-ac uinput zero_item zero_input2">
+
+					<input class="ub ub-f1 jypswd" type="password" placeholder="请输入交易密码" />
+				</div>
+				<span class="colorred">*</span>
+			</div>
+		</div>
+		<!--选择地区弹层-->
+		<section id="areaLayer" class="express-area-box">
+			<header>
+				<h3>选择地区</h3>
+				<a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+				<a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+			</header>
+			<article id="areaBox">
+				<ul id="areaList" class="area-list"></ul>
+			</article>
+		</section>
+		<!--遮罩层-->
+		<div id="areaMask" class="mask"></div>
+		<script src="../common/js/area.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/Safe.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+		<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+			getcpmessages();
+			getspmessages();
+			getmessages();
+			appcan.window.subscribe('getaddress', function(msg) {
+
+				var Faddress1 = $(".xxdz1").val();
+				var Faddress2 = $(".ssq").text();
+				var lygFaddress = Faddress2 + ">" + Faddress1;
+				var lygFpaypwd = $(".jypswd").val();
+				if(Faddress1 == "") {
+					appcan.window.openToast("请填写详细收货地址！", '2000');
+					return;
+				}
+				if(lygFpaypwd == "") {
+					appcan.window.openToast("交易密码不能为空！", '2000');
+					return;
+				} else {
+					lygFpaypwd = $.md5(lygFpaypwd).toUpperCase();
+				}
+				var parm = {
+					Fuserid: Fsuper.getuserid(),
+					Fpaypwd: lygFpaypwd,
+				}
+
+				Safe.post(Serverurl + "/Common/CheckPassword", parm, function(result) {
+					console.log(result);
+					var code = result.code;
+					if(code == 0) {
+
+						var Fmoney = $("#Fmoney").val();
+						var parm = {
+							Fuserid: Fsuper.getuserid(),
+							Fmoney: appcan.locStorage.getVal("lygFmoney"),
+							Fsupersign: result.data,
+							Productid: appcan.locStorage.getVal("lygproductid"),
+							FchooseType: "1",
+							Fgoodsid: appcan.locStorage.getVal("lyggoodsid"),
+							Faddress: lygFaddress,
+						}
+
+						Safe.post(Serverurl + "/Common/LygCheckSign", parm, function(result) {
+							var code = result.code;
+							if(code == 0) {
+								appcan.window.openToast('投资成功', '2000');
+								appcan.window.open("invest", "../invest/invest.html");
+								appcan.window.publish('closezero', '');
+							} else {
+
+								return;
+							}
+						})
+					} else if(code == 3) {
+						appcan.window.openToast("交易密码错误！", '2000');
+						return;
+					} else {
+						return;
+					}
+				});
+			});
+		});
+		//产品信息
+		function getcpmessages() {
+			var parm = {
+				Fid: appcan.locStorage.getVal("lygproductid"),
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getcpmessages",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							FJiE = rows.Fmax;
+							$(".FMingC").text(rows.FMingC);
+							$(".Fmax").text(rows.Fmax);
+							//  $(".FLiX_prepose").text(rows.FLiX_prepose);
+							if(rows.FJiXlx == "0") {
+								$(".FTouZqx").text(rows.FTouZqx);
+								$(".Fdw").text("天");
+							} else {
+								$(".FTouZqx").text(rows.FTouZqx);
+								$(".Fdw").text("个月");
+							}
+							$(".FqzLix").text(msg);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		//商品信息
+		function getspmessages() {
+			var parm = {
+				Fid: appcan.locStorage.getVal("lyggoodsid"),
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getspmessages",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(".Fprice").text(rows.Fprice);
+							$(".Fname").text(rows.Fname);
+							$(".Fdesc").text(rows.Fdesc);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+		//用户信息
+		function getmessages() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getmessages",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(".Fyue").text(rows.Fyue.toFixed(2));
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+	</script>
+
+</html>

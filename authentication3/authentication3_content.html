@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/authentication1.css">
+	</head>
+
+	<body class="um-vp" style="background: #fff" ontouchstart>
+		<img src="../authentication3/css/myImg/1.jpg" style="width:auto;width:90%;text-align:center;vertical-align:middle;padding: 1em;"></div>
+		<!--
+       	1 身份验证 设置交易密码 绑定银行卡
+       -->
+		<div class="ub ub-ver ub--ac ub-pc a_1">
+			<div class="ub ub-pc ub-ac"></div>
+			<div class="ub ub-pc ub-ac word">
+				<div class="ub ub-f1 ub-pc ub-ac sfyz">身份证验证</div>
+				<div class="ub ub-f1 ub-pc ub-ac szjymm">设置交易密码</div>
+				<div class="ub ub-f1 ub-pc ub-ac bdyhk">绑定银行卡</div>
+			</div>
+		</div>
+		<!-- 2验证信息-->
+		<div class="ub ub-ver a_2">
+			<div class="ub xm ">
+				<div class="ub ub-ac word">银行卡卡号</div>
+				<div class="ub ub-f1 uinput "><input class="FbankNum" type="text" placeholder="持证人须与实名认证相符" /></div>
+			</div>
+			<div class="ub sfz">
+				<div class="ub ub-ac word">持卡人姓名</div>
+				<div class="ub ub-f1 uinput "><input class="FCkrName" type="text" placeholder="持卡人须与银行卡用户相符" /></div>
+			</div>
+			<div class="ub jjlxr">
+				<div class="ub ub-ac word">所属银行</div>
+				<div class="ub ub-f1 uinput "><input class="Fbankname" type="text" placeholder="请填写开户支行名称" /></div>
+			</div>
+			<div class="ub jjlxrdh">
+				<div class="ub ub-ac word">开户支行</div>
+				<div class="ub ub-f1 uinput "><input class="FKaihuzH" type="text" placeholder="请填写银行卡所属银行" /></div>
+			</div>
+		</div>
+		<!--
+        	特别提醒
+        -->
+		<div class="ub a_5">
+			<div class="ub ub-ver tbtx">
+				<div class="ub  ub-ac s">
+					<img style="width: 1.5em" src="../authentication3/css/myImg/2.jpg" />
+					<div class="ub ub-pc ub-ac tx">特别提醒</div>
+				</div>
+				<div class="ub x">
+					为确保账户资金安全，请绑定开户者本人的储蓄卡。
+				</div>
+			</div>
+
+		</div>
+		<!--
+        	3 申请验证：
+        -->
+		<div class="ub a_3">
+			<div class="ub ub-pc ub-ac ub-f1 sqyz wcrzl">完成认证</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/appcan.tab.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+	<script type="text/javascript" src="../common/js/Safe.js"></script>
+	<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+		    Fsuper.getevuserinfo();
+			var users = Fsuper.getuserinfo();
+			$(".FbankNum").val(users.FbankNum);
+			$(".FCkrName").val(users.Fname);
+			$(".Fbankname").val(users.Fbankname);
+			$(".FKaihuzH").val(users.FKaihuzH);
+		});
+		appcan.button(".wcrzl", "ani-act", function(a, b) {
+			saveBankinfo();
+		})
+
+		function saveBankinfo() {
+			var FbankNum = $(".FbankNum").val();
+			var FCkrName = $(".FCkrName").val();
+			var Fbankname = $(".Fbankname").val();
+			var FKaihuzH = $(".FKaihuzH").val();
+			if(FbankNum == "") {
+				appcan.window.openToast('银行卡号不能为空！', '1000');
+				return;
+			}
+			if(FCkrName == "") {
+				appcan.window.openToast('持卡人姓名不能为空！', '1000');
+				return;
+			}
+			if(Fbankname == "") {
+				appcan.window.openToast('所属银行不能为空！', '1000');
+				return;
+			}
+			if(FKaihuzH == "") {
+				appcan.window.openToast('开户支行不能为空！', '1000');
+				return;
+			}
+			var parm = {
+				Fuserid: Fsuper.getuserid(),
+				FbankNum: FbankNum,
+				FCkrName: FCkrName,
+				Fbankname: Fbankname,
+				FKaihuzH: FKaihuzH
+
+			}
+			Safe.apppost(Serverurl + "/app/savebank", parm, function(result) {
+				var code = result.code;
+				if(code == 0) {
+					appcan.window.openToast('已完成认证！', '1000');
+					appcan.window.evaluateScript({
+						name: 'authentication3',
+						scriptContent: 'windowclose()'
+					});
+
+				}
+			})
+		}
+	</script>
+
+</html>

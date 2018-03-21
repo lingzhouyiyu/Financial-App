@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.touchSwipe.min.js" ></script>
+		<script>
+		$(document).ready(
+
+				function() {
+
+					var nowpage = 0;
+
+					//给最大的盒子增加事件监听
+
+					$(".container").swipe(
+
+						{
+
+							swipe: function(event, direction, distance, duration, fingerCount) {
+
+								if(direction == "up") {
+
+									nowpage = nowpage + 1;
+
+								} else if(direction == "down") {
+
+									nowpage = nowpage - 1;
+
+								}
+
+								if(nowpage > 5) {
+
+									nowpage = 5;
+
+								}
+
+								if(nowpage < 0) {
+
+									nowpage = 0;
+
+								}
+
+								$(".container").animate({
+									"top": nowpage * -100 + "%"
+								}, 400);
+
+								$(".page").eq(nowpage).addClass("cur").siblings().removeClass("cur");
+
+							}
+
+						}
+
+					);
+
+				}
+
+			);
+	</script>
+	</head>
+
+	<body class="um-vp bc-bg" onmousewheel="return false;">
+		<div class="container">
+
+			<div class="page ub ub-ac  ub-pc ub-ver  page0 cur">
+
+				<div class="ub ub-ac ub-pc">
+					<img class="ub-img" style="width: 100%;" src="css/myImg/slide01.jpg" />
+				</div>
+				<div class="ub ub-ac ub-pc slide_title">项目保障</div>
+				<div class="ub ub-ac ub-pc">
+					大众易融易贷均为商家提供资产抵   押或优质在校大学生借款服务
+				</div>
+				<div class="ub ub-ac ub-pc ">
+					<div class="ub circle"></div>
+				</div>
+				<div class="ub ub-ac ub-pc more2">
+					<img src="css/myImg/more.png" style="width: 1em;" />
+				</div>
+
+			</div>
+
+			<div class="page ub ub-ac  ub-pc ub-ver page1">
+
+				<div class="ub ub-ac ub-pc">
+					<img class="ub-img" style="width: 100%;" src="css/myImg/slide02.jpg" />
+				</div>
+				<div class="ub ub-ac ub-pc slide_title">风控保险</div>
+				<div class="ub ub-ac ub-pc">
+					大众易融易贷均为商家提供资产抵   押或优质在校大学生借款服务
+				</div>
+				<div class="ub ub-ac ub-pc more2">
+					<img src="css/myImg/more.png" style="width: 1em;" />
+				</div>
+
+			</div>
+
+			<div class="page ub ub-ac  ub-pc ub-ver page2">
+
+				<div class="ub ub-ac ub-pc">
+					<img class="ub-img" style="width: 100%;" src="css/myImg/slide03.jpg" />
+				</div>
+				<div class="ub ub-ac ub-pc slide_title bc-text">技术保障</div>
+				<div class="ub ub-ac ub-pc bc-text">
+					大众易融易贷均为商家提供资产抵   押或优质在校大学生借款服务
+				</div>
+				<div class="ub ub-ac ub-pc more2">
+					<img src="css/myImg/more01.png" style="width: 1em;" />
+				</div>
+
+			</div>
+
+			<div class="page ub ub-ac  ub-pc ub-ver page3">
+
+				<div class="ub ub-ac ub-pc">
+					<img class="ub-img" style="width: 100%;" src="css/myImg/slide04.jpg" />
+				</div>
+				<div class="ub ub-ac ub-pc slide_title bc-text">本息保障</div>
+				<div class="ub ub-ac ub-pc bc-text">
+					大众易融易贷均为商家提供资产抵   押或优质在校大学生借款服务
+				</div>
+				<div class="ub ub-ac ub-pc more2">
+					<img src="css/myImg/more01.png" style="width: 1em;" />
+				</div>
+
+			</div>
+
+			<div class="page ub ub-ac  ub-pc ub-ver page4">
+
+				<div class="ub ub-ac ub-pc">
+					<img class="ub-img" style="width: 100%;" src="css/myImg/slide05.jpg" />
+				</div>
+				<div class="ub ub-ac ub-pc slide_title bc-text">法律保障</div>
+				<div class="ub ub-ac ub-pc bc-text">
+					大众易融易贷均为商家提供资产抵   押或优质在校大学生借款服务
+				</div>
+				<div class="ub ub-ac ub-pc more2">
+					<img src="css/myImg/more01.png" style="width: 1em;" />
+				</div>
+
+			</div>
+			<div class="page ub ub-ac  ub-pc ub-ver page5">
+
+				<div class="ub ub-ac ub-pc">
+					<img class="ub-img" style="width: 100%;" src="css/myImg/slide06.jpg" />
+				</div>
+				<div class="ub ub-ac ub-pc slide_title bc-text">隐私保障</div>
+				<div class="ub ub-ac ub-pc bc-text">
+					大众易融易贷均为商家提供资产抵   押或优质在校大学生借款服务
+				</div>
+				<div class="ub ub-ac ub-pc more2">
+					<img src="css/myImg/more01.png" style="width: 1em;" />
+				</div>
+
+			</div>
+
+		</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		
+	</body>
+	
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub bc-text help_title">
+			提现什么时候到账？
+		</div>
+		<div class="ub help_main bc-text">
+			提现时间一般是1-2个工作日， 财付通支持提现的银行，以及各银行提现到账时间如下；  温馨提示：工作日是除周末及国家法定节假日以外的正常上班时间
+		</div>
+		<div class="ub ub-ac ub-pc bc-text help_tel">
+			客服电话：0871-63375090
+		</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		//加载进度条
+		function animate() {
+			$(".charts").each(function(i, item) {
+				var a = parseInt($(item).parents().find(".percent").text());
+
+				$(item).animate({
+					width: a + "%"
+				}, 3000);
+
+			});
+		}
+		animate();
+	</script>
+
+</html>

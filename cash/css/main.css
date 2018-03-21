@@ -1,0 +1,16 @@
+.recharge_top{ background: #fff; padding: 1em; margin-bottom: 0.6em;}
+.nav{ height: 2em;border: 1px solid #8879aa; border-radius: 0.4em; }
+.top_nav{ height: 2em; color: #382071;}
+.nav_active{ background: #382071; color: #fff;}
+.recharge_num{ height: 3em; background: #fff;  padding:0 1em; }
+.recharge_num input{ height: 2.5em; margin-left: 0.6em; border: 0 none;}
+.recharge_black{ margin-top: 2em; margin-bottom: 1em; margin-left: 1em;}
+.recharge_btn{ background: #382071; height: 2.5em; margin: 0 1em; color: #fff; border-radius: 0.4em;}
+.nav_left{ border-top-left-radius: 0.4em; border-bottom-left-radius: 0.4em;}
+.nav_right{ border-top-right-radius: 0.4em; border-bottom-right-radius: 0.4em;}
+.rech_record{ background: #fff; }
+.margin6{ margin-bottom: 0.6em;}
+.record_left img{ width: 1.2em;}
+.record_item{ border-bottom: 1px solid #E1E1E1; padding: 0.6em 1em;}
+.sxf{ background: #fff; padding: 0.6em 1em 1.5em 1em;}
+.border_btom{ border-bottom: 1px solid #E1E1E1;}

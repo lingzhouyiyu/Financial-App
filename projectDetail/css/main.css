@@ -1,0 +1,14 @@
+.problem_item{ background: #fff; padding: 1em; margin-bottom: 0.6em;}
+.problem_top{margin-bottom: 0.6em; color: #382071; }
+.top_left{ width: 8px; background: #382071;}
+.texthidden{  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; margin-bottom: 0.5em;}
+.problem_main img{ width: 100%;}
+.left_img{ padding-right: 5px;}
+.right_img{ padding-left: 5px;}
+
+.goinvest{ position: fixed; left: 0; bottom: 0; height: 2.8em; background: #382071; color: #fff; width: 100%;}
+.shjl_item{ font-size: 0.9em; margin-top: 0.5em;}

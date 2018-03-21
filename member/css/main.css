@@ -1,0 +1,13 @@
+.memeber_top{ background: #fff url(../../common/images/member_bg.jpg) no-repeat ; background-size: cover; padding-top: 2em; padding-bottom: 2em; margin-bottom: 0.6em;}
+.top_logon { margin-bottom: 1em;}
+.top_logon img{ width: 8em;}
+.memeber_phone{ margin-bottom: 0.6em;}
+.member_center{ padding: 1em 0; background: #fff; margin-bottom: 0.6em;}
+.member_center img{ width: 3em; margin-right: 0.5em;}
+.font-size08{ font-size: 0.9em;}
+.borderrigrt{ border-right: 1px solid #E1E1E1;}
+.member_title{ padding: 1em; background: #fff; border-bottom: 1px solid #E1E1E1;}
+.member_title img{ width: 1.5em;}
+.memeber_item{ background: #fff; padding: 1em 0;}
+.memeber_item img{ width: 5em;}
+.memeber_item02{ padding-bottom: 3em;}

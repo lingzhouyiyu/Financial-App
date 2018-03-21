@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/authentication1.css">
+	</head>
+
+	<body class="um-vp" style="background: #fff" ontouchstart>
+		<!--
+       	1 身份验证 设置交易密码 绑定银行卡
+       -->
+		<img src="../authentication1/css/myImg/1.jpg" style="width:auto;width:90%;text-align:center;vertical-align:middle;padding: 1em;"></div>
+		<div class="ub ub-ver ub--ac ub-pc a_1">
+
+			<div class="ub ub-pc ub-ac word">
+				<div class="ub ub-f1 ub-pc ub-ac sfyz">身份证验证</div>
+				<div class="ub ub-f1 ub-pc ub-ac szjymm">设置交易密码</div>
+				<div class="ub ub-f1 ub-pc ub-ac bdyhk">绑定银行卡</div>
+			</div>
+		</div>
+		<!-- 2验证信息-->
+		<div class="ub ub-ver a_2">
+			<div class="ub xm ">
+				<div class="ub ub-ac word">姓名</div>
+				<div class="ub ub-f1 uinput "><input type="text" class="userFname" placeholder="请输入真实姓名" /></div>
+			</div>
+			<div class="ub sfz">
+				<div class="ub ub-ac word">身份证</div>
+				<div class="ub ub-f1 uinput "><input type="text" class="Fidcard" placeholder="请输入正确身份证号码" /></div>
+			</div>
+			<div class="ub jjlxr">
+				<div class="ub ub-ac word">紧急联系人</div>
+				<div class="ub ub-f1 uinput "><input type="text" class="Fjjlxr" placeholder="请输入紧急联系人姓名" /></div>
+			</div>
+			<div class="ub jjlxrdh">
+				<div class="ub ub-ac word">紧急联系人电话</div>
+				<div class="ub ub-f1 uinput "><input type="text" class="FJjLxDh" placeholder="请输入紧急联系人电话" /></div>
+			</div>
+		</div>
+		<!--
+        	3 申请验证：
+        -->
+		<div class="ub a_3">
+			<div class="ub ub-pc ub-ac ub-f1 sqyz">申请验证</div>
+		</div>
+		<!--
+        	联系客服
+        -->
+		<div class="ub ub-pc ub-ac bc-text a_4">
+			<span class="word">如有疑问，请联系客服:</span>
+			<span class="num">0871-63375090</span>
+		</div>
+	</body>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/appcan.tab.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+
+	<script type="text/javascript">
+		appcan.ready(function() {
+
+		})
+
+		function updateuserinfo() {
+			var userFname = $(".userFname").val();
+			var Fidcard = $(".Fidcard").val();
+			var FJjLxDh = $(".FJjLxDh").val();
+			var Fjjlxr = $(".Fjjlxr").val();
+			if(userFname == "") {
+				appcan.window.openToast('用户名不能为空！', '1000');
+				return;
+			}
+			if(Fidcard == "") {
+				appcan.window.openToast('身份证不能为空！', '1000');
+				return;
+			}
+			if(Fidcard.length < 18) {
+				appcan.window.openToast('身份证号码不合法！', '1000');
+				return;
+			}
+			if(Fjjlxr == "") {
+				appcan.window.openToast('紧急联系人不能为空！', '1000');
+				return;
+			}
+			if(FJjLxDh == "") {
+				appcan.window.openToast('紧急联系电话不能为空！', '1000');
+				return;
+			}
+			var parm = {
+				Fuserid: Fsuper.getuserid(),
+				Fname: userFname,
+				Fidcard: Fidcard,
+				FJjLxDh: FJjLxDh,
+				Fjjlxr: Fjjlxr
+			}
+			appcan.ajax({
+				url: Serverurl + '/app/updateuserinfo',
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							appcan.window.open("authentication2", "../authentication2/authentication2.html");
+							appcan.window.evaluateScript({
+								name: 'authentication1',
+								scriptContent: 'windowclose()'
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		appcan.button(".sqyz", "ani-act", function(a, b) {
+			updateuserinfo();
+		})
+	</script>
+
+</html>

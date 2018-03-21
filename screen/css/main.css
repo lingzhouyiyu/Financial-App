@@ -1,0 +1,42 @@
+.c-red{
+	background-color:#D13434;
+}
+.c-blue{
+	background-color:#218DD5;
+}
+.b-gra{
+	border-color:#a4a4a4;
+}
+.t-gra
+{
+	color:#a1a1a1;
+}
+.uh .btn,.uf .btn{
+	display: inline-block;
+	font-size: .8125em;
+	margin: 0
+}
+.btn
+{
+	font-size: 1em;
+	text-align:center;
+}
+.uinnh5
+{
+	padding:0.8em 0.5em;
+	margin:0;
+}
+.c-wh{
+    
+}
+.screen_main{background-color: white;  }
+.screen_top{ height: 3em; padding: 0 1em;}
+.screen_item{ border: 1px solid #8e8e8e; margin-left: 1em; height: 2.5em; border-radius: 0.4em;  margin-bottom: 1em;}
+.screen_choose{ padding-right: 1em;}
+.screen_cate{background: #fff; }
+.screen_cate02{ padding-bottom: 3em;}
+.screen_sure{ background: #fff; border-top: 1px solid #E1E1E1; position: fixed; left: 0; bottom: 0; height: 3em; width: 100%; padding-left: ;}
+.sure_btn{ margin-left: 1em; margin-right: 0.5em; height: 2.5em; background: #382071; color: #fff; border-radius: 0.4em;}
+.out_btn{  margin-right: 1em; margin-left: 0.5em; height: 2.5em; background: #a4046b; color: #fff; border-radius: 0.4em;}
+.screen_active{ border: 1px solid #ff7220;  color: #ff7220;}
+.choose_bill{ padding-bottom: 3em;}

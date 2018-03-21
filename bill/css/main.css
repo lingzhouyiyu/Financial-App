@@ -1,0 +1,24 @@
+.bill_top{ padding: 0.6em 1em;}
+.bill_item{ background: #fff; padding: 1em; border-bottom: 1px solid #E1E1E1;}
+.bill_left{ margin-right: 1.5em;}
+.texthide{overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.font-size12{ font-size: 1.125em;}
+.color21{ color: #434343;}
+.mask{ position: fixed; left: 0; top: 0; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#33000000', endColorstr='#33000000');background:rgba(0,0,0,0.2); width: 100%; height: 100%;}
+.mask_main{ background: #fff; height: auto; padding-top: 1em; padding-left: 1em; padding-bottom: 2em; overflow: hidden;}
+.mask_item{ border: 1px solid #E1E1E1; color: #969696; padding: 0.4em 1.2em; margin-right: 1em; margin-bottom: 1em;}
+.mask_active{ border: 1px solid #fe6040; color: #fe6040;}
+.screen_item{ border: 1px solid #8e8e8e; margin-left: 1em; height: 2.5em; border-radius: 0.4em;  margin-bottom: 1em;}
+.screen_choose{ padding-right: 1em;}
+.screen_cate{background: #fff; }
+.screen_cate02{ padding-bottom: 3em;}
+.screen_sure{ background: #fff; border-top: 1px solid #E1E1E1; position: fixed; left: 0; bottom: 0; height: 3em; width: 100%; padding-left: ;}
+.sure_btn{ margin-left: 1em; margin-right: 0.5em; height: 2.5em; background: #382071; color: #fff; border-radius: 0.4em;}
+.out_btn{  margin-right: 1em; margin-left: 0.5em; height: 2.5em; background: #a4046b; color: #fff; border-radius: 0.4em;}
+.screen_active{ border: 1px solid #ff7220;  color: #ff7220;}
+.choose_bill{ padding-bottom: 3em;}

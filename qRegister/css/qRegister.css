@@ -1,0 +1,120 @@
+
+
+
+.qRg_rg{
+	padding-top: 3em;
+}
+.qRg_rg .rg1{	
+	
+	border-bottom: 1px solid #cacaca;
+	margin: 0 2em;
+	}
+.qRg_rg .rg2{	
+
+	border-bottom: 1px solid #cacaca;
+	margin: 0 2em;
+	// background: url("../../qRegister/css/myImg/eye.png")  no-repeat right center ;
+	}
+.qRg_rg .rg3{	
+	border-bottom: 1px solid #cacaca;
+	margin: 0 2em;
+	}
+.qRg_rg .rg1 input{
+	font-size: 1em;
+	color:#a9a0be;
+	background-color:transparent;
+	border: none;
+	padding: 0.3em 0;
+	margin: 0.5em 0;
+}
+.qRg_rg .rg2 input{
+	font-size: 1em;
+	color:#a9a0be;
+	background-color:transparent;
+	border: none;
+	padding: 0.3em 0;
+	margin: 0.5em 0;
+}
+
+.qRg_rg .rg3 input{
+	font-size: 1em;
+	color:#a9a0be;
+	background-color:transparent;
+	border: none;
+	padding: 0.3em 0;
+	margin: 0.5em 0;
+}
+.qRg_rg .rg3 .yzm{
+	
+	color: #f39800;
+
+}
+.inviter_num  .yqr img{
+	width: auto;
+	height: auto;
+	width:150%;
+}
+.inviter_num  .yqr{
+	margin: 1em 2em;
+
+}
+
+.inviter_num  .a{
+	margin-left: 0.5em;
+	text-decoration: none;
+	color: #382071;
+	font-size: 1em;
+	font-weight: 200;
+}
+.inviter_num  .srk{
+	margin:0 2em;
+}
+
+.inviter_num  .srk input{
+	font-size: 1em;
+	color:#a9a0be;
+	background-color:transparent;
+	border: none;
+	padding: 0.5em 0;
+	 border-bottom: 2px solid #cacaca;
+	width: 100%;
+
+}
+/*
+.qRg_btn .zc{
+	padding: 0.6em 7em ;
+	background: #382071;
+	border: 1px solid #382071;
+	color: #F0F0F0;
+	font-size: 1.2em;
+	margin: 1em 0 1em 0;
+	border-radius: 10px;
+}
+*/
+.qRg_btn{
+	
+	background: #382071;
+	height: 2.8em; color: #fff; margin-top: 1em;
+	border-radius: 8px; margin-right: 4em; margin-left: 4em; margin-bottom: 2em;
+}
+.qRg_choose span{
+	font-size: 1em;
+	color: #969696;
+}
+.qRg_choose .zzfwxy{
+	text-decoration: none;
+	color: #382071;
+	font-size: 1em;
+}
+.qRg_login{
+	margin-top: 3em;
+}
+.qRg_login span{
+	font-size: 1em;
+	color: #969696;
+}
+.qRg_login .qRg_ljdl{
+	text-decoration: none;
+	color: #382071;
+	font-size: 1em;
+}

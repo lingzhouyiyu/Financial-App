@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ac ub-pc fund_top">
+			<div class="ub ub-f1 fund_left"></div>
+			<div class="ub">资产总额</div>
+			<div class="ub ub-f1 fund_right"></div>
+		</div>
+		<div class="ub ub-ac ub-pc fund_num Ftotalmoney">
+			0.00
+		</div>
+		<div class="ub fund_box">
+			<div class="ub ub-f1 ub-ver ub-fh">
+				<div class="ub ub-ac fund_itemTop">
+					<div class="ub circle"></div>
+					<div class="ub sc-text">
+						账户总额
+					</div>
+				</div>
+				<div class="ub  fund_itemBotom Ftotalmoney">
+					0.00
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ver ub-fh">
+				<div class="ub ub-ac fund_itemTop">
+					<div class="ub circle circle01"></div>
+					<div class="ub sc-text">
+						可用余额
+					</div>
+				</div>
+				<div class="ub fund_itemBotom Fyue">
+					0.00
+				</div>
+			</div>
+			<div class="ub ub-f1 ub-ver ub-fh">
+				<div class="ub ub-ac fund_itemTop">
+					<div class="ub circle circle02"></div>
+					<div class="ub sc-text">
+						冻结资金
+					</div>
+				</div>
+				<div class="ub fund_itemBotom FYsbj">
+					0.00
+				</div>
+			</div>
+		</div>
+
+		<div class="ub ub-ver box_main">
+			<!--定期投资总汇 -->
+			<div class="ub ub-ver box_item">
+				<div class="ub box_top">
+					<div class="ub ub-f1 ub-ac ">
+						定期投资总汇
+					</div>
+					<div class="ub ub-ac box_img">
+						<img class="down_img" src="../common/images/icon-back-down.png" />
+						<img class="up_img uhide" src="../common/images/icon-back-up.png" />
+					</div>
+				</div>
+				<div class="ub fund_box fund_box2">
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle03"></div>
+							<div class="ub sc-text">
+								待收本金
+							</div>
+						</div>
+						<div class="ub  fund_itemBotom Fbj">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle04"></div>
+							<div class="ub sc-text">
+								待收利息
+							</div>
+						</div>
+						<div class="ub fund_itemBotom Flx">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle05"></div>
+							<div class="ub sc-text">
+								已收利息
+							</div>
+						</div>
+						<div class="ub fund_itemBotom FysLx">
+							0.00
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--活期投资总汇-->
+			<div class="ub ub-ver box_item">
+				<div class="ub box_top ">
+					<div class="ub ub-f1 ub-ac ">
+						活期投资总汇
+					</div>
+					<div class="ub ub-ac box_img">
+						<img class="down_img" src="../common/images/icon-back-down.png" />
+						<img class="up_img uhide" src="../common/images/icon-back-up.png" />
+					</div>
+				</div>
+				<div class="ub fund_box fund_box2 uhide">
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle01"></div>
+							<div class="ub sc-text">
+								投资本金
+							</div>
+						</div>
+						<div class="ub  fund_itemBotom Fhqbj">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle05"></div>
+							<div class="ub sc-text">
+								今日利息
+							</div>
+						</div>
+						<div class="ub fund_itemBotom Fhqjr">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle "></div>
+							<div class="ub sc-text">
+								已收利息
+							</div>
+						</div>
+						<div class="ub fund_itemBotom Fhqys">
+							0.00
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--授信金额总汇-->
+			<div class="ub ub-ver box_item">
+				<div class="ub box_top">
+					<div class="ub ub-f1 ub-ac ">
+						授信金额总汇
+					</div>
+					<div class="ub ub-ac box_img">
+						<img class="down_img" src="../common/images/icon-back-down.png" />
+						<img class="up_img uhide" src="../common/images/icon-back-up.png" />
+					</div>
+				</div>
+				<div class="ub fund_box fund_box2 uhide">
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle02"></div>
+							<div class="ub sc-text">
+								前置金额
+							</div>
+						</div>
+						<div class="ub  fund_itemBotom Fsyqz">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle03"></div>
+							<div class="ub sc-text">
+								授信金额
+							</div>
+						</div>
+						<div class="ub fund_itemBotom Fxyje">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle04"></div>
+							<div class="ub sc-text">
+								消费金额
+							</div>
+						</div>
+						<div class="ub fund_itemBotom Fxfje">
+							0.00
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--易购易乐消费总汇-->
+			<div class="ub ub-ver box_item">
+				<div class="ub box_top ">
+					<div class="ub ub-f1 ub-ac ">
+						易购易乐消费总汇
+					</div>
+					<div class="ub ub-ac box_img">
+						<img class="down_img" src="../common/images/icon-back-down.png" />
+						<img class="up_img uhide" src="../common/images/icon-back-up.png" />
+					</div>
+				</div>
+				<div class="ub fund_box fund_box2 uhide">
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle "></div>
+							<div class="ub sc-text">
+								商家消费
+							</div>
+						</div>
+						<div class="ub  fund_itemBotom Fsjxf">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle02"></div>
+							<div class="ub sc-text">
+								商城消费
+							</div>
+						</div>
+						<div class="ub fund_itemBotom Fscxf">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle01"></div>
+							<div class="ub sc-text">
+								冻结资金
+							</div>
+						</div>
+						<div class="ub fund_itemBotom">
+							0.00
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--易购易乐消费总汇-->
+			<div class="ub ub-ver box_item">
+				<div class="ub box_top">
+					<div class="ub ub-f1 ub-ac ">
+						代金券
+					</div>
+					<div class="ub ub-ac box_img">
+						<img class="down_img" src="../common/images/icon-back-down.png" />
+						<img class="up_img uhide" src="../common/images/icon-back-up.png" />
+					</div>
+				</div>
+				<div class="ub fund_box fund_box2 uhide">
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle01"></div>
+							<div class="ub sc-text">
+								现金券
+							</div>
+						</div>
+						<div class="ub  fund_itemBotom">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+						<div class="ub ub-ac fund_itemTop">
+							<div class="ub circle circle05"></div>
+							<div class="ub sc-text">
+								易购易乐抵用券
+							</div>
+						</div>
+						<div class="ub fund_itemBotom">
+							0.00
+						</div>
+					</div>
+					<div class="ub ub-f1 ub-ver ub-fh">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ver bottom_box">
+			<div class="ub ub bottom_item border_b">
+				<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc border_r left_item">
+					<div class="ub sc-text item_b">
+						累计投资
+					</div>
+					<div class="ub">
+						0.00
+					</div>
+				</div>
+				<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc left_item">
+					<div class="ub sc-text item_b">
+						累计消费
+					</div>
+					<div class="ub Fxf">
+						0.00
+					</div>
+				</div>
+			</div>
+			<div class="ub ub bottom_item bottom_item2">
+				<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc border_r right_item">
+					<div class="ub sc-text item_b">
+						累计充值
+					</div>
+					<div class="ub Fcz">
+						0.00
+					</div>
+				</div>
+				<div class="ub ub-f1 ub-fh ub-ver ub-ac ub-pc right_item">
+					<div class="ub sc-text item_b">
+						累计提现
+					</div>
+					<div class="ub Ftx">
+						0.00
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/appcan.tab.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/Safe.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+		<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+				getZczh();
+				getDqTzzh();
+				getSxzh();
+				getHqTzzh();
+				getScSjzh();
+				getctxzh();
+			})
+			//打开客服电话
+		appcan.button(".lxkf", "ani-act", function(a, b) {
+
+				$(".kefu").removeClass("uhide");
+			})
+			//关闭客服电话
+		appcan.button(".outkf", "ani-act", function(a, b) {
+
+				$(".kefu").addClass("uhide");
+			})
+			//打开关注微信
+		appcan.button(".gzwx", "ani-act", function(a, b) {
+
+				appcan.window.open("weixin", "../weixin/weixin.html");
+				appcan.window.publish('weixin', '');
+				//              appcan.window.publish('move', '1');
+			})
+			//打开常见问题
+		appcan.button(".cjwt", "ani-act", function(a, b) {
+
+			appcan.window.open("questions", "../questions/questions.html");
+			appcan.window.publish('questions', '');
+			//              appcan.window.publish('move', '1');
+		})
+
+		$(".box_top").click(function() {
+
+			var up_img = $(this).find(".up_img");
+			var down_img = $(this).find(".down_img");
+			var fund_box = $(this).siblings(".fund_box");
+
+			if($(fund_box).hasClass("uhide")) {
+				$(down_img).addClass("uhide");
+				$(up_img).removeClass("uhide");
+				$(fund_box).removeClass("uhide");
+			} else {
+				$(down_img).removeClass("uhide");
+				$(up_img).addClass("uhide");
+				$(fund_box).addClass("uhide");
+			}
+
+		});
+		//资产总汇
+		function getZczh() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getZczh",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Ftotalmoney").text(rows.Ftotalmoney);
+							$(".Fyue").text(rows.Fyue);
+							$(".FYsbj").text(rows.FYsbj);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		//定期资产总汇
+		function getDqTzzh() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getDqTzzh",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fbj").text(rows.Fbj);
+							$(".Flx").text(rows.Flx);
+							$(".FysLx").text(rows.FysLx);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		//授信金额总汇
+		function getSxzh() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getSxzh",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fxyje").text(rows.Fbj); //信用授信金额
+							$(".Fsyqz").text(rows.Flx); //前置金额
+							$(".Fxfje").text(rows.FysLx); //总消费金额
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		//活期总汇
+		function getHqTzzh() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getHqTzzh",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fhqbj").text(rows.Fbj); //投资本金本金
+							$(".Fhqjr").text(rows.Flx); //今日利息
+							$(".Fhqys").text(rows.FysLx); //已收利息
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		//商城商家总汇
+		function getScSjzh() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getScSjzh",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fscxf").text(rows.Fbj); //商城消费 
+							$(".Fsjxf").text(rows.FysLx); //商家消费
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		//累计充值，提现，消费
+		function getctxzh() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getctxzh",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fcz").text(rows.Fbj); //累计充值 
+							$(".Ftx").text(rows.Flx); //累计提现
+							$(".Fxf").text(rows.FysLx); //累计消费
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+	</script>
+
+</html>

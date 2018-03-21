@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bg_white" ontouchstart>
+			<img style="width: 100%;" src="css/myImg/borrow_bar.jpg" />
+			<div class="ub  normal">
+				<div class="ub ub-ac ub-f1">
+					<div class="ub">
+					<img src="../common/images/borrow01.png" />
+				</div>
+				<div class="ub ub-ac">
+					普通借款
+				</div>
+				</div>
+				<div class="ub ub-ac ub-pc borrow_btn ptjk">立即申请</div>
+			</div>
+			<div class="ub normal">
+				<div class="ub ub-ac ub-f1">
+					<div class="ub">
+					<img src="../common/images/borrow02.png" />
+				</div>
+				<div class="ub ub-ac">
+					企业借款
+				</div>
+				</div>
+				<div class="ub ub-ac ub-pc borrow_btn">立即申请</div>
+			</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		//打开帮助中心
+        appcan.button(".ptjk", "ani-act", function(a, b) {
+
+                appcan.window.open("ordborrow", "../ordborrow/ordborrow.html");
+                appcan.window.publish('ordborrow', '');
+                //              appcan.window.publish('move', '1');
+            })
+	</script>
+
+</html>

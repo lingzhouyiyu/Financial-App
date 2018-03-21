@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bg_white" ontouchstart>
+		<div class="ub ub-ac redeem_top bc-text">
+			随投随赎【<span class="FMingC"></span>】
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				可赎金额
+			</div>
+			<div class="ub ub-ac">
+				<span class="Fkesmoney"></span>
+				<span>元</span>
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				已赎金额
+			</div>
+			<div class="ub ub-ac">
+				<span class="FShMoney"></span>
+				<span>元</span>
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				投资金额
+			</div>
+			<div class="ub ub-ac">
+				<span class="Fmoney"></span>
+				<span>元</span>
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				获得收益
+			</div>
+			<div class="ub ub-ac">
+				<span class=""></span>
+				<span class="Fhdsy">元</span>
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				年利率
+			</div>
+			<div class="ub ub-ac">
+				<span class="FLiX"></span>
+				<span>%</span>
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				投资时间
+			</div>
+			<div class="ub ub-ac">
+				<span class="FdownTime"></span>
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				状态
+			</div>
+			<div class="ub ub-ac colorglod Fstate">
+
+			</div>
+		</div>
+		<div class="ub ub-ac redeem_top bc-text">
+			<div class="ub ub-f1 ub-ac">
+				协议
+			</div>
+			<div class="ub ub-ac colorglod goxy">
+				查看
+			</div>
+		</div>
+		<div class="ub redeem_bot">
+			<div class="ub ub-ac ub-f1 redeem_border">
+				<div class="ub ub-f1 input_border">
+					<input class="ub-f1 ub uinput FSHje" type="text" onkeyup="Num(this)" />
+				</div>
+				<div class="ub ub-ac ub-pc redeem_btn">
+					赎回
+				</div>
+			</div>
+		</div>
+		<!--交易密码弹窗-->
+		<div class="tranpwd uhide">
+			<div class="ub ub-ver tranpwd_main">
+				<div class="ub ub-f1 tranpwd_top bc-text">
+					<div class="ub ub-ac ub-f1">交易密码</div>
+					<div class="ub ub-ac close_mask">
+						<img src="../common/css/icons/icon-close-act.png" />
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc tranpwd_center">
+					<div class="ub ub-f1 tranpwd_input umar-r">
+						<input class="ub ub-f1 uinput SHmm" type="password" />
+					</div>
+					<div class="ub  colorred">
+						*
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 tranpwd_btn" onclick="SuH.QueRSh()">
+					确认
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/appcan.tab.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/Safe.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+		<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		var Fshuiid = null;
+		appcan.ready(function() {
+				Fshuiid = appcan.locStorage.getVal("Fshuiid");
+				getProductMx();
+			})
+			//打开协议
+		appcan.button(".goxy", "ani-act", function(a, b) {
+
+				appcan.window.open("xieyi", "../xieyi/xieyi.html");
+				appcan.window.publish('xieyi', '');
+				//              appcan.window.publish('move', '1');
+			})
+			//赎回按钮
+		appcan.button(".redeem_btn", "ani-act", function(a, b) {
+
+				$(".tranpwd").removeClass("uhide");
+			})
+			//赎回按钮
+		appcan.button(".close_mask", "ani-act", function(a, b) {
+
+			$(".tranpwd").addClass("uhide");
+		})
+
+		function getProductMx() {
+			var parm = {
+				Fid: appcan.locStorage.getVal("Fshuiid")
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getProductMx",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(".FMingC").text(rows.FMingC);
+							$(".Fmoney").text(rows.Fmoney);
+							$(".FShMoney").text(rows.FShMoney);
+							$(".Fkesmoney").text(rows.Fkesmoney);
+							$(".FLiX").text(rows.FLiX);
+							$(".FdownTime").text(rows.FdownTime);
+							$(".Fhdsy").text(rows.Fhdsy);
+							if(Number(rows.Fkesmoney) > 0) {
+								$(".Fstate").text("可赎回");
+							} else {
+								$(".Fstate").text("不可赎回");
+							}
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+		var SuH = {
+			QueRSh: function() { //确认赎回
+				if(Fsuper.checkUserauthen() == 0) {
+					return;
+				}
+				var Fpaypwd = $(".SHmm").val();
+				var FSHmoney = $(".FSHje").val();
+				var Fkesmoney = $(".Fkesmoney").text();
+				if(Number(FSHmoney) >  Number(Fkesmoney)) {
+					appcan.window.openToast('可赎回金额不足！', '2000');
+					return;
+				}
+				if(FSHmoney == "") {
+					appcan.window.openToast('赎回金额不能为空！', '2000');
+					return;
+				}
+				if(Fpaypwd == "") {
+					appcan.window.openToast('交易密码不能为空！', '2000');
+					return;
+				}
+				if(Number(FSHmoney) <= 0) {
+					appcan.window.openToast('赎回金额不能小于0！', '2000');
+					return;
+				}
+				var parm = {
+					Fuserid: Fsuper.getuserid(),
+					Fpaypwd: $.md5($(".SHmm").val()).toUpperCase(),
+				}
+				console.log(parm);
+				Safe.post(Serverurl + "/Common/CheckPassword", parm, function(result) {
+					var code = result.code;
+					if(code == 0) {
+						var parm = {
+							Fuserid: Fsuper.getuserid(),
+							Fsupersign: result.data,
+							FSid: appcan.locStorage.getVal("Fshuiid"),
+							FSHmoney: $(".FSHje").val()
+						}
+						Safe.post(Serverurl + "/moneyManage/ShCheckSign", parm, function(result) {
+							var code = result.code;
+							if(code == 0) {
+								appcan.window.publish('shcgs', '');
+								appcan.window.evaluateScript({
+
+									name: 'redeemDetial',
+									scriptContent: 'windowclose()'
+								});
+
+							} else if(code == 1) {
+								appcan.window.openToast('剩余本金必须大于100！', '2000');
+								return;
+							} else if(code == 2) {
+								appcan.window.openToast('赎回金额不合法！', '2000');
+								return;
+							} else if(code == 4) {
+								appcan.window.openToast('令牌过期！', '2000');
+								return;
+							}
+						})
+					} else if(code == 3) {
+						appcan.window.openToast('交易密码错误！', '2000');
+						return;
+					} else {
+						return;
+					}
+				})
+			},
+		}
+
+		function Num(obj) {
+			obj.value = obj.value.replace(/[^\d.]/g, ""); //清除"数字"和"."以外的字符
+			obj.value = obj.value.replace(/^\./g, ""); //验证第一个字符是数字
+			obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个, 清除多余的
+			obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+			obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); //只能输入两个小数
+		}
+	</script>
+
+</html>

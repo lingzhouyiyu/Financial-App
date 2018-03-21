@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+
+		<!--信用授信会员-->
+		<div class="ub ub-ver bc-text invest_choose01 choose_main">
+			<div class="ub choose_top">
+				<div class="ub bc-text ub-f1 choose_name">
+					信用授信会员
+				</div>
+				<div class="ub choose_item ub-pc ub-ac nochhoose">
+					<img class=" check_ok xysx" src="../common/images/blue_ok.png" />
+				</div>
+			</div>
+			<div class="ub ub-ac ub-pc parcent">
+				<span class="span01 FLiX">0.00</span>
+				<span class="span02">%</span>
+			</div>
+			<div class="ub ub-ac ub-pc bc-text umar-t">
+				年利率
+			</div>
+			<div class="ub choose_title">
+				产品介绍
+			</div>
+			<div class="ub choose_detial look">
+				信用授信指的是在大众易融易贷投资后可以先用利息
+			</div>
+
+		</div>
+		<div class="ub touzi">
+			<div class="ub ub-f1 ub-ac ub-pc invist_btn">
+				确定投资
+			</div>
+		</div>
+
+		<!--交易密码弹窗-->
+		<div class="tranpwd uhide">
+			<div class="ub ub-ver tranpwd_main">
+				<div class="ub ub-f1 ub-ac tranpwd_top bc-text uinput">
+					<div class="ub ub-ac ub-pc ub-f1">交易密码</div>
+				</div>
+				<div class="ub ub-ac ub-pc tranpwd_center">
+					<div class="ub uinput ub-f1 tranpwd_input umar-r">
+						<input class="ub ub-f1  jymm" type="password" />
+					</div>
+					<div class="ub  colorred">
+						*
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pe sc-text margin_r gofind">
+					忘记密码
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 btn_box">
+
+					<div class="ub ub-ac ub-pc ub-f1 ub-fh out_btn">
+						取消
+					</div>
+					<div class="ub ub-ac ub-pc ub-f1 ub-fh sure_btn">
+						确认
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script src="../common/js/appcan.tab.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/Safe.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+		<script type="text/javascript" src="../common/js/des.js"></script>
+	</body>
+	<script>
+		if(appcan.locStorage.getVal("sethqlx") == 'undefined') {
+			$(".FLiX").text(0.00);
+		} else {
+			$(".FLiX").text(appcan.locStorage.getVal("sethqlx"));
+		}
+		//单选
+		$(".choose_main").click(function() {
+			var check_ok = $(".check_ok");
+			if($(check_ok).hasClass("uhide")) {
+				$(check_ok).removeClass("uhide");
+			} else {
+				$(check_ok).addClass("uhide");
+			}
+
+		});
+		$(".touzi").click(function() {
+			$(".tranpwd").removeClass("uhide");
+		});
+		//取消
+		appcan.button(".out_btn", "ani-act", function(a, b) {
+			$(".tranpwd").addClass("uhide");
+		});
+		appcan.button(".sure_btn", "ani-act", function(a, b) {
+			user.quickdown();
+		});
+		var user = {
+			quickdown: function() {
+				var Fmoney = Number(appcan.locStorage.getVal("Fhqmoney"));
+				if(appcan.locStorage.getVal("Fhqmoney") == 'undefined') {
+					appcan.window.openToast('请输入投资金额', '2000');
+					return;
+				}
+				if(Fmoney < 0) {
+					appcan.window.openToast('请输入投资金额', '2000');
+					return;
+				}
+				var Fpaypwd = $(".jymm").val();
+				if(Fpaypwd == "") {
+					appcan.window.openToast('交易密码不能为空', '2000');
+					return;
+				}
+				var parm = {
+					Fuserid: Fsuper.getuserid(),
+					Fpaypwd: $.md5($(".jymm").val()).toUpperCase(),
+				}
+				Safe.post(Serverurl + "/Common/CheckPassword", parm, function(result) {
+					var code = result.code;
+					if(code == 0) {
+
+						var parm = {
+							Fuserid: Fsuper.getuserid(),
+							Fmoney: Fmoney,
+							Fsupersign: result.data,
+							ids: "",
+							Productid: appcan.locStorage.getVal("stssid"),
+							FchooseType: "0"
+						}
+						Safe.post(Serverurl + "/Common/CheckSign", parm, function(result) {
+							var code = result.code;
+							if(code == 0) {
+								appcan.locStorage.setVal("Fselect", 'stss');
+								$(".lcywin").removeClass("uhide");
+								$(".lcywin").addClass("uhide");
+								appcan.window.openToast('投资成功', '2000');
+								appcan.window.open("invest", "../invest/invest.html");
+								appcan.window.evaluateScript({
+									name: 'investChoice2',
+									scriptContent: 'windowclose()'
+								});
+								appcan.window.evaluateScript({
+									name: 'huoqi',
+									scriptContent: 'windowclose()'
+								});
+							} else if(code == 30000) {
+								appcan.window.openToast('您的余额不足请充值！', '2000');
+								return;
+							} else {
+
+								return;
+							}
+						})
+					} else if(code == 3) {
+						appcan.window.openToast('交易密码错误', '2000');
+						return;
+					} else {
+						return;
+					}
+				})
+			},
+		}
+		
+		//打开忘记密码
+		appcan.button(".gofind", "ani-act", function(a, b) {
+
+			appcan.window.open("find", "../find/find.html");
+			//appcan.window.publish('findpwd01', '');
+			//              appcan.window.publish('move', '1');
+		})
+	</script>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ver redeem_top">
+			<div class="ub ub-ac margin6">
+				<span>可赎金额</span>
+				<span class="Fkesmoney">0.00</span>
+			</div>
+			<div class="ub ub-ac top_btom">
+				<div class="ub ub-ac ub-f1 ub-fh borderwhite">
+					<span>本金</span>
+					<span class="FtotalMoney">0.00</span>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 ub-fh">
+					<span>利息</span>
+					<span class="Fhdsy">0.00</span>
+				</div>
+			</div>
+		</div>
+		<div class="stsstemp uhide">
+			<div class="ub ub-ver redeem_item stitem">
+				<div class="ub ub-ac ub-f1 top_name">
+					<div class="ub umar-r ub-f1  name_left bc-text">
+						<span>[</span>
+						<span>随投随赎</span>
+						<span>]</span>
+						<span class="FMingC"></span>
+					</div>
+					<div class="ub  name_right">
+						<div class="ub ub-ac ub-pc umar-r">
+							<img src="../common/images/blueclock.png" />
+						</div>
+						<span>赎回次数</span>
+						<span>(</span>
+						<span class="totalcount"></span>
+						<span>)</span>
+					</div>
+				</div>
+				<div class="ub botm_detial">
+					<div class="ub ub-ver ub-f1 ub-fh">
+						<div class="ub margin6">
+							<span class="color96 umar-r">投资金额 </span>
+							<span class="colorglod Fmoney"></span>
+						</div>
+						<div class="ub">
+							<span class="color96 umar-r">年化利率</span>
+							<span class="bc-text FLiX"></span>
+							<span>%</span>
+						</div>
+						<div class="ub">
+                            <span class="color96 umar-r">类型</span>
+                            <span class="bc-text Fzero">信用授信</span>
+                        </div>
+                        <div class="ub">
+                            <span class="color96 umar-r">剩余投资金额</span>
+                            <span class="bc-text Fsyje">1000</span>
+                        </div>
+					</div>
+					<div class="ub ub-ver ub-f1 ub-fh">
+						<div class="ub margin6">
+							<span class="color96 umar-r">投资时间 </span>
+							<span class="bc-text FdownTime"></span>
+						</div>
+						<div class="ub">
+							<span class="color96 umar-r">期限 </span>
+							<span class="bc-text">--</span>
+							<span class="bc-text">天</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ver redeem_list listtotal">
+			<!--赎回列表item-->
+
+		</div>
+
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../common/js/yfkj.js"></script>
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		var pageSize = 10;
+		var Fstart = 0;
+		var Ftype = "jxz";
+		appcan.ready(function() {
+				getProductMxJe();
+				appcan.window.subscribe('Fseltybtn', function(msg) {
+					Ftype = msg;
+					getProductMxJe();
+					$('.listtotal').empty();
+					Fstart = 0;
+					getShuiLiset();
+				});
+				appcan.window.subscribe('shcgs', function(msg) {
+					$('.listtotal').empty();
+					Fstart = 0;
+					getShuiLiset();
+				});
+				getShuiLiset();
+				appcan.frame.setBounce([0, 1], function(type) {
+					$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+				}, function(type) {
+					$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+				}, function(type) {
+					if(type == 0) {
+						$('.listtotal').empty();
+						Fstart = 0;
+						getShuiLiset();
+					} else if(type == 1) {
+						getShuiLiset();
+					}
+					setTimeout(function() {
+						appcan.frame.resetBounce(type);
+					}, 1000);
+				})
+			})
+			//打开赎回详情
+		appcan.button(".redeem_item", "ani-act", function(a, b) {
+
+			appcan.window.open("redeemDetial", "../redeemDetial/redeemDetial.html");
+		})
+
+		function getShuiLiset() {
+			var furl = "/app/getShuiLiset";
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: {
+					Fuserid: Fsuper.getuserid(),
+					pageSize: pageSize,
+					Fstart: Fstart,
+					Ftype: Ftype
+				},
+				success: function(result) {
+					var rows = result.data.rows;
+					console.log(rows);
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addstsuitem(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addstsuitem(row, end) {
+			var list = $(".listtotal");
+			var item = $(".stsstemp").clone();
+			var domitem = item.find(".stitem");
+			domitem.attr("id", row.Fid);
+			var Fmoney = Number(row.Fmoney);
+			var FShmoney = Number(row.FShMoney);
+			var delt = Fmoney - FShmoney;
+			if(delt == 0) {
+				domitem.find(".Fstate").text("已赎回");
+			} else {
+				domitem.find(".Fstate").text("回款中");
+			}
+			if(row.Fzero == "0") {
+                domitem.find(".Fzero").text("信用授信");
+            }
+            if(row.Fzero == "1") {
+                domitem.find(".Fzero").text("0元购");
+            }
+            if(row.Fzero == "2") {
+                domitem.find(".Fzero").text("利息前置");
+            }
+            domitem.find(".Fsyje").text(row.Fsyje);
+			domitem.find(".FMingC").text(row.FMingC);
+			domitem.find(".Fmoney").text(row.Fmoney.toFixed(2));
+			domitem.find(".FLiX").text(row.FLiX.toFixed(2));
+			domitem.find(".FdownTime").text(row.FdownTime);
+			domitem.find(".totalcount").text(row.totalcount);
+			domitem.attr("onclick", "details('" + row.Fid + "')");
+			list.append(domitem);
+			Fstart = end;
+		}
+
+		function details(Fid) {
+			appcan.locStorage.setVal("Fshuiid", Fid);
+			appcan.window.open("redeemDetial", "../redeemDetial/redeemDetial.html");
+		}
+
+		function getProductMxJe() {
+			var parm = {
+				Fuserid: Fsuper.getuserid(),
+				Ftype: Ftype
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getProductMxJe",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(".FtotalMoney").text(rows.FtotalMoney);
+							$(".Fkesmoney").text(rows.Fkesmoney);
+							$(".Fhdsy").text(rows.Fhdsy);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+	</script>
+
+</html>

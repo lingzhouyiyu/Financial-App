@@ -1,0 +1,23 @@
+.top{ padding-top: 2em; padding-bottom: 0.8em;}
+.font-size125{ font-size: 1.2em;}
+.top_botom{ font-size: 0.85em; margin-top: 0.6em; margin-bottom:1em}
+.cont_center{ background: url(myImg/cont_bg.jpg)no-repeat; background-size: cover; }
+.cont_center{ padding: 3em 0; margin-top: 2em;}
+.before_botom{ padding-bottom: 0.4em; border-bottom: 1px solid #E1E1E1; color: #969696; margin-bottom: 0.6em;}
+.convent_botom{ padding: 2em 0;}
+.btn_box{ margin: 2em 1em;}
+.convent_btn{ background: #382071; color: #fff; height: 2.8em; border-radius: 0.4em;}
+.sh_btn{ background: #382071; color: #fff; height: 2.8em; border-radius: 0.4em;}
+.join_box{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#4C000000', endColorstr='#4C000000');background:rgba(0,0,0,0.3);}
+.join_main{ background: #fff; margin-left: 1em; margin-right: 1em; border-radius: 0.4em; top: 50%; margin-top: -13em;}
+.join_top{ background: #f0f0f0; padding: 0.6em; border-top-left-radius: 0.4em; border-top-right-radius: 0.4em;}
+.txtinput{ border: 1px solid #E1E1E1;}
+.put_item{ margin-bottom: 1em; margin-left: 0.6em; margin-right: 1em;}
+.put_item input{padding-left: 8px;}
+.put_item01{ margin-top: 1em;}
+.item_left{ width: 5.5em; margin-right: 8px;}
+.font_size{ font-size: 0.85em; margin-left: 8px;}
+.join_btn{ margin: 1em 2.5em 0.5em 2.5em; background: #382071; color: #fff; height: 2.5em; border-radius: 0.4em;}
+.agree{ font-size: 0.85em; padding-bottom: 0.6em;}
+.after_txt{ font-size: 1.125em; margin-top: 1em; margin-bottom: 0.4em;}
+.cont_after{ color: #382071;}

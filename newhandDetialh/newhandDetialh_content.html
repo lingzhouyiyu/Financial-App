@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub newhangd_top">
+			<div class="ub ub-ver ub-f1 ub-fh">
+				<div class="ub ub-ac color9c margin6">
+					投资金额
+				</div>
+				<div class="ub ub-ac bc-text font-size12 Fmoney">
+					0.00
+				</div>
+			</div>
+			<div class="ub ub-ver ub-f1 ub-fh">
+				<div class="ub ub-ac color9c margin6 yfbx">
+					已收利息
+				</div>
+				<div class="ub ub-ac bc-text font-size12 FYusBx">
+					0.00
+				</div>
+			</div>
+		</div>
+		<div class="ub newhangd_top newhangd_top2">
+			<div class="ub ub-ver ub-f1 ub-fh">
+				<div class="ub ub-ac color9c margin6">
+					预期可获收益
+				</div>
+				<div class="ub ub-ac bc-text font-size12 colorglod FYuQiSy">
+					0.00
+				</div>
+			</div>
+			<div class="ub ub-ver ub-f1 ub-fh">
+				<div class="ub ub-ac color9c margin6 dsbx">
+					待收本金
+				</div>
+				<div class="ub ub-ac bc-text font-size12 FDsBx">
+					0.00
+				</div>
+			</div>
+		</div>
+		<div class="ub newhangd_top newhangd_top3">
+			<div class="ub ub-ver ub-f1 ub-fh">
+				<div class="ub ub-ac color9c margin6">
+					消费金额
+				</div>
+				<div class="ub ub-ac bc-text font-size12 colorglod FyfqzLix">
+					0.00
+				</div>
+			</div>
+			<div class="ub ub-ver ub-f1 ub-fh uhide">
+				<div class="ub ub-ac color9c margin6 sybj">
+					剩余本金
+				</div>
+				<div class="ub ub-ac bc-text font-size12 Fsyje">
+					0.00
+				</div>
+			</div>
+		</div>
+		<div class="ub ub-ac newhand_listTop bc-text">
+			<!--<div class="ub ub-ac ub-f1 ub-ac uhide">
+				<div class="ub listTop_img umar-r">
+					<img src="../common/images/newhand01.png" />
+				</div>
+				<div class="ub">
+					<span>0</span>
+					<span>/</span>
+					<span class="FTouZqx"></span>
+					<span class="Fdaw"></span>
+					<span>(到期本息)</span>
+				</div>
+			</div>-->
+			<div class="ub">
+				收支明细
+			</div>
+		</div>
+		<div class="list">
+
+		</div>
+		<!--详情-->
+		<div class="temp uhide">
+			<div class="ub ub-ac newhand_detail bc-text items">
+				<div class="ub ub-ac ub-f1">
+					<div class="ub umar-r Fpaytime">
+
+					</div>
+					<div class="ub newhand_sign uhide">
+						回款中
+					</div>
+				</div>
+				<div class="ub">
+					<span class="FBj">0.00</span>
+					<span></span>
+					<span class="colorred FLxJe">0.00</span>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+	</body>
+	<script>
+		var detailsFzero = appcan.locStorage.getVal("detailsFzero");
+
+		var pageSize = 10;
+		var Fstart = 0;
+		appcan.ready(function() {
+			if(detailsFzero == 0) {
+				getDqSy();
+			}
+			if(detailsFzero == 2 || detailsFzero == 1) {
+				$(".yfbx").text("前置收益");
+				$(".dsbx").text("待收本金");
+				$(".sybj").text("剩余收益");
+				getDqSy_qz();
+			}
+			getTouZPMx();
+			appcan.frame.setBounce([0, 1], function(type) {
+				$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+			}, function(type) {
+				$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+			}, function(type) {
+				if(type == 0) {
+					$('.list').empty();
+					Fstart = 0;
+					getTouZPMx();
+				} else if(type == 1) {
+					getTouZPMx();
+				}
+				setTimeout(function() {
+					appcan.frame.resetBounce(type);
+				}, 1000);
+			})
+		})
+
+		function getDqSy() {
+			var parm = {
+				Fid: appcan.locStorage.getVal("FDqmid")
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getDqSy",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fmoney").text(rows.Fmoney.toFixed(2));
+							$(".FYuQiSy").text(rows.FYuQiSy.toFixed(2));
+							$(".FYusBx").text(rows.FYusBx.toFixed(2));
+							$(".FDsBx").text(rows.Fsyje.toFixed(2));
+							$(".FyfqzLix").text(rows.Fxfje.toFixed(2));
+							$(".Fsyje").text(rows.Fsyje.toFixed(2));
+							if(rows.FTouZlx == "0") {
+								$(".FTouZqx").text("--");
+								$(".Fdaw").text("天");
+							} else {
+								if(rows.FJiXlx == "0") {
+									$(".FTouZqx").text(rows.FTouZqx);
+									$(".Fdaw").text("天");
+								} else {
+									$(".FTouZqx").text(rows.FTouZqx);
+									$(".Fdaw").text("期");
+								}
+							}
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+
+		function getDqSy_qz() {
+			var parm = {
+				Fid: appcan.locStorage.getVal("FDqmid")
+			};
+			appcan.ajax({
+				url: Serverurl + "/app/getDqSy_qz",
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data[0];
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					if(code < 10000) {
+						if(code == 0) { //返回成功  
+							$(".Fmoney").text(rows.Fmoney.toFixed(2));
+							$(".FYuQiSy").text(rows.FYuQiSy.toFixed(2));
+							$(".FYusBx").text(rows.FYusBx.toFixed(2));
+							$(".FDsBx").text(rows.FDsBx.toFixed(2));
+							$(".FyfqzLix").text(rows.FyfqzLix.toFixed(2));
+							$(".Fsyje").text(rows.Fsyje.toFixed(2));
+							if(rows.FTouZlx == "0") {
+								$(".FTouZqx").text("--");
+								$(".Fdaw").text("天");
+							} else {
+								if(rows.FJiXlx == "0") {
+									$(".FTouZqx").text(rows.FTouZqx);
+									$(".Fdaw").text("天");
+								} else {
+									$(".FTouZqx").text(rows.FTouZqx);
+									$(".Fdaw").text("期");
+								}
+							}
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+
+		function getTouZPMx() {
+			var furl = "/app/getTouZPMx";
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: {
+					Forderid: appcan.locStorage.getVal("FDqmid"),
+					pageSize:pageSize,
+					Fstart:Fstart
+				},
+				success: function(result) {
+					var rows = result.data.rows;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addstsuitem(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addstsuitem(row, end) {
+			var list = $(".list");
+			var item = $(".temp").clone();
+			var domitem = item.find(".items");
+			domitem.attr("id", row.Fid);
+			domitem.find(".Fpaytime").text(row.Ftime);
+			domitem.find(".FBj").text(row.Fdes);
+			domitem.find(".FLxJe").text(row.Fmoney.toFixed(2));
+			list.append(domitem);
+			Fstart = end;
+		}
+	</script>
+
+</html>

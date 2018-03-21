@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        <link rel="stylesheet" href="../common/css/ui-box.css">
+        <link rel="stylesheet" href="../common/css/ui-base.css">
+        <link rel="stylesheet" href="../common/css/ui-color.css">
+        <link rel="stylesheet" href="../common/css/appcan.icon.css">
+        <link rel="stylesheet" href="../common/css/appcan.control.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub recharge_top">
+            <div class="ub ub-f1 nav">
+                <div class="ub ub-ac ub-pc ub-f1 ub-fh top_nav nav_left nav_active" id="recharge">
+                    我要充值
+                </div>
+                <div class="ub ub-ac ub-pc ub-f1 ub-fh top_nav nav_right" id="recored">
+                    充值记录
+                </div>
+            </div>
+        </div>
+        <!--充值-->
+        <div class="ub ub-ver recharge changebox" id="rechargeid">
+            <div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+                <div class="ub">充值金额:</div>
+                <div class="ub ub-f1 uinput">
+                    <input class="ub ub-f1  FCzJe" type="text" placeholder="请输入充值金额" />
+                </div>
+            </div>
+            <div class="ub ub-f1 ub-ac ub-pc recharge_num bc-text">
+                <div class="ub">交易密码:</div>
+                <div class="ub ub-f1 uinput">
+                    <input class="ub ub-f1  FCzmm" type="text" placeholder="请输入交易密码" />
+                </div>
+            </div>
+            <div class="ub ub-ac  recharge_black bc-text">
+                <span>您当前可用余额：￥</span>
+                <span class="Fyue">0.00</span>
+            </div>
+            <div class="ub ub-ac ub-pc ub-f1 recharge_btn">
+                立即充值
+            </div>
+        </div>
+        <!--充值记录-->
+        <div class="ub ub-ver changebox rech_record bc-text uhide" id="recoredid">
+            <!--充值记录item-->
+            <div class="ub ub-f1 record_item">
+                <div class="ub ub-pc ub-ver ub-f1 record_left">
+                    <div class="ub colorglod margin6">
+                        <span>￥</span>
+                        <span>800</span>
+                    </div>
+                    <div class="ub ub-ac">
+                        <div class="ub ub-ac">
+                            <img class="ub-img umar-r" src="../common/images/clock.png" />
+                        </div>
+                        <span class="color96">2016-10-19</span>
+                    </div>
+                </div>
+                <div class="ub ub-ac">
+                    充值成功
+                </div>
+            </div>
+            <div class="ub ub-f1 record_item">
+                <div class="ub ub-pc ub-ver ub-f1 record_left">
+                    <div class="ub colorglod margin6">
+                        <span>￥</span>
+                        <span>800</span>
+                    </div>
+                    <div class="ub ub-ac">
+                        <div class="ub ub-ac">
+                            <img class="ub-img umar-r" src="../common/images/clock.png" />
+                        </div>
+                        <span class="color96">2016-10-19</span>
+                    </div>
+                </div>
+                <div class="ub ub-ac">
+                    充值成功
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../common/js/appcan.js"></script>
+    <script src="../common/js/appcan.control.js"></script>
+    <script type="text/javascript" src="../common/js/yfkj.js"></script>
+    <script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+    <script type="text/javascript" src="../common/js/Safe.js"></script>
+    <script type="text/javascript" src="../common/js/des.js"></script>
+    <script>
+        appcan.ready(function() {
+            getUserMoney();
+        })
+        $(".top_nav").click(function() {
+            $(".top_nav").removeClass("nav_active");
+            $(".changebox").addClass("uhide");
+            $(this).addClass("nav_active");
+            var id = $(this).attr("id");
+            id = id + "id";
+            $("#" + id).removeClass("uhide");
+        });
+
+        function getUserMoney() {
+            var parm = {
+                Fuserid: Fsuper.getuserid()
+            };
+            appcan.ajax({
+                url: Serverurl + "/app/getUserMoney",
+                type: "POST",
+                dataType: "json",
+                data: parm,
+                success: function(result) {
+                    var rows = result.data[0];
+                    var code = result.code;
+                    var msg = result.msg;
+                    var debug = result.debug;
+                    if(code < 10000) {
+                        if(code == 0) { //返回成功
+                            $(".Fyue").text(rows.Fyue.toFixed(2));
+                        }
+                    } else {
+                        if(Fsuperdbg) {
+                            alert(result.code);
+                            alert(result.msg);
+                            alert(result.debug);
+                        }
+                    }
+                }
+            });
+        }
+
+        function Czfun() {
+            var FCzJe = $(".FCzJe").val();
+            if(FCzJe == "") {
+                appcan.window.openToast('请输入充值金额！', '1000');
+                return;
+            }
+            if(FCzJe > 10000000) {
+                appcan.window.openToast('充值金额过大！', '1000');
+                return;
+            }
+            var Fpaypwd = $(".FCzmm").val();
+            if(Fpaypwd == "") {
+                appcan.window.openToast('交易密码不能为空！', '1000');
+                return;
+            }
+            var parm = {
+                Fuserid: Fsuper.getuserid(),
+                Fpaypwd: $.md5($(".FCzmm").val()).toUpperCase(),
+            }
+            Safe.post("/Common/CheckPassword", parm, function(result) {
+                var code = result.code;
+                if(code == 0) {
+                    var Fmoney = $("#Fmoney").val();
+                    var parm = {
+                        Fuserid: '@Session["Fuserid"]',
+                        FCzJe: $(".FCzJe").val(),
+                        Fsupersign: result.data
+                    }
+                    Safe.post("/fundMange/CZCheckSign", parm, function(result) {
+                        var code = result.code;
+                        if(code == 0) {
+                            alert("充值成功");
+                            //                          $("#Fuser_id").val(Fuser_id);
+                            //                          $("#FpayNum").val(FCzJe*100);
+                            //                          $("#pay").submit();
+                        } else {
+
+                            return;
+                        }
+                    })
+                } else if(code == 3) {
+                    alert("交易密码错误!");
+                    return;
+                } else {
+                    return;
+                }
+            })
+        }
+    </script>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../qRegister/css/qRegister.css">
+		<title></title>
+	</head>
+
+	<body class="um-vp bg_white" ontouchstart>
+		<!--
+        	作者：694250639@qq.com
+        	时间：2016-11-01
+        	描述：顶部
+        -->
+
+		<!--
+        	作者：694250639@qq.com
+        	时间：2016-11-01
+        	描述：输入注册信息
+        -->
+		<div class="ub ub-ver ub-f1 qRg_rg" id="qRegister">
+			<div class="ub ub-ac ub-f1 rg1"><input class="ub ub-f1 Fname" type="text" placeholder="请输入公司名称 " /></div>
+			<div class="ub ub-ac rg1"><input class="ub ub-f1 FGsDjhao" type="text" placeholder="请输入工商登记号 " /></div>
+			<div class="ub ub-ac ub-f1 rg1"><input class="ub ub-f1 FfZr" type="text" placeholder="请输入法定代表人 " /></div>
+			<div class="ub ub-ac ub-f1 rg1"><input class="ub ub-f1 Fphone" type="text" placeholder="请输入负责人电话 " /></div>
+			<div class="ub ub-ac ub-f1 rg1"><input class="ub ub-f1 Fidcard" type="text" placeholder="请输入法定人身份号码" /></div>
+			<div class="ub ub-ac  rg2"><input class="ub ub-f1 Fpwd" type="password" placeholder="请设置登录密码" /></div>
+			<div class="ub ub-ac  rg2"><input class="ub ub-f1 CheckFpwd" type="password" placeholder="确认登录密码" /></div>
+			<div class="ub ub-ac ub-pj rg3 uhide"><input class="ub ub-f1 valiCode" type="text" placeholder="请输入验证码" />
+				<div id="btncheck" class="ub ub-pe yzm"> 获取验证码</div>
+			</div>
+		</div>
+		<!--
+           	作者：694250639@qq.com
+           	时间：2016-11-01
+           	描述：邀请人手机号码 inviter——number
+           -->
+		<div class="ub ub-ver inviter_num uhide" id="qRegister">
+			<div class="ub ub-ac yqr" id="inviter_num"><img style="width: 0.6em" src="../qRegister/css/myImg/1.jpg">
+				<div class=" ub ub-ac ub-pc a">邀请人手机号码</div>
+			</div>
+			<div class="ub srk "><input type="text" id="hiddenDiv" placeholder="请输入邀请人手机号码" style="display: none;" /></div>
+		</div>
+		<!--
+        	作者：694250639@qq.com
+        	时间：2016-11-01
+        	描述：注册按钮
+        -->
+		<div class="ub ub-ver" id="qRegister">
+			<div class="ub ub-ac ub-pc qRg_btn" onclick="register()">
+				<div class="ub zc">注册</div>
+			</div>
+			<div class="ub ub-ac ub-pc qRg_choose">
+				<div class="checkbox umar-r">
+					<input id="agree" type="checkbox" checked="checked" name="radio" class="uabs ub-con">
+				</div>
+				<span>我已阅读并同意</span><span class="zzfwxy">《注册服务协议》</span></div>
+		</div>
+		<!--
+        	作者：694250639@qq.com
+        	时间：2016-11-01
+        	描述：已有账号 立即登录
+        -->
+		<div class="ub ub-ac ub-pc" id="qRegister">
+			<div class="ub qRg_login"><span>已有账号?</span><span class="qRg_ljdl">立即登录</span></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../common/js/jquery-2.1.4.min.js"></script>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script src="../common/js/appcan.tab.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script type="text/javascript" src="../common/js/jquery.md5.js"></script>
+	<script type="text/javascript" src="../common/js/Safe.js"></script>
+	<script type="text/javascript" src="../common/js/des.js"></script>
+
+	<script type="text/javascript">
+		function registers() {
+			alert('33');
+		}
+		//		var Fidentifier = "";
+		//		var msg = "";
+		//		var wait = 60;
+		//		var cantag = 0;
+		//		/*计时器函数*/
+		//		function time(o) {
+		//			var tso = o;
+		//			if(wait == 0) {
+		//				o.innerHTML = "免费获取验证码";
+		//				wait = 60;
+		//				cantag = 0;
+		//				$(o).removeClass("disclick");
+		//			} else {
+		//				o.innerHTML = "重新发送(" + wait + ")";
+		//				wait--;
+		//				setTimeout(function() {
+		//					time(o)
+		//				}, 1000)
+		//			}
+		//		}
+		//		//点击验证码
+		//		appcan.button("#btncheck", "ani-act", function() {
+		//				var Fname = $(".Fname").val();
+		//				var FGsDjhao = $(".FGsDjhao").val();
+		//				var FfZr = $(".FfZr").val();
+		//				var Fidcard = $(".Fidcard").val();
+		//				var Fpwd = $(".Fpwd").val();
+		//				var CheckFpwd = $(".CheckFpwd").val();
+		//				var Fphone = $(".Fphone").val();
+		//				var valiCode = $(".valiCode").val();
+		//				var isMobile = /^([1][3458][0-9]{9})|([1][7][03678]{1}[0-9]{8})$/;
+		//				if(Fname == "") {
+		//					appcan.window.openToast('公司名称不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(FGsDjhao == "") {
+		//					appcan.window.openToast('工商登记号不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(FfZr == "") {
+		//					appcan.window.openToast('法定代表人不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fidcard == "") {
+		//					appcan.window.openToast('法定人身份证号码不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fpwd == "") {
+		//					appcan.window.openToast('登录密码不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fpwd.length < 6) {
+		//					appcan.window.openToast('登录密码不能少于六位!', '2000', 5);
+		//					return;
+		//				}
+		//				if(CheckFpwd == "") {
+		//					appcan.window.openToast('确认密码不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fpwd != CheckFpwd) {
+		//					appcan.window.openToast('确认密码和登录密码不一致!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fphone == "") {
+		//					appcan.window.openToast('负责人电话不能为空!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fphone.length != 11) {
+		//					appcan.window.openToast('负责人电话码格式不正确!', '2000', 5);
+		//					return;
+		//				}
+		//				if(Fidcard.length != 18) {
+		//					appcan.window.openToast('法定人身份证号码位数不对!', '2000', 5);
+		//					return;
+		//				}
+		//				if(!isMobile.test(Fphone)) {
+		//					appcan.window.openToast('负责人电话号码格式不正确!', '2000', 5);
+		//					return;
+		//				}
+		//				
+		//				var o = this;
+		//				var parm = {
+		//					Fphone: $(".Fphone").val() //电话密码
+		//				};
+		//				appcan.ajax({
+		//					type: "POST",
+		//					dataType: 'json',
+		//					url: Serverurl + "/app/checkUser",
+		//					data: parm,
+		//					success: function(result) {
+		//						if(result.code == 1) {
+		//							appcan.window.openToast('该手机号已被注册！', '1000');
+		//							msg = result.Msg;
+		//							return;
+		//						} else {
+		//							var Fphone = $("#Fphone").val();
+		//							if(Fphone && /^1[3|4|5|8]\d{9}$/.test(Fphone)) {} else {
+		//								appcan.window.openToast("不是有效的手机号", 2000, 5);
+		//								return;
+		//							}
+		//							if(cantag == 0) {
+		//								sendcode();
+		//								$(this).addClass("disclick");
+		//								time(o);
+		//								cantag = 1;
+		//							};
+		//						}
+		//					},
+		//					error: function() {
+		//						appcan.window.openToast('服务器出错!', '1000');
+		//					}
+		//				});
+		//			})
+		//			/*获取验证码*/
+		//		function sendcode() {
+		//			var Fphone = $("#Fphone").val();
+		//			var furl = Serverurl + "/app/sendCode";
+		//			var parm = {
+		//					Fphone: Fphone
+		//				}
+		//				//电话
+		//			Safe.post(furl, parm, function(result) {
+		//				var code = result.code;
+		//				var msg = result.msg;
+		//				if(code == 1) {
+		//					appcan.window.openToast('验证码发送成功！', '1000', 5);
+		//					Fidentifier = result.msg;
+		//
+		//				} else {
+		//					appcan.window.openToast('验证码发送失败！', '1000');
+		//				}
+		//			})
+		//		}
+
+		inviter_num.onclick = function showDiv() {
+			var div = document.getElementById("hiddenDiv");
+			if(div.style.display == "none") {
+				div.style.display = 'block';
+			} else {
+				div.style.display = 'none';
+			}
+		}
+		appcan.button(".qRg_ljdl", "ani-act", function(a, b) {
+
+			appcan.window.open("qylogin", "../qylogin/qylogin.html");
+			appcan.window.publish('login', '');
+
+		})
+
+		function register() {
+			var Fname = $(".Fname").val();
+			var FGsDjhao = $(".FGsDjhao").val();
+			var FfZr = $(".FfZr").val();
+			var Fidcard = $(".Fidcard").val();
+			var Fpwd = $(".Fpwd").val();
+			var CheckFpwd = $(".CheckFpwd").val();
+			var Fphone = $(".Fphone").val();
+			//var valiCode = $(".valiCode").val();
+			var isMobile = /^([1][3458][0-9]{9})|([1][7][03678]{1}[0-9]{8})$/;
+			if(Fname == "") {
+				appcan.window.openToast('公司名称不能为空!', '2000', 5);
+				return;
+			}
+			if(FGsDjhao == "") {
+				appcan.window.openToast('工商登记号不能为空!', '2000', 5);
+				return;
+			}
+			if(FfZr == "") {
+				appcan.window.openToast('法定代表人不能为空!', '2000', 5);
+				return;
+			}
+			if(Fidcard == "") {
+				appcan.window.openToast('法定人身份证号码不能为空!', '2000', 5);
+				return;
+			}
+			if(Fpwd == "") {
+				appcan.window.openToast('登录密码不能为空!', '2000', 5);
+				return;
+			}
+			if(Fpwd.length < 6) {
+				appcan.window.openToast('登录密码不能少于六位!', '2000', 5);
+				return;
+			}
+			if(CheckFpwd == "") {
+				appcan.window.openToast('确认密码不能为空!', '2000', 5);
+				return;
+			}
+			if(Fpwd != CheckFpwd) {
+				appcan.window.openToast('确认密码和登录密码不一致!', '2000', 5);
+				return;
+			}
+			if(Fphone == "") {
+				appcan.window.openToast('负责人电话不能为空!', '2000', 5);
+				return;
+			}
+			if(Fphone.length != 11) {
+				appcan.window.openToast('负责人电话码格式不正确!', '2000', 5);
+				return;
+			}
+			if(Fidcard.length != 18) {
+				appcan.window.openToast('法定人身份证号码位数不对!', '2000', 5);
+				return;
+			}
+			if(!isMobile.test(Fphone)) {
+				appcan.window.openToast('负责人电话号码格式不正确!', '2000', 5);
+				return;
+			}
+			//			if(valiCode == "") {
+			//				appcan.window.openToast('验证码不能为空!', '2000', 5);
+			//				return;
+			//			}
+			var parm = {
+				Fbmmc: Fname,
+				FGsDjhao: FGsDjhao,
+				FFzrid: FfZr,
+				Fidcard: Fidcard,
+				Fpwd: $.md5(Fpwd).toUpperCase(),
+				Flxdh: Fphone,
+			}
+			Safe.post(Serverurl + "/app/comregisterSave", parm, function(result) {
+				var code = result.code;
+				if(code == 0) {
+					appcan.window.openToast('注册成功!', '1000', 5);
+					appcan.window.open("qylogin", "../qylogin/qylogin.html");
+				} else if(code == 1) {
+					appcan.window.openToast('该公司已经注册过!', '2000', 5);
+					return;
+				}
+			})
+		}
+	</script>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class=" ub" ontouchstart style="background: url(css/myImg/down_bg.jpg) no-repeat; background-size: cover;">
+		<div class="ub ub-ac ub-pc  ub-ver ub-f1 bc-text screen_main c-wh">
+			<div class="ub ub-ac ub-pc ">
+				<img style="width: 100%;" src="css/myImg/down01.jpg" />
+			</div>
+			<div class="ub ub-ac ub-pc umar-b">
+				<img style="width: 100%;" src="css/myImg/apple_down.png" />
+			</div>
+			<div class="ub ub-ac ub-pc">
+				<img style="width: 100%;" src="css/myImg/andro_down.png" />
+			</div>
+		</div>
+		<script src="../common/js/appcan.js"></script>
+		<script src="../common/js/appcan.control.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {})
+
+		function closepop() {
+			appcan.execScriptInWin("detail", "closePop()");
+		}
+
+		appcan.button(".btn", "ani-act", function() {
+			closepop();
+		})
+		//期限
+		appcan.button(".choose_qx .screen_item", "ani-act", function() {
+			$(".choose_qx .screen_item").removeClass("screen_active");
+			$(this).addClass("screen_active");
+		})
+		//利率
+		appcan.button(".choose_ll .screen_item", "ani-act", function() {
+			$(".choose_ll .screen_item").removeClass("screen_active");
+			$(this).addClass("screen_active");
+		})
+		//类型
+		appcan.button(".choose_lx .screen_item", "ani-act", function() {
+			$(".choose_lx .screen_item").removeClass("screen_active");
+			$(this).addClass("screen_active");
+		})
+		//确认按钮
+		appcan.button(".dbsure", "ani-act", function() {
+           appcan.window.close(-1);
+        });
+        //重置按钮
+        appcan.button(".dbreset", "ani-act", function() {
+           $(".screen_item").removeClass("screen_active");
+        });
+	</script>
+
+</html>

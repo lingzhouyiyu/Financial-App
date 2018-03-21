@@ -1,0 +1,12 @@
+.top_head{ background: #fff; border-bottom: 1px solid #E1E1E1; padding: 0.6em 1em;}
+.head_img{ margin-right: 0.5em;}
+.head_img img{ width: 2em;}
+.center_top{ background: #fff; padding: 1em 0; border-bottom: 1px solid #E1E1E1; }
+.top_left{ border-right: 1px solid #E1E1E1;}
+.font-size12{ font-size: 1.125em; color: #fc4b4b;}
+.title{ background: #fff;  padding: 1.5em 0; }
+.line_left{ width: 1em; height: 1px; background: #323232;}
+.blue_box{ background: #fff;}
+.blue_bg{ background: #afa6c6; color: #fff; height: 2.5em; margin: 1em; padding: 0 1em; border-radius: 0.4em;}
+.invite_list{ background: #fff; padding: 0 1.5em 2em 1.5em;}
+.invite_item{ height: 2em;}

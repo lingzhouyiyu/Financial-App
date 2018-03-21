@@ -1,0 +1,20 @@
+.main_title{ background: #fff; padding: 1em 0; margin-bottom: 0.6em;}
+.title1{ border-right: 1px solid #E1E1E1;}
+.sign{ width: 0.5em; height: 0.5em; background: #fd6040; border-radius: 50%; margin-left: 5px;}
+.dzgg{ background: #fff;  padding: 0.6em 0.6em 0 0.6em; ;}
+.sign01{  width: 0.5em; height: 0.5em; background: #fd6040; border-radius: 50%; margin-left: 5px;}
+.left_title{overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; margin-right: 0.4em;}
+.gg_time{ font-size: 0.8em;}
+.texthidden{ overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; }
+.gg_content{ margin-top: 0.6em; }
+.gg_item{ border-bottom: 1px solid #E1E1E1; padding-bottom: 1em;}
+.sign_box{ height: 0.6em;}
+.title_active{ color: #382071;}

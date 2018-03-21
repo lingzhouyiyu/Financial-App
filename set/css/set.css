@@ -1,0 +1,58 @@
+.set_1{
+	background: #fff;
+border-top: 6px solid #efefed;
+padding: 0 1em;
+}
+.set_1 .L{
+	padding: 1em 0;
+	color: #222222;
+}
+.set_1 .R{
+	color: #ababab;
+	font-size: 1em;
+}
+.account_right img{ width: 0.6em;}
+.set_1 .yjfk{
+	border-top: 1px solid #efefed;
+}
+.set_1 .gywm{
+	border-top: 1px solid #efefed;
+}
+
+.set_1 .kfdh{
+	border-top: 1px solid #efefed;
+}
+.set_1 .kfdh span{
+padding-right: 0.5em;
+}
+.set_2{
+	background: #fff;
+border-top: 6px solid #efefed;
+padding: 0 1em;
+border-bottom: 6px solid #efefed;
+}
+.set_2 .L{
+	padding: 1em 0;
+	color: #222222;
+}
+.set_2 .R{
+	color: #ababab;
+	font-size: 1em;
+	padding-right: 1em;
+}
+.set_3{
+margin: 1em 1em;
+	border: 1px solid #382071;
+	background: #382071;
+	border-radius: 5px;
+	
+}
+.set_3 .tczh {
+	padding: 0.7em 1em;
+	color: #F0F0F0;
+	font-size: 1.2em;
+}
+.loginexit{ margin: 1em;}
+.tczhBtn{
+	background: #382071; height: 2.8em; color: #fff; border-radius: 0.4em;
+}

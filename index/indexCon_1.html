@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/idangerous.swiper.css" />
+		<link rel="stylesheet" href="../common/css/owl.carousel.css" />
+		<link rel="stylesheet" href="../common/css/ui-box.css">
+		<link rel="stylesheet" href="../common/css/ui-base.css">
+		<link rel="stylesheet" href="../common/css/ui-color.css">
+		<link rel="stylesheet" href="../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css" />
+		<script type="text/javascript" src="../common/js/jquery.1.10.2.js"></script>
+		<script type="text/javascript" src="../common/js/owl.carousel.min.js"></script>
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ver ">
+			<!-- 头部分类查看-->
+			<div class="ub  orderimg manger_top bc-text">
+				<div id="mr" class="ub ub-ac ub-pc ub-f1 ub-f-fh " onclick="selectorder(this)">
+					默认
+				</div>
+				<div id="" class="ub ub-ac ub-pc ub-f1 ub-f-fh" onclick="selectorder(this)">
+					<div class="ub">
+						利率
+					</div>
+					<div class="ub">
+						<img id="Lx" href="desc" class="toup seimg" src="../common/images/up.png" />
+					</div>
+				</div>
+				<div id="" class="ub ub-ac ub-pc ub-f1 ub-f-fh" onclick="selectorder(this)">
+					<div class="ub">
+						期限
+					</div>
+					<div class="ub">
+						<img id="qx" href="desc" class="toup seimg" src="../common/images/up.png" />
+					</div>
+				</div>
+				<div class="ub ub-ac ub-pc ub-f1 ub-f-fh screen_btn">
+					<div class="ub">
+						筛选
+					</div>
+					<div class="ub">
+						<img src="../common/images/sx.png" />
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ver listtotal">
+
+			</div>
+			<!--
+            	作者：offline
+            	时间：2016-12-27
+            	描述：零元购模板
+            -->
+			<div class="lygtemp uhide">
+				<div class="ub ub-ver zero_item lygitem">
+					<div class="ub ub-ver ub-f1  zero_top">
+						<div class="ub ub-f1">
+							<div class="ub ub-f1 zero_name">
+								<div class="ub zero_shop FMingC">
+
+								</div>
+								<div class="ub ub-pc ub-ac zero_sign">
+									E
+								</div>
+							</div>
+							<div class="ub">
+								<div class="ub ub-ac ub-pc zero_right">
+									hot
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1">
+							<div class="ub ub-ver ub-f1 ub-fh zero_left">
+
+								<div class="ub ub-ac umar-b">
+									<div class="ub colorred font-size125">
+										<span class="FLiX_prepose">0.00</span>
+										<span>%</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									年化收益率
+								</div>
+							</div>
+							<div class="ub ub-ver ub-ac ub-fh ub-f1  zero_center">
+								<div class="ub  umar-b">
+									<div class="ub  font-size125">
+										<span class="FTouZqx"></span>
+										<span class="Fdw"></span>
+									</div>
+								</div>
+								<div class="ub color96">
+									期限
+								</div>
+							</div>
+							<div class="ub ub-ac ub-pe ub-f1 ub-fh zero_bright">
+								<div class="ub ub-ac ub-pc join_btn gozero joinlyg">
+									立即加入
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-ac zero_bottom">
+						<div class="ub ub-ac ub-pc bottom_left umar-r">
+							￥
+						</div>
+						<div class="ub ub-ac ub-pc">
+							<span>投资金额</span>
+							<span class="Fmoney">0.00</span>
+							<span>元</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ub ub-ver uhide">
+				<!-- 0元购一个item-->
+				<div class="ub ub-ver zero_item">
+					<div class="ub ub-ver ub-f1  zero_top">
+						<div class="ub ub-f1">
+							<div class="ub ub-f1 zero_name">
+								<div class="ub zero_shop">
+									0元购iPhone7
+								</div>
+								<div class="ub ub-pc ub-ac zero_sign">
+									E
+								</div>
+							</div>
+							<div class="ub">
+								<div class="ub ub-ac ub-pc zero_right">
+									hot
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1">
+							<div class="ub ub-ver ub-f1 ub-fh zero_left">
+
+								<div class="ub ub-ac umar-b">
+									<div class="ub colorred font-size125">
+										<span>9.6</span>
+										<span>%</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									年化收益率
+								</div>
+							</div>
+							<div class="ub ub-ver ub-ac ub-fh ub-f1  zero_center">
+								<div class="ub  umar-b">
+									<div class="ub  font-size125">
+										<span>6</span>
+										<span>个月</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									期限
+								</div>
+							</div>
+							<div class="ub ub-ac ub-pe ub-f1 ub-fh zero_bright">
+								<div class="ub ub-ac ub-pc join_btn gozero">
+									立即加入
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-ac zero_bottom">
+						<div class="ub ub-ac ub-pc bottom_left umar-r">
+							￥
+						</div>
+						<div class="ub ub-ac ub-pc">
+							<span>投资金额</span>
+							<span>7.9</span>
+							<span>万</span>
+						</div>
+					</div>
+				</div>
+				<!-- 0元购一个item-->
+				<div class="ub ub-ver zero_item">
+					<div class="ub ub-ver ub-f1  zero_top">
+						<div class="ub ub-f1">
+							<div class="ub ub-f1 zero_name">
+								<div class="ub zero_shop">
+									0元购iPhone7
+								</div>
+								<div class="ub ub-pc ub-ac zero_sign">
+									E
+								</div>
+							</div>
+							<div class="ub">
+								<div class="ub ub-ac ub-pc uhide zero_right">
+									hot
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1">
+							<div class="ub ub-ver ub-f1 ub-fh zero_left">
+
+								<div class="ub ub-ac umar-b">
+									<div class="ub colorred font-size125">
+										<span>9.6</span>
+										<span>%</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									年化收益率
+								</div>
+							</div>
+							<div class="ub ub-ver ub-ac ub-fh ub-f1  zero_center">
+								<div class="ub  umar-b">
+									<div class="ub  font-size125">
+										<span>6</span>
+										<span>个月</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									期限
+								</div>
+							</div>
+							<div class="ub ub-ac ub-pe ub-f1 ub-fh zero_bright">
+								<div class="ub ub-ac ub-pc join_btnActive">
+									收益中
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-ac zero_bottom">
+						<div class="ub ub-ac ub-pc bottom_left umar-r">
+							￥
+						</div>
+						<div class="ub ub-ac ub-pc">
+							<span>投资金额</span>
+							<span>7.9</span>
+							<span>万</span>
+						</div>
+					</div>
+				</div>
+				<!-- 随投定赎  一个item-->
+				<div class="stdstemp uhide">
+					<div class="ub ub-ver zero_item stdsitem">
+						<div class="ub ub-ver ub-f1  zero_top">
+							<div class="ub ub-f1">
+								<div class="ub ub-f1 zero_name">
+									<div class="ub zero_shop FMingC">
+
+									</div>
+									<div class="ub ub-pc ub-ac fix_sign">
+										<span class="Fmin"></span>元起投
+									</div>
+									<div class="ub ub-pc ub-ac zero_sign">
+										a
+									</div>
+								</div>
+								<div class="ub">
+									<div class="ub ub-ac ub-pc uhide zero_right">
+										hot
+									</div>
+								</div>
+							</div>
+							<div class="ub ub-f1">
+								<div class="ub ub-ver ub-f1 ub-fh zero_left">
+
+									<div class="ub ub-ac umar-b">
+										<div class="ub colorred font-size125">
+											<span class="FLiX"></span>
+											<span>%</span>
+											<span >-</span>
+											<span class="FLiX_prepose"></span>
+											<span>%</span>
+										</div>
+									</div>
+									<div class="ub color96">
+										年化收益率
+									</div>
+								</div>
+								<div class="ub ub-ver ub-ac ub-fh ub-f1  zero_center">
+									<div class="ub  umar-b">
+										<div class="ub  font-size125">
+											<span class="FTouZqx"></span>
+											<span class="Fdaw"></span>
+										</div>
+									</div>
+									<div class="ub color96">
+										期限
+									</div>
+								</div>
+								<div class="ub ub-ac ub-pe ub-f1 ub-fh zero_bright">
+									<div class="ub ub-ac ub-pc join_btn  joinstds">
+										立即加入
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-ac zero_bottom">
+							<div class="ub ub-ac ub-pc bottom_left umar-r">
+								￥
+							</div>
+							<div class="ub ub-ac ub-pc">
+								<span>单笔上限</span>
+								<span class="Fmax"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 随时投 乐宝 一个item-->
+				<div class="ub ub-ver zero_item">
+					<div class="ub ub-ver ub-f1  zero_top">
+						<div class="ub ub-f1">
+							<div class="ub ub-f1 zero_name">
+								<div class="ub zero_shop">
+									随时投
+								</div>
+								<div class="ub ub-pc ub-ac fix_sign">
+									100元起投
+								</div>
+								<div class="ub ub-pc ub-ac zero_sign">
+									e
+								</div>
+							</div>
+							<div class="ub">
+								<div class="ub ub-ac ub-pc  zero_right">
+									hot
+								</div>
+							</div>
+						</div>
+						<div class="ub ub-f1">
+							<div class="ub ub-ver ub-f1 ub-fh zero_left">
+
+								<div class="ub ub-ac umar-b">
+									<div class="ub colorred font-size125">
+										<span>12.0</span>
+										<span>%</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									年化收益率
+								</div>
+							</div>
+							<div class="ub ub-ver ub-ac ub-fh ub-f1  zero_center">
+								<div class="ub  umar-b">
+									<div class="ub  font-size125">
+										<span>6</span>
+										<span>个月</span>
+									</div>
+								</div>
+								<div class="ub color96">
+									期限
+								</div>
+							</div>
+							<div class="ub ub-ac ub-pe ub-f1 ub-fh zero_bright">
+								<div class="ub ub-ac ub-pc join_btn gofree">
+									立即加入
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ub ub-ac zero_bottom">
+						<div class="ub ub-ac ub-pc bottom_left umar-r">
+							￥
+						</div>
+						<div class="ub ub-ac ub-pc">
+							<span>融资金额</span>
+							<span>100万</span>
+						</div>
+						<div class="ub ub-f1 umar-r status">
+							<div style="width:0px;" class="ub  charts"></div>
+						</div>
+						<div class="ub colorred">
+							<span class="percent">78.6</span>
+							<span>%</span>
+						</div>
+					</div>
+				</div>
+				<!-- 活期 随投随赎-->
+				<div class="stsutemp uhide">
+					<div class="ub ub-f1 ub-fv  redom_index gohq susuitem">
+						<div class="ub ub-f1 ub-ver redom_main">
+							<div class="ub ub-f1">
+								<div class="ub  cil_top">
+									<img src="../common/images/redom.png" />
+								</div>
+								<div class="ub ub-ac ub-pe ub-f1 cirl_right">
+									<div class="ub ub-ac ub-pc cirl_rightL">
+										随
+									</div>
+									<div class="ub ub-ac ub-pc cirl_rightR bc-text FMingC">
+
+									</div>
+								</div>
+							</div>
+							<div class="ub ub-f1 ub-ac  ub-pc ub-f1 cirl">
+								<img class="Fimg" src="../common/images/cirl.png" />
+							</div>
+
+							<div class="ub ub-f1 ub-ac ub-pc cirl_center">
+								<span>单笔上限 </span><span class="Fmax">100,000.00</span>
+							</div>
+							<div class="ub ub-f1 ub-ac ub-pc cril_bottom">
+								<div class="ub ub-ac ub-pc  ub-f1 ">
+									<div class="ub">
+										<img src="../common/images/redom01.png" />
+									</div>
+									<div class="ub bc-text">
+										活期理财
+									</div>
+								</div>
+								<div class="ub ub-ac ub-pc ub-f1 ">
+									<div class="ub">
+										<img src="../common/images/redom02.png" />
+									</div>
+									<div class="ub bc-text">
+										每日结息
+									</div>
+								</div>
+								<div class="ub ub-ac ub-pc ub-f1 ">
+									<div class="ub">
+										<img src="../common/images/redom03.png" />
+									</div>
+									<div class="ub bc-text">
+										<span class="Fmin"></span>元起投
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script src="../common/js/appcan.js"></script>
+	<script src="../common/js/appcan.control.js"></script>
+	<script type="text/javascript" src="../common/js/yfkj.js"></script>
+	<script>
+		var Fstart = 0;
+		var pageSize = 10;
+		var Fselect = "stsu";
+		var LXorder = "";
+		var QXorder = "";
+		var lxqx = "";
+		var lxfw = "";
+		appcan.ready(function() {
+				appcan.window.subscribe('lxqx', function(msg) {
+					lxqx = msg;
+					$('.listtotal').empty();
+					Fstart = 0;
+					if(Fselect == "stsu") { //随投随赎
+						getStSs();
+					} else if(Fselect == "stds") {
+						getStds();
+					} else if(Fselect == "lyg") {
+						getLygList();
+					}
+				});
+				appcan.window.subscribe('lxfw', function(msg) {
+					lxfw = msg;
+					$('.listtotal').empty();
+					Fstart = 0;
+					if(Fselect == "stsu") { //随投随赎
+						getStSs();
+					} else if(Fselect == "stds") {
+						getStds();
+					} else if(Fselect == "lyg") {
+						getLygList();
+					}
+				});
+				appcan.window.subscribe('Fselect', function(msg) {
+					Fselect = msg;
+					LXorder = "";
+					QXorder = "";
+					lxqx = "";
+					lxfw = "";
+					$("#Lx").attr("href", "desc");
+					$("#qx").attr("href", "desc");
+					$("#qx").attr("src", "../common/images/up.png");
+					$("#Lx").attr("src", "../common/images/up.png");
+					$('.listtotal').empty();
+					Fstart = 0;
+					if(msg == "stsu") { //随投随赎
+						getStSs();
+					} else if(msg == "stds") {
+						getStds();
+					} else if(msg == "lyg") {
+						getLygList();
+					}
+				});
+				if(Fselect == "stsu") {
+					getStSs();
+				} else if(Fselect == "stds") {
+					getStds();
+				} else if(Fselect == "lyg") {
+					getLygList();
+				}
+				appcan.frame.setBounce([0, 1], function(type) {
+					$("#pullstatus" + type).html(!type ? "开始下拉" : "开始上拖");
+				}, function(type) {
+					$("#pullstatus" + type).html(!type ? "下拉超过临界点,产生事件了！" : "超过临界点,产生事件了！");
+				}, function(type) {
+					if(type == 0) {
+						$('.listtotal').empty();
+						Fstart = 0;
+						if(Fselect == "stsu") { //随投随赎
+							getStSs();
+						} else if(Fselect == "stds") {
+							getStds();
+						} else if(Fselect == "lyg") {
+							getLygList();
+						}
+					} else if(type == 1) {
+						if(Fselect == "stsu") { //随投定赎
+							getStSs();
+						} else if(Fselect == "stds") {
+							getStds();
+						} else if(Fselect == "lyg") {
+							getLygList();
+						}
+					}
+					setTimeout(function() {
+						appcan.frame.resetBounce(type);
+					}, 1000);
+				})
+			})
+			//加载进度条
+		function animate() {
+			$(".charts").each(function(i, item) {
+				var a = parseInt($(item).parents().find(".percent").text());
+				$(item).animate({
+					width: a + "%"
+				}, 3000);
+			});
+		}
+		animate();
+
+		//零元购去投资
+		appcan.button(".gozero", "ani-act", function(a, b) {
+
+				appcan.window.open("zeroDetial", "../zeroDetial/zeroDetial.html");
+				appcan.window.publish('zeroDetial', '');
+				//              appcan.window.publish('move', '1');
+			})
+			//定期去投资
+			//		appcan.button(".godq", "ani-act", function(a, b) {
+			//
+			//				//appcan.window.open("dingqi", "../dingqi/dingqi.html");
+			//				//appcan.window.publish('dingqi', '');
+			//				//              appcan.window.publish('move', '1');
+			//			})
+			//随时投去投资
+		appcan.button(".gofree", "ani-act", function(a, b) {
+
+				appcan.window.open("freeDetial", "../freeDetial/freeDetial.html");
+				appcan.window.publish('freeDetial', '');
+				//              appcan.window.publish('move', '1');
+			})
+			//活期去投资
+		appcan.button(".gohq", "ani-act", function(a, b) {
+
+				appcan.window.open("huoqi", "../huoqi/huoqi.html");
+
+			})
+			//筛选
+		appcan.button(".screen_btn", "ani-act", function() {
+			appcan.frame.open("screen", "../screen/screen.html", 0, 0);
+		});
+
+		//随投随赎列表
+		function getStSs() {
+			var furl = "/app/getStSs";
+			var parm = {
+				pageSize: pageSize,
+				Fstart: Fstart,
+				LXorder: LXorder,
+				QXorder: QXorder,
+				lxfw: lxfw
+			}
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data.rows;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addstsuitem(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addstsuitem(row, end) {
+			var list = $(".listtotal");
+			var item = $(".stsutemp").clone();
+			var domitem = item.find(".susuitem");
+			domitem.attr("id", row.Fid);
+			domitem.find(".FMingC").text(row.FMingC);
+			domitem.find(".Fmax").text(row.Fmax.toFixed(2));
+			domitem.find(".Fmin").text(row.Fmin.toFixed(2));
+			//domitem.find(".Fimg").attr("src", imgurl + row.Fimg);
+			domitem.find(".Fimg").attr("onclick", "details('" + row.Fid + "',this)");
+			list.append(domitem);
+			Fstart = end;
+		}
+		//随投随赎点击
+		function details(Fid, dom) {
+			appcan.locStorage.setVal("stssid", Fid); //id传到详情页
+			appcan.window.open("huoqi", "../huoqi/huoqi.html");
+		}
+		//随投定赎列表
+		function getStds() {
+			var furl = "/app/getStDs";
+			var parm = {
+				pageSize: pageSize,
+				Fstart: Fstart,
+				LXorder: LXorder,
+				QXorder: QXorder,
+				lxqx: lxqx,
+				lxfw: lxfw
+			}
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data.rows;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addstdsuitem(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addstdsuitem(row, end) {
+			var list = $(".listtotal");
+			var item = $(".stdstemp").clone();
+			var domitem = item.find(".stdsitem");
+			domitem.attr("id", row.Fid);
+			domitem.find(".FMingC").text(row.FMingC);
+			domitem.find(".FTouZqx").text(row.FTouZqx);
+			if(row.FJiXlx == "0") {
+				domitem.find(".Fdaw").text("天");
+			} else if(row.FJiXlx == "1") {
+				domitem.find(".Fdaw").text("个月");
+			}
+			domitem.find(".Fmax").text(row.Fmax.toFixed(2));
+			domitem.find(".Fmin").text(row.Fmin.toFixed(2));
+			domitem.find(".FLiX").text(row.FLiX.toFixed(2));
+			domitem.find(".FLiX_prepose").text(row.FLiX_prepose.toFixed(2));
+			domitem.find(".joinstds").attr("onclick", "joinstds('" + row.Fid + "',this)");
+			list.append(domitem);
+			Fstart = end;
+		}
+		//随投定赎点击
+		function joinstds(Fid, dom) {
+			appcan.locStorage.setVal("stdsid", Fid); //id传到详情页
+			appcan.window.open("dingqi", "../dingqi/dingqi.html");
+		}
+
+		function selectorder(dom) {
+			var id = $(dom).attr("id");
+			if(id != "mr") {
+				if($(dom).find("img").hasClass("toup")) {
+					$(dom).find("img").attr("src", "../common/images/lower.png");
+					$(dom).find("img").removeClass("toup").addClass("todown");
+					$(dom).find("img").attr("href", "asc");
+				} else {
+					$(dom).find("img").attr("src", "../common/images/up.png");
+					$(dom).find("img").removeClass("todown").addClass("toup");
+					$(dom).find("img").attr("href", "desc");
+				}
+				var allimg = $(".orderimg img");
+				allimg.each(function(index, domEle) {
+					if($(domEle).hasClass("seimg")) {
+						if($(domEle).attr("id") == "Lx") {
+							LXorder = $(domEle).attr("href");
+						}
+						if($(domEle).attr("id") == "qx") {
+							QXorder = $(domEle).attr("href");
+						}
+					}
+				});
+			} else {
+				$("#Lx").attr("href", "desc");
+				$("#qx").attr("href", "desc");
+				$("#qx").attr("src", "../common/images/up.png");
+				$("#Lx").attr("src", "../common/images/up.png");
+				var allimg = $(".orderimg img");
+				allimg.each(function(index, domEle) {
+					if($(domEle).hasClass("seimg")) {
+						if($(domEle).attr("id") == "Lx") {
+							LXorder = $(domEle).attr("href");
+						}
+						if($(domEle).attr("id") == "qx") {
+							QXorder = $(domEle).attr("href");
+						}
+					}
+				});
+			}
+			$('.listtotal').empty();
+			Fstart = 0;
+			if(Fselect == "stsu") { //随投随赎
+				getStSs();
+			} else if(Fselect == "stds") {
+				getStds();
+			}
+		}
+
+		//零元购列表
+		function getLygList() {
+			var furl = "/app/getLygList";
+			var parm = {
+				pageSize: pageSize,
+				Fstart: Fstart,
+				LXorder: LXorder,
+				QXorder: QXorder,
+				lxqx: lxqx,
+				lxfw: lxfw
+			}
+			appcan.ajax({
+				url: Serverurl + furl,
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var rows = result.data.rows;
+					var code = result.code;
+					var msg = result.msg;
+					var debug = result.debug;
+					var end = result.data.end;
+					var length = rows.length;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(rows).each(function(i, row) {
+								addlygitem(row, end);
+							});
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+
+		}
+
+		function addlygitem(row, end) {
+			var list = $(".listtotal");
+			var item = $(".lygtemp").clone();
+			var domitem = item.find(".lygitem");
+			domitem.attr("id", row.Fid);
+			domitem.find(".FMingC").text(row.FMingC);
+			domitem.find(".Fmoney").text(row.Fmax);
+			domitem.find(".FTouZqx").text(row.FTouZqx);
+			if(row.FJiXlx == "0") {
+				domitem.find(".Fdaw").text("天");
+			} else if(row.FJiXlx == "1") {
+				domitem.find(".Fdaw").text("个月");
+			}
+			domitem.find(".FLiX_prepose").text(row.FLiX.toFixed(2));
+			domitem.find(".joinlyg").attr("onclick", "joinlyg('" + row.Fid + "','"+row.Fgoodsid+"',this)");
+			list.append(domitem);
+			Fstart = end;
+		}
+		//随投定赎点击
+		function joinlyg(Fid,Fgoodsid, dom) {
+			appcan.locStorage.setVal("lygproductid", Fid); //id传到详情页
+			appcan.locStorage.setVal("lyggoodsid", Fgoodsid); 
+			appcan.window.open("zeroDetial", "../zeroDetial/zeroDetial.html");
+		}
+	</script>
+
+</html>

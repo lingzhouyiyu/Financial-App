@@ -1,0 +1,10 @@
+.ord_top{ padding-top: 2em; border-top: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; }
+.ord_item{ padding: 1em; background: #fff;}
+.ord_input{ margin-left: 0.6em; margin-right: 0.6em; }
+.ord_input input{  border: 0 none;}
+.ord_top02{ padding-top: 0; border-top: 0;}
+.ord_check{ border: 1px solid #ff721f; height: 2em; border-radius: 8px;}
+.ord_active{ background: #ff721f; color: #fff;  }
+.ord_warming{ padding: 1em; color: #f85e46;}
+.ord_warming02{ padding-top: 0; }
+.ord_btn{ background: #382071; color: #fff; height: 2.5em; margin: 1em; border-radius: 8px;}

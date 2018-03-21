@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../common/css/fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="../../common/css/ui-box.css">
+		<link rel="stylesheet" href="../../common/css/ui-base.css">
+		<link rel="stylesheet" href="../../common/css/ui-color.css">
+		<link rel="stylesheet" href="../../common/css/appcan.icon.css">
+		<link rel="stylesheet" href="../../common/css/appcan.control.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body class="um-vp bc-bg" ontouchstart>
+		<div class="ub ub-ver bc-text main_box">
+			<div class="ub  ub-ac ub-f1 input_item">
+				<div class="ub  margin_r">
+					手机号码
+				</div>
+				<div class="ub Fphone">
+
+				</div>
+			</div>
+		</div>
+		<script src="../../common/js/appcan.js"></script>
+		<script src="../../common/js/appcan.control.js"></script>
+		<script type="text/javascript" src="../../common/js/yfkj.js"></script>
+	</body>
+	<script>
+		appcan.ready(function() {
+			getuserinfo();
+		})
+
+		function getuserinfo() {
+			var parm = {
+				Fuserid: Fsuper.getuserid()
+			}
+			appcan.ajax({
+				url: Serverurl + '/useCenter/getuserinfo',
+				type: "POST",
+				dataType: "json",
+				data: parm,
+				success: function(result) {
+					var data = result.data[0];
+					var msg = result.msg;
+					var debug = result.debug;
+					var code = result.code;
+					if(code < 10000) {
+						if(code == 0) { //返回成功
+							$(".Fphone").text(data.Fphone);
+						}
+					} else {
+						if(Fsuperdbg) {
+							alert(result.code);
+							alert(result.msg);
+							alert(result.debug);
+						}
+					}
+				}
+			});
+		}
+	</script>
+
+</html>
